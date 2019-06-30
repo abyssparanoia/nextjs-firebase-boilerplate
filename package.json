@@ -10,13 +10,14 @@
     "lint": "eslint --fix -c ./.eslintrc.js './**/*.{ts,tsx}'"
   },
   "dependencies": {
-    "@types/react": "^16.8.22",
-    "@types/react-dom": "^16.8.4",
     "@types/body-parser": "1.17.0",
     "@types/express-session": "1.15.13",
     "@types/node": "12.0.10",
+    "@types/react": "^16.8.22",
+    "@types/react-dom": "^16.8.4",
     "@types/session-file-store": "1.2.0",
     "@zeit/next-typescript": "1.1.1",
+    "@types/next": "^8.0.5",
     "body-parser": "1.19.0",
     "express": "4.17.1",
     "express-session": "1.16.2",
