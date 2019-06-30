@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "strictPropertyInitialization": false,
+    "esModuleInterop": true,
+    "lib": ["dom", "es2017"],
+    "target": "es6",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "jsx": "preserve",
+    "baseUrl": "./",
+    "incremental": true,
+    "types": ["node", "jest"]
+  },
+  "exclude": ["node_modules", "dist"]
+}
