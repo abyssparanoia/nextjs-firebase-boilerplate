@@ -1,8 +1,8 @@
-import { createContext } from "react";
+import { createContext } from 'react'
 
 export interface AuthInfo {
-  token: string;
-  userID: string;
+  token: string
+  userID: string
 }
 
-export const AuthContext = createContext<AuthInfo | null>(null);
+export const AuthContext = createContext<AuthInfo | null>(null)
