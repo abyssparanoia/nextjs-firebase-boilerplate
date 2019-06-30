@@ -2,9 +2,13 @@ import { ExNextContext } from 'next'
 import { auth } from '../firebase/client'
 import Router from 'next/router'
 
-export const authenticate = async (req: ExNextContext['req'], res: ExNextContext['res'], loginRequired: boolean) => {
-  let userID: string | null = null
-  let token: string | null = null
+export const authenticate = async (
+  req: ExNextContext['req'],
+  res: ExNextContext['res'],
+  loginRequired: boolean
+): Promise<{ userID?: string; token?: string }> => {
+  let userID: string | undefined = undefined
+  let token: string | undefined = undefined
   // サーバー上での処理
   if (req && req.session) {
     const user = req.session.firebaseUser
@@ -16,7 +20,7 @@ export const authenticate = async (req: ExNextContext['req'], res: ExNextContext
       })
       res.end()
     }
-    userID = user.uid
+    userID = user ? user.uid : null
     // ブラウザ上での処理
   } else {
     const user = auth.currentUser
