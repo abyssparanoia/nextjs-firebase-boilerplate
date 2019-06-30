@@ -1,5 +1,5 @@
-import * as admin from 'firebase-admin'
+import * as admin from "firebase-admin";
 
 export default admin.initializeApp({
-  credential: admin.credential.cert(require('../firebaseAdminKey.json'))
-})
+  credential: admin.credential.cert(require("../firebaseAdminKey.json"))
+});

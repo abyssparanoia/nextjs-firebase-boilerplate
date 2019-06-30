@@ -1,13 +1,13 @@
-import * as admin from 'firebase-admin'
+import * as admin from "firebase-admin";
 
 declare global {
   namespace Express {
     interface Request {
-      firebaseServer: admin.app.App
+      firebaseServer: admin.app.App;
     }
     interface Session {
-      firebaseUser: admin.auth.DecodedIdToken
-      firebaseToken: string
+      firebaseUser: admin.auth.DecodedIdToken;
+      firebaseToken: string;
     }
   }
 }

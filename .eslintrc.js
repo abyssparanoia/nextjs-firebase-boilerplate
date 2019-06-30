@@ -17,7 +17,7 @@ module.exports = {
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "sourceType": "module",
-        "project": "./src/app/tsconfig.json", 
+        "project": "./tsconfig.json", 
         "tsconfigRootDir": __dirname,
         "ecmaFeatures": {
             "tsx": true
@@ -34,7 +34,9 @@ module.exports = {
         "no-console": ["error", { "allow": ["info", "error"] }], 
         "react/prop-types": "off",
         "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn"
+        "react-hooks/exhaustive-deps": "warn",
+        "require-atomic-updates": "off",
+        "no-console": "off"
     },
     "settings": {
         "react": {

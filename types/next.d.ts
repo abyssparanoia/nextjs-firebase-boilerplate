@@ -11,9 +11,7 @@ declare module 'next' {
 }
 
 declare module 'next/document' {
-  type ExNextDocumentContext<
-    Q extends DefaultQuery = DefaultQuery
-  > = NextDocumentContext<Q> & {
+  type ExNextDocumentContext<Q extends DefaultQuery = DefaultQuery> = NextDocumentContext<Q> & {
     req?: Express.Request
     res?: Express.Response
   }
