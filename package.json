@@ -46,7 +46,7 @@
   },
   "lint-staged": {
     "*.{.ts,tsx}": [
-      "eslint --fix -c ./.eslintrc.js '**/*.{ts,tsx}'",
+      "eslint --fix -c ./.eslintrc.js './**/*.{ts,tsx}'",
       "git add"
     ]
   }
