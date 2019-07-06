@@ -2,6 +2,10 @@ import * as React from 'react'
 import App, { Container, DefaultAppIProps, NextAppContext } from 'next/app'
 import { firebase } from '../firebase/client'
 import { AuthContext, AuthInfo } from '../contexts'
+import { ThemeProvider } from '@material-ui/styles'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import Head from 'next/head'
+import theme from '../thema'
 
 interface State extends AuthInfo {}
 
@@ -49,9 +53,15 @@ export default class extends App<DefaultAppIProps, State> {
 
     return (
       <Container>
-        <AuthContext.Provider value={{ userID: this.state.userID, token: this.state.token }}>
-          <Component {...pageProps} />
-        </AuthContext.Provider>
+        <Head>
+          <title>gearchange</title>
+        </Head>
+        <ThemeProvider theme={theme}>
+          <AuthContext.Provider value={{ userID: this.state.userID, token: this.state.token }}>
+            <CssBaseline />
+            <Component {...pageProps} />
+          </AuthContext.Provider>
+        </ThemeProvider>
       </Container>
     )
   }
