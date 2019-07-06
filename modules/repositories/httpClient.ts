@@ -7,7 +7,7 @@ export default class AxiosClient {
   private readonly axiosInstance = axios.create({
     headers: {
       'Content-Type': 'application/json',
-      Authorization: this.token ? `Bearer ${this.token}` : undefined
+      Authorization: this.token ? `Bearer ${this.token}` : ''
     }
   })
 
