@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { ExNextContext } from 'next'
 import { auth } from 'firebase/client'
 import Router from 'next/router'
+import * as repositoris from 'modules/repositories'
 
 export const authenticate = async (
   req: ExNextContext['req'],
@@ -34,4 +36,74 @@ export const authenticate = async (
   }
 
   return { userID, token }
+}
+
+interface ISignInWithEmailAndPassword {
+  email: string
+  password: string
+}
+
+export const useSignInWithEmailAndPassword = () => {
+  const [values, setValues] = useState<ISignInWithEmailAndPassword>({ email: '', password: '' })
+  const [isLoading, setIsLoading] = useState<Boolean>(false)
+  const [error, setError] = useState<Error | undefined>(undefined)
+
+  const handleChange = (name: keyof ISignInWithEmailAndPassword) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValues({ ...values, [name]: e.target.value })
+  }
+
+  const handleSignIn = () => {
+    setIsLoading(true)
+    repositoris
+      .signInWithEmailAndPassword({ ...values })
+      .then(() => {
+        setIsLoading(false)
+      })
+      .catch((err: Error) => {
+        setIsLoading(false)
+        setError(err)
+      })
+  }
+
+  return { values, isLoading, error, handleChange, handleSignIn }
+}
+
+export const useSignInWithGoogle = () => {
+  const [isLoading, setIsLoading] = useState<Boolean>(false)
+  const [error, setError] = useState<Error | undefined>(undefined)
+
+  const handleSignIn = () => {
+    setIsLoading(true)
+    repositoris
+      .signInWithGoogle()
+      .then(() => {
+        setIsLoading(false)
+      })
+      .catch((err: Error) => {
+        setIsLoading(false)
+        setError(err)
+      })
+  }
+
+  return { isLoading, error, handleSignIn }
+}
+
+export const useSignOut = () => {
+  const [isLoading, setIsLoading] = useState<Boolean>(false)
+  const [error, setError] = useState<Error | undefined>(undefined)
+
+  const handleSignOut = () => {
+    setIsLoading(true)
+    repositoris
+      .signOut()
+      .then(() => {
+        setIsLoading(false)
+      })
+      .catch(err => {
+        setIsLoading(false)
+        setError(err)
+      })
+  }
+
+  return { isLoading, error, handleSignOut }
 }
