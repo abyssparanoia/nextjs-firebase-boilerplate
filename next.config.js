@@ -21,6 +21,7 @@ module.exports = withTypescript({
     config.resolve.alias['pages'] = path.join(__dirname, 'pages')
     config.resolve.alias['contexts'] = path.join(__dirname, 'contexts')
     config.resolve.alias['components'] = path.join(__dirname, 'components')
+    config.resolve.alias['firebase'] = path.join(__dirname, 'firebase')
 
     return config
   }
