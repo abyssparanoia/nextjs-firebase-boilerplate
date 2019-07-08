@@ -1,10 +1,7 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { ExNextContext } from 'next'
-import { auth } from '../firebase/client'
-// import { AuthContext } from "../contexts";
-import { authenticate } from 'modules/services/auth'
+import { useSignOut, authenticate } from 'modules/services'
 import Link from 'next/link'
-import Router from 'next/router'
 
 type InitialProps = {
   token: string
@@ -16,18 +13,18 @@ type Props = {} & InitialProps
 const Index = (props: Props) => {
   // const authInfo = useContext(AuthContext)
 
-  const signOut = useCallback(() => {
-    auth.signOut().then(() => Router.push('/sign_in'))
-  }, [])
+  const { isLoading, error, handleSignOut } = useSignOut()
 
   return (
     <div>
+      {isLoading && <div>loading....</div>}
+      {error && <div>{error.message}</div>}
       {props.userID && (
         <>
           <div>認証時はこれが表示される</div>
           <div>firebase uid: {props.userID}</div>
           <div>
-            <button onClick={signOut}>Logout</button>
+            <button onClick={handleSignOut}>SignOut</button>
           </div>
         </>
       )}

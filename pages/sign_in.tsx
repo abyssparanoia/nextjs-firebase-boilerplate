@@ -1,21 +1,18 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { ExNextContext } from 'next'
-import { auth, firebase } from '../firebase/client'
 import Router from 'next/router'
+import { useSignInWithGoogle } from 'modules/services'
+import { auth } from 'firebase/client'
 
 type Props = {}
 
 const SignIn = (_: Props) => {
-  const signIn = useCallback(() => {
-    auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(() => {
-      Router.push('/')
-    })
-  }, [])
+  const { handleSignIn } = useSignInWithGoogle()
 
   return (
     <div>
       <div>ログインページ</div>
-      <button onClick={signIn}>Login</button>
+      <button onClick={handleSignIn}>SignIn</button>
     </div>
   )
 }
