@@ -1,5 +1,5 @@
 import { ExNextContext } from 'next'
-import { auth } from '../firebase/client'
+import { auth } from 'firebase/client'
 import Router from 'next/router'
 
 export const authenticate = async (

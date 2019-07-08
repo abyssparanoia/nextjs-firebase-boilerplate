@@ -2,7 +2,7 @@ import React, { useCallback } from 'react'
 import { ExNextContext } from 'next'
 import { auth } from '../firebase/client'
 // import { AuthContext } from "../contexts";
-import { authenticate } from '../modules/auth'
+import { authenticate } from 'modules/services/auth'
 import Link from 'next/link'
 import Router from 'next/router'
 

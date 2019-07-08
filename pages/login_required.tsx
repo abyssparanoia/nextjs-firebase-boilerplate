@@ -1,6 +1,6 @@
 import React from 'react'
 // import { AuthContext } from "../contexts";
-import { authenticate } from '../modules/auth'
+import { authenticate } from 'modules/services'
 import { ExNextContext } from 'next'
 import Link from 'next/link'
 
