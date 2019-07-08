@@ -2,7 +2,7 @@ import React from 'react'
 import { ExNextContext } from 'next'
 import Router from 'next/router'
 import { useSignInWithGoogle } from 'modules/services'
-import { auth } from 'firebase/client'
+import { auth } from '../firebase/client'
 
 type Props = {}
 

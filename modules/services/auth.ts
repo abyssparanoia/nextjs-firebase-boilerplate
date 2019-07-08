@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { ExNextContext } from 'next'
-import { auth } from 'firebase/client'
+import { auth } from '../../firebase/client'
 import Router from 'next/router'
 import * as repositoris from 'modules/repositories'
 
@@ -57,6 +57,7 @@ export const useSignInWithEmailAndPassword = () => {
     repositoris
       .signInWithEmailAndPassword({ ...values })
       .then(() => {
+        Router.push('/')
         setIsLoading(false)
       })
       .catch((err: Error) => {
@@ -77,6 +78,7 @@ export const useSignInWithGoogle = () => {
     repositoris
       .signInWithGoogle()
       .then(() => {
+        Router.push('/')
         setIsLoading(false)
       })
       .catch((err: Error) => {
@@ -97,6 +99,7 @@ export const useSignOut = () => {
     repositoris
       .signOut()
       .then(() => {
+        Router.push('/sign_in')
         setIsLoading(false)
       })
       .catch(err => {

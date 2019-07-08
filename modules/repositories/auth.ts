@@ -1,4 +1,4 @@
-import { auth, firebase } from 'firebase/client'
+import { auth, firebase } from '../../firebase/client'
 
 export const signInWithGoogle = async () => auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
 
