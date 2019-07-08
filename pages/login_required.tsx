@@ -3,6 +3,7 @@ import React from 'react'
 import { authenticate } from 'modules/services'
 import { ExNextContext } from 'next'
 import Link from 'next/link'
+import { Layout } from 'components/Layout'
 
 type InitialProps = {
   token: string
@@ -11,10 +12,10 @@ type InitialProps = {
 
 type Props = {} & InitialProps
 
-const LoginRequired = (_: Props) => {
+const LoginRequired = ({ userID }: Props) => {
   // const authInfo = useContext(AuthContext);
   return (
-    <div>
+    <Layout userID={userID}>
       <div>ログイン済みユーザーのみが見れる</div>
       <div>
         初期レンダリング後の認証情報に関して、AuthContextを使うかfirebase authのSDKのcurrentUserを使うかは要相談
@@ -22,7 +23,7 @@ const LoginRequired = (_: Props) => {
       <Link href={{ pathname: '/' }}>
         <a>トップページへ</a>
       </Link>
-    </div>
+    </Layout>
   )
 }
 

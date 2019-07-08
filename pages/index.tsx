@@ -1,7 +1,8 @@
 import React from 'react'
 import { ExNextContext } from 'next'
-import { useSignOut, authenticate } from 'modules/services'
+import { authenticate } from 'modules/services'
 import Link from 'next/link'
+import { Layout } from 'components/Layout'
 
 type InitialProps = {
   token: string
@@ -10,26 +11,19 @@ type InitialProps = {
 
 type Props = {} & InitialProps
 
-const Index = (props: Props) => {
+const Index = ({ userID }: Props) => {
   // const authInfo = useContext(AuthContext)
 
-  const { isLoading, error, handleSignOut } = useSignOut()
-
   return (
-    <div>
-      {isLoading && <div>loading....</div>}
-      {error && <div>{error.message}</div>}
-      {props.userID && (
+    <Layout userID={userID}>
+      {userID && (
         <>
           <div>認証時はこれが表示される</div>
-          <div>firebase uid: {props.userID}</div>
-          <div>
-            <button onClick={handleSignOut}>SignOut</button>
-          </div>
+          <div>firebase uid: {userID}</div>
         </>
       )}
 
-      {!props.userID && (
+      {!userID && (
         <>
           <div>未認証時はこれが表示される</div>
         </>
@@ -37,7 +31,7 @@ const Index = (props: Props) => {
       <Link href={{ pathname: '/login_required' }}>
         <a>ログイン必要ページへ</a>
       </Link>
-    </div>
+    </Layout>
   )
 }
 
