@@ -50,15 +50,14 @@ const main = async () => {
         res.status(403).send({ err })
       })) as auth.DecodedIdToken // ここneverとかで返したかった
 
-    req.session.firebaseUser = user
-    req.session.firebaseToken = token
+    req.session!.firebaseUser = user
+    req.session!.firebaseToken = token
 
     return res.sendStatus(200)
   })
 
   server.post('/api/sign_out', (req: Request, res: Response) => {
-    req.session.firebaseUser = null
-    req.session.firebaseToken = null
+    req.session = undefined
     return res.sendStatus(200)
   })
 
