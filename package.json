@@ -7,7 +7,9 @@
     "start:prd": "ts-node server/main.ts",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --fix -c ./.eslintrc.js './**/*.{ts,tsx}'"
+    "lint": "eslint --fix -c ./.eslintrc.js './**/*.{ts,tsx}'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@material-ui/core": "^4.1.3",
@@ -38,9 +40,25 @@
     "typescript": "3.5.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-console": "^1.1.1",
+    "@storybook/addon-info": "^5.1.9",
+    "@storybook/addon-knobs": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addon-storysource": "^5.1.9",
+    "@storybook/addon-viewport": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/cli": "^5.1.9",
+    "@storybook/react": "^5.1.9",
     "@types/axios": "^0.14.0",
+    "@types/storybook__addon-actions": "^3.4.3",
+    "@types/storybook__addon-info": "^4.1.2",
+    "@types/storybook__addon-knobs": "^5.0.2",
+    "@types/storybook__react": "^4.0.2",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
+    "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
     "eslint": "^6.0.1",
     "eslint-config-prettier": "^6.0.0",
@@ -51,7 +69,8 @@
     "lint-staged": "^8.2.1",
     "nodemon": "1.19.1",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "react-docgen-typescript-loader": "^3.1.0"
   },
   "husky": {
     "hooks": {
