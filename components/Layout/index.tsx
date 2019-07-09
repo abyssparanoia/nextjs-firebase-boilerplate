@@ -1,6 +1,6 @@
 import * as React from 'react'
-import Link from 'next/link'
 import Head from 'next/head'
+import { MenuAppBar } from './AppBar'
 import { useSignOut } from 'modules/services'
 
 type Props = {
@@ -18,23 +18,7 @@ export const Layout: React.FunctionComponent<Props> = ({ children, title = 'This
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <header>
-        <nav>
-          <Link href="/">
-            <a>Home</a>
-          </Link>{' '}
-          |{' '}
-          <Link href="/login_required">
-            <a>Login Required</a>
-          </Link>{' '}
-          | {userID && <button onClick={handleSignOut}>SignOut</button>}
-          {!userID && (
-            <Link href="/sign_in">
-              <a>SignIn</a>
-            </Link>
-          )}
-        </nav>
-      </header>
+      <MenuAppBar userID={userID} handleSignOut={handleSignOut} />
       {isLoading && <div>{'loadign....'}</div>}
       {error && <div>{error.message}</div>}
       {children}
