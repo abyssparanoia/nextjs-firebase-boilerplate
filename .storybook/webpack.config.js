@@ -1,5 +1,6 @@
 const path = require("path");
-module.exports = ({ config }) => {
+module.exports = ({config}) => {
+
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     use: [
@@ -11,6 +12,9 @@ module.exports = ({ config }) => {
         options: { parser: 'typescript' }
       }
     ]
+    // exclude: /node_modules/,
+    // include: [/stories/, /components/],
+    // loader: "ts-loader"
   });
   config.resolve.extensions.push(".ts", ".tsx");
   return config;
