@@ -21,6 +21,7 @@
     "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",
     "@types/session-file-store": "1.2.0",
+    "@types/styled-components": "^4.1.16",
     "@zeit/next-typescript": "1.1.1",
     "axios": "^0.19.0",
     "body-parser": "1.19.0",

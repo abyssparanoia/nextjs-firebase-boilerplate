@@ -8,7 +8,8 @@ import MenuIcon from '@material-ui/icons/Menu'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import MenuItem from '@material-ui/core/MenuItem'
 import Menu from '@material-ui/core/Menu'
-import Link from 'next/link'
+// import Link from 'next/link'
+import { Link } from 'components/atoms'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -44,9 +45,7 @@ export const MenuAppBar = ({ userID, handleSignOut }: Props) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            <Link href="/">
-              <a>NextJS Firebase Boilerplate</a>
-            </Link>{' '}
+            <Link href="/">NextJS Firebase Boilerplate</Link>{' '}
           </Typography>
           {userID && (
             <div>
@@ -83,11 +82,7 @@ export const MenuAppBar = ({ userID, handleSignOut }: Props) => {
               </Menu>
             </div>
           )}
-          {!userID && (
-            <Link href="/sign_in">
-              <a>SignIn</a>
-            </Link>
-          )}
+          {!userID && <Link href="/sign_in">SignIn</Link>}
         </Toolbar>
       </AppBar>
     </div>
