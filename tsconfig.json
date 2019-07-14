@@ -15,6 +15,8 @@
     "baseUrl": "./",
     "incremental": true,
     "strict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
     "types": [
       "node"
     ],
