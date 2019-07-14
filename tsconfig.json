@@ -2,7 +2,6 @@
   "compilerOptions": {
     "module": "esnext",
     "removeComments": true,
-    "strictPropertyInitialization": false,
     "esModuleInterop": true,
     "lib": [
       "dom",
@@ -16,6 +15,8 @@
     "incremental": true,
     "strict": true,
     "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noImplicitReturns": true,
     "noImplicitAny": true,
     "types": [
       "node"
