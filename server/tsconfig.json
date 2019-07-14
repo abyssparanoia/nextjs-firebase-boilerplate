@@ -2,7 +2,7 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "target": "es2017",
-    "outDir": "../dist/server",
+    "outDir": "../dist",
     "declaration": false,
     "module": "commonjs",
     "noEmit": false

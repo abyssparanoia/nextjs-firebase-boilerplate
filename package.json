@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "nodemon server/main.ts",
-    "start:prd": "ts-node server/main.ts --compilerOptions '{\"module\":\"commonjs\"}'",
-    "build": "next build && tsc server/main.ts",
+    "start:prd": "NODE_ENV=production node ./dist/server/main.js",
+    "build": "next build && tsc -p ./server && cp firebaseAdminKey.json ./dist && cp firebaseClientKey.json ./dist",
     "start": "next start",
     "lint": "eslint --fix -c ./.eslintrc.js './**/*.{ts,tsx}'",
     "storybook": "start-storybook -p 6006",

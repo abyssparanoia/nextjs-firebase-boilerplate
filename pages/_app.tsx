@@ -1,5 +1,5 @@
 import * as React from 'react'
-import App, { Container, AppInitialProps } from 'next/app'
+import App, { Container, AppInitialProps, AppContext } from 'next/app'
 import { firebase } from '../firebase/client'
 import { AuthContext, AuthInfo } from '../contexts'
 import { ThemeProvider } from '@material-ui/styles'
@@ -10,15 +10,15 @@ import theme from '../thema'
 interface State extends AuthInfo {}
 
 export default class extends App<AppInitialProps, State> {
-  // static async getInitialProps({ Component, ctx }: AppContext) {
-  //   let pageProps = {}
+  static async getInitialProps({ Component, ctx }: AppContext) {
+    let pageProps = {}
 
-  //   if (Component.getInitialProps) {
-  //     pageProps = await Component.getInitialProps(ctx)
-  //   }
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx)
+    }
 
-  //   return { pageProps }
-  // }
+    return { pageProps }
+  }
 
   state = {
     token: '',
