@@ -13,13 +13,10 @@ RUN npm run build
 FROM node:lts-alpine as runner
 
 COPY --from=builder /web/.next .next
+COPY --from=builder /web/dist dist
 
 ADD package.json .
-ADD tsconfig.json .
-ADD ./server ./server
-ADD firebaseClientKey.json .
-ADD firebaseAdminKey.json .
-RUN npm install
+RUN npm ci --production
 
 EXPOSE 3000
 CMD ["npm", "run", "start:prd"]
