@@ -24,18 +24,18 @@ const useStyles = makeStyles(theme => ({
 }))
 
 interface Props {
-  userID: string
+  userID?: string
   handleSignOut: () => void
 }
 
 export const MenuAppBar = ({ userID, handleSignOut }: Props) => {
   const classes = useStyles({})
-  const [anchorEl, setAnchorEl] = React.useState(null)
+  const [anchorEl, setAnchorEl] = React.useState<EventTarget & HTMLButtonElement | undefined>(undefined)
   const open = Boolean(anchorEl)
 
   const handleMenu = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => setAnchorEl(e.currentTarget)
 
-  const handleClose = () => setAnchorEl(null)
+  const handleClose = () => setAnchorEl(undefined)
 
   return (
     <div className={classes.root}>

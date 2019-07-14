@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express'
 import next from 'next'
-const bodyParser = require('body-parser')
+import * as bodyParser from 'body-parser'
 import session, { SessionOptions } from 'express-session'
 import sessionFileStore from 'session-file-store'
 import firebaseAdmin from '../firebase/admin'
