@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "nodemon server/main.ts",
-    "start:prd": "ts-node server/main.ts",
+    "start:prd": "ts-node server/main.ts --compilerOptions '{\"module\":\"commonjs\"}'",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --fix -c ./.eslintrc.js './**/*.{ts,tsx}'",
@@ -32,7 +32,7 @@
     "express-session": "1.16.2",
     "firebase": "6.2.4",
     "firebase-admin": "8.2.0",
-    "next": "8.1.0",
+    "next": "9.0.1",
     "path": "^0.12.7",
     "react": "16.8.6",
     "react-dom": "16.8.6",
