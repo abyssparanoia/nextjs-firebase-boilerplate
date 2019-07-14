@@ -1,5 +1,5 @@
 import React from 'react'
-import { ExNextContext } from 'next'
+import { ExNextPageContext } from 'next'
 import { authenticate } from 'modules/services'
 import Link from 'next/link'
 import { Layout } from 'components/Layout'
@@ -35,7 +35,7 @@ const Index = ({ userID }: Props) => {
   )
 }
 
-Index.getInitialProps = async ({ req, res }: ExNextContext) => {
+Index.getInitialProps = async ({ req, res }: ExNextPageContext) => {
   const { userID, token } = await authenticate(req, res, false)
   return { token, userID }
 }

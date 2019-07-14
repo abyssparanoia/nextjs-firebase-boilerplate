@@ -3,12 +3,12 @@ import React from 'react'
 import { Button } from './Button'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs } from '@storybook/addon-knobs'
-import { muiTheme } from 'storybook-addon-material-ui'
+// import { muiTheme } from 'storybook-addon-material-ui'
 
 storiesOf('atoms', module)
   .addDecorator(withKnobs)
   .addDecorator(withInfo({ inline: true }))
-  .addDecorator(muiTheme())
+  // .addDecorator(muiTheme())
   .add('Button', () => (
     // <div>
     //   <Button variant="contained">Default</Button>

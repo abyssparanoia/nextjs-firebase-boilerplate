@@ -1,11 +1,11 @@
 import React from 'react'
-import Document, { Head, Main, NextScript, NextDocumentContext } from 'next/document'
+import Document, { Head, Main, NextScript, DocumentContext } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
 import { ServerStyleSheet } from 'styled-components'
 import theme from '../thema'
 
 export default class extends Document {
-  static getInitialProps = async (ctx: NextDocumentContext) => {
+  static getInitialProps = async (ctx: DocumentContext) => {
     const materialSheets = new ServerStyleSheets()
     const styledComponentsSheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage

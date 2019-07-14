@@ -1,10 +1,9 @@
 require('dotenv').config()
 
-const withTypescript = require('@zeit/next-typescript')
 const path = require('path')
 const Dotenv = require('dotenv-webpack')
 
-module.exports = withTypescript({
+module.exports = {
   webpack: config => {
     config.plugins = config.plugins || []
 
@@ -24,4 +23,4 @@ module.exports = withTypescript({
 
     return config
   }
-})
+}

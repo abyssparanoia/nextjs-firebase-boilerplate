@@ -1,7 +1,7 @@
 import React from 'react'
 // import { AuthContext } from "../contexts";
 import { authenticate } from 'modules/services'
-import { ExNextContext } from 'next'
+import { ExNextPageContext } from 'next'
 import Link from 'next/link'
 import { Layout } from 'components/Layout'
 
@@ -27,7 +27,7 @@ const LoginRequired = ({ userID }: Props) => {
   )
 }
 
-LoginRequired.getInitialProps = async ({ req, res }: ExNextContext) => {
+LoginRequired.getInitialProps = async ({ req, res }: ExNextPageContext) => {
   const { userID, token } = await authenticate(req, res, true)
   return { userID, token }
 }

@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { ExNextContext } from 'next'
+import { ExNextPageContext } from 'next'
 import { auth } from '../../firebase/client'
 import Router from 'next/router'
 import * as repositoris from 'modules/repositories'
 
 export const authenticate = async (
-  req: ExNextContext['req'],
-  res: ExNextContext['res'],
+  req: ExNextPageContext['req'],
+  res: ExNextPageContext['res'],
   loginRequired: boolean
 ): Promise<{ userID?: string; token?: string }> => {
   let userID: string | undefined = undefined
@@ -17,12 +17,12 @@ export const authenticate = async (
     token = req.session.firebaseToken
     // userがnullの場合は未認証なので、sign_inにredirectする
     if (!user && loginRequired) {
-      res.writeHead(302, {
+      res!.writeHead(302, {
         Location: '/sign_in'
       })
-      res.end()
+      res!.end()
     }
-    userID = user ? user.uid : null
+    userID = user ? user.uid : undefined
     // ブラウザ上での処理
   } else {
     const user = auth.currentUser

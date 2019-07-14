@@ -1,17 +1,16 @@
 import Express from 'express'
-import { NextContext } from 'next'
-import { NextDocumentContext } from 'next/document'
-import { DefaultQuery } from 'next/router'
+import { NextPageContext } from 'next'
+import { DocumentContext } from 'next/document'
 
 declare module 'next' {
-  type ExNextContext<Q extends DefaultQuery = DefaultQuery> = NextContext<Q> & {
+  type ExNextPageContext = NextPageContext & {
     req?: Express.Request
     res?: Express.Response
   }
 }
 
 declare module 'next/document' {
-  type ExNextDocumentContext<Q extends DefaultQuery = DefaultQuery> = NextDocumentContext<Q> & {
+  type ExDocumentContext = DocumentContext & {
     req?: Express.Request
     res?: Express.Response
   }
