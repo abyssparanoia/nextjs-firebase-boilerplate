@@ -73,6 +73,9 @@ typings/
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
+# build
+dist
+
 # next.js build output
 .next
 
@@ -135,3 +138,9 @@ Temporary Items
 ### secret
 firebaseAdminKey.json
 firebaseClientKey.json
+
+### build
+server/main.js
+server/main.js.map
+firebase/admin.js
+firebase/admin.js.map

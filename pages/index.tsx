@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { Layout } from 'components/Layout'
 
 type InitialProps = {
-  token: string
-  userID: string
+  token?: string
+  userID?: string
 }
 
 type Props = {} & InitialProps
@@ -35,7 +35,7 @@ const Index = ({ userID }: Props) => {
   )
 }
 
-Index.getInitialProps = async ({ req, res }: ExNextPageContext) => {
+Index.getInitialProps = async ({ req, res }: ExNextPageContext): Promise<InitialProps> => {
   const { userID, token } = await authenticate(req, res, false)
   return { token, userID }
 }

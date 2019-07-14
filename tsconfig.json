@@ -2,7 +2,6 @@
   "compilerOptions": {
     "module": "esnext",
     "removeComments": true,
-    "strictPropertyInitialization": false,
     "esModuleInterop": true,
     "lib": [
       "dom",
@@ -10,11 +9,16 @@
     ],
     "target": "es6",
     "sourceMap": true,
+    "rootDir": ".",
     "outDir": "./dist",
     "jsx": "preserve",
     "baseUrl": "./",
     "incremental": true,
     "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
     "types": [
       "node"
     ],
