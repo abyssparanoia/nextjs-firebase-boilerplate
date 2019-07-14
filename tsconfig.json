@@ -18,10 +18,10 @@
     "types": [
       "node"
     ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "allowJs": false,
-    "skipLibCheck": false,
-    "forceConsistentCasingInFileNames": false,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true

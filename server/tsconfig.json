@@ -5,8 +5,7 @@
     "outDir": "../dist/server",
     "declaration": false,
     "module": "commonjs",
-    "noEmit": false,
-    "allowJs": true
+    "noEmit": false
   },
   "include": ["."]
 }
