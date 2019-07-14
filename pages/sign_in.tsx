@@ -18,7 +18,7 @@ const SignIn = (_: Props) => {
   )
 }
 
-SignIn.getInitialProps = async ({ req, res }: ExNextPageContext) => {
+SignIn.getInitialProps = async ({ req, res }: ExNextPageContext): Promise<void> => {
   // ログイン済みだった場合はredirectを行う
   // サーバー上での処理
   if (req && req.session && req.session.firebaseUser) {

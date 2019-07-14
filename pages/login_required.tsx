@@ -27,9 +27,9 @@ const LoginRequired = ({ userID }: Props) => {
   )
 }
 
-LoginRequired.getInitialProps = async ({ req, res }: ExNextPageContext) => {
+LoginRequired.getInitialProps = async ({ req, res }: ExNextPageContext): Promise<InitialProps> => {
   const { userID, token } = await authenticate(req, res, true)
-  return { userID, token }
+  return { userID: userID!, token: token! }
 }
 
 export default LoginRequired
