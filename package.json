@@ -5,7 +5,7 @@
   "scripts": {
     "start:dev": "nodemon server/main.ts",
     "start:prd": "ts-node server/main.ts --compilerOptions '{\"module\":\"commonjs\"}'",
-    "build": "next build",
+    "build": "next build && tsc server/main.ts",
     "start": "next start",
     "lint": "eslint --fix -c ./.eslintrc.js './**/*.{ts,tsx}'",
     "storybook": "start-storybook -p 6006",
