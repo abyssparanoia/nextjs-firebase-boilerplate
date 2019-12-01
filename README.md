@@ -7,8 +7,8 @@
 ### setup
 
 1. prepare firebase project
-2. save client key as `firebaseClientKey.json`
-3. save admin key as `firebaseAdminKey.json`
+2. save client key as `firebase.client.key.json`
+3. save admin key as `firebase.admin.key.json`
 
 ### how to run on docker
 

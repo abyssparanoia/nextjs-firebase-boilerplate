@@ -136,8 +136,8 @@ Temporary Items
 
 
 ### secret
-firebaseAdminKey.json
-firebaseClientKey.json
+firebase.admin.key.json
+firebase.client.key.json
 
 ### build
 server/main.js

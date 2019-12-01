@@ -1,4 +1,4 @@
 {
-  "watch": ["server/**/*.ts", "next.config.js"],
-  "exec": "ts-node --project ./server/tsconfig.json server/main.ts"
+  "watch": ["next.config.js"],
+  "exec": "ts-node -r dotenv/config --project ./src/tsconfig.server.json ./src/run.ts"
 }
