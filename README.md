@@ -10,6 +10,12 @@
 2. save client key as `firebase.client.key.json`
 3. save admin key as `firebase.admin.key.json`
 
+4. prepare dotenv
+
+```bash
+> cp .env.tmpl .env
+```
+
 ### how to run on docker
 
 ```bash
