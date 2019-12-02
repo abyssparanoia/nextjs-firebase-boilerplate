@@ -3,6 +3,7 @@ import { reducerWithInitialState } from 'typescript-fsa-reducers'
 import { Dispatch } from 'redux'
 import { Credential } from 'src/firebase/interface'
 import * as repository from './repositories'
+import Router from 'next/router'
 
 const actionCreator = actionCreatorFactory('auth')
 
@@ -25,6 +26,7 @@ export const signInWithGoogle = () => async (dispatch: Dispatch) => {
     dispatch(actions.signInWithGoogle.started())
     const credential = await repository.signInWithGoogle()
     dispatch(actions.signInWithGoogle.done({ result: { credential } }))
+    Router.push('/')
   } catch (err) {
     dispatch(actions.signInWithGoogle.failed({ error: err }))
   }

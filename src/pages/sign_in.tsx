@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { ExNextPageContext } from 'next'
 import Router from 'next/router'
-import { useSignInWithGoogle } from 'src/modules/services'
 import { auth } from 'src/firebase/client'
 import { Layout } from 'src/components/Layout'
+import { useDispatch } from 'react-redux'
+import { signInWithGoogle } from 'src/modules/auth'
 
 type Props = {}
 
 const SignIn = (_: Props) => {
-  const { handleSignIn } = useSignInWithGoogle()
+  const dispatch = useDispatch()
+
+  const handleSignIn = useCallback(
+    (_: React.MouseEvent<HTMLButtonElement, MouseEvent>) => dispatch(signInWithGoogle()),
+    [dispatch]
+  )
 
   return (
     <Layout>
@@ -21,7 +27,7 @@ const SignIn = (_: Props) => {
 SignIn.getInitialProps = async ({ req, res }: ExNextPageContext): Promise<void> => {
   // ログイン済みだった場合はredirectを行う
   // サーバー上での処理
-  if (req && req.session && req.session.firebaseUser) {
+  if (req && req.session && req.session.credential) {
     res!.writeHead(302, {
       Location: '/'
     })
