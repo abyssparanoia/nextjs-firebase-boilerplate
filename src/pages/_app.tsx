@@ -1,5 +1,5 @@
 import * as React from 'react'
-import App, { Container, AppProps as NextAppProps, AppContext } from 'next/app'
+import App, { AppProps as NextAppProps, AppContext } from 'next/app'
 import { StylesProvider } from '@material-ui/styles'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -32,7 +32,7 @@ export default class extends App<AppProps> {
     const { Component, pageProps } = this.props
 
     return (
-      <Container>
+      <>
         <Head>
           <title>boiler</title>
         </Head>
@@ -44,7 +44,7 @@ export default class extends App<AppProps> {
             </StyledThemeProvider>
           </MuiThemeProvider>
         </StylesProvider>
-      </Container>
+      </>
     )
   }
 }
