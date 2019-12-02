@@ -16,6 +16,7 @@ const Index = (_: Props) => {
 }
 
 Index.getInitialProps = async ({ store }: ExNextPageContext): Promise<InitialProps> => {
+  // sample dispatch
   await store.dispatch(fetchTableList() as any)
 
   return {}
