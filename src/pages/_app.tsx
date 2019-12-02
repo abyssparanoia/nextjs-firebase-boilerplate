@@ -6,12 +6,18 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider as StyledThemeProvider } from 'styled-components'
 import Head from 'next/head'
 import theme from 'src/components/theme'
+import withRedux from 'next-redux-wrapper'
+import { makeStore } from 'src/store'
+import { Provider } from 'react-redux'
+import { Store } from 'redux'
+import { ReduxStore } from 'src/modules/reducer'
 
 interface AppProps extends NextAppProps {
   ua: string
+  store: Store<ReduxStore>
 }
 
-export default class extends App<AppProps> {
+class NextApp extends App<AppProps> {
   static async getInitialProps({ Component, ctx }: AppContext) {
     let pageProps = {}
 
@@ -29,7 +35,7 @@ export default class extends App<AppProps> {
   }
 
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, store } = this.props
 
     return (
       <>
@@ -40,7 +46,9 @@ export default class extends App<AppProps> {
           <MuiThemeProvider theme={theme}>
             <CssBaseline />
             <StyledThemeProvider theme={theme}>
-              <Component {...pageProps} />
+              <Provider store={store}>
+                <Component {...pageProps} />
+              </Provider>
             </StyledThemeProvider>
           </MuiThemeProvider>
         </StylesProvider>
@@ -48,3 +56,5 @@ export default class extends App<AppProps> {
     )
   }
 }
+
+export default withRedux(makeStore)(NextApp)
