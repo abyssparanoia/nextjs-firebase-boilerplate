@@ -1,5 +1,4 @@
 import { auth, firebase, FirebaseAuthenticationError } from 'src/firebase/client'
-import { AxiosClient } from './httpClient'
 import { Credential } from 'src/firebase/interface'
 
 export const signInWithGoogle = async () => {
@@ -17,7 +16,13 @@ export const signInWithEmailAndPassword = ({ email, password }: ISignInWithEmail
   auth.signInWithEmailAndPassword(email, password)
 
 export const signOut = async () => {
-  await new AxiosClient({ url: `/api/session` }).delete()
+  // await new AxiosClient({ url: `/api/session` }).delete().then(res => console.log(res))
+
+  await fetch(`/api/session`, {
+    method: 'DELETE',
+    credentials: 'same-origin'
+  })
+
   await auth.signOut()
 }
 
@@ -37,7 +42,12 @@ export const createSession = async (firebaseUser: firebase.User | null) => {
     avatarURL: firebaseUser.photoURL
   }
 
-  await new AxiosClient({ url: `/api/session`, token: idTokenResult.token }).post({ ...credential })
+  await fetch(`/api/session`, {
+    method: 'POST',
+    headers: new Headers({ 'Content-Type': 'application/json' }),
+    credentials: 'same-origin',
+    body: JSON.stringify({ ...credential })
+  })
 
   return credential
 }

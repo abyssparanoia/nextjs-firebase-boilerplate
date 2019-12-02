@@ -1,14 +1,10 @@
 import React from 'react'
 import { ExNextPageContext } from 'next'
-import { Credential } from 'src/firebase/interface'
-import { authenticate } from 'src/modules/services'
 import { fetchTableList } from 'src/modules/table'
 import { useSelector } from 'react-redux'
 import { ReduxStore } from 'src/modules/reducer'
 
-type InitialProps = {
-  credential?: Credential
-}
+type InitialProps = {}
 
 type Props = {} & InitialProps
 
@@ -19,12 +15,10 @@ const Index = (_: Props) => {
   return <div>Hello world</div>
 }
 
-Index.getInitialProps = async ({ req, res, store }: ExNextPageContext): Promise<InitialProps> => {
-  const credential = await authenticate(req, res, false)
-
+Index.getInitialProps = async ({ store }: ExNextPageContext): Promise<InitialProps> => {
   await store.dispatch(fetchTableList() as any)
 
-  return { credential }
+  return {}
 }
 
 export default Index

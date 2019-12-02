@@ -1,14 +1,9 @@
 import React from 'react'
-import { authenticate } from 'src/modules/services'
 import { ExNextPageContext } from 'next'
 import Link from 'next/link'
-import { Credential } from 'src/firebase/interface'
+import { authorize } from 'src/modules/services'
 
-type InitialProps = {
-  credential: Credential
-}
-
-type Props = {} & InitialProps
+type Props = {}
 
 const LoginRequired = (_: Props) => {
   return (
@@ -24,9 +19,8 @@ const LoginRequired = (_: Props) => {
   )
 }
 
-LoginRequired.getInitialProps = async ({ req, res }: ExNextPageContext): Promise<InitialProps> => {
-  const credential = (await authenticate(req, res, true)) as Credential
-  return { credential }
+LoginRequired.getInitialProps = async ({ res, store }: ExNextPageContext): Promise<void> => {
+  await authorize(res, store)
 }
 
 export default LoginRequired

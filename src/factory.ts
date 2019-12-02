@@ -43,17 +43,17 @@ export const appFactory = async () => {
     return res.sendStatus(200)
   })
 
-  server.delete('/api/session', (req: Request, res: Response) => {
-    req.session = undefined
+  server.delete('/api/session', async (req: Request, res: Response) => {
+    await req.session!.destroy(() => {})
     return res.sendStatus(200)
   })
 
   // nextjs routing
   server.get('*', (req, res) => handle(req, res))
-  server.post('*', (req, res) => handle(req, res))
-  server.put('*', (req, res) => handle(req, res))
-  server.patch('*', (req, res) => handle(req, res))
-  server.delete('*', (req, res) => handle(req, res))
+  // server.post('*', (req, res) => handle(req, res))
+  // server.put('*', (req, res) => handle(req, res))
+  // server.patch('*', (req, res) => handle(req, res))
+  // server.delete('*', (req, res) => handle(req, res))
 
   return server
 }

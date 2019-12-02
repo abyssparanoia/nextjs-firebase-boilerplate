@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react'
 import Head from 'next/head'
 import { MenuAppBar } from './AppBar'
-import { Credential } from 'src/firebase/interface'
 import { useDispatch, useSelector } from 'react-redux'
 import { signOut } from 'src/modules/auth'
 import { ReduxStore } from 'src/modules/reducer'
@@ -9,17 +8,12 @@ import { CircularProgress } from '@material-ui/core'
 
 type Props = {
   title?: string
-  credential?: Credential
 }
 
-export const Global: React.FunctionComponent<Props> = ({
-  children,
-  title = 'This is the default title',
-  credential
-}) => {
+export const Global: React.FunctionComponent<Props> = ({ children, title = 'This is the default title' }) => {
   const dispatch = useDispatch()
   const handleSignOut = useCallback(() => dispatch(signOut()), [dispatch])
-  const { isLoading, error } = useSelector((state: ReduxStore) => ({ ...state.auth }))
+  const { isLoading, error, credential } = useSelector((state: ReduxStore) => ({ ...state.auth }))
 
   return (
     <div>

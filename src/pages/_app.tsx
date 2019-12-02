@@ -12,6 +12,9 @@ import { Provider } from 'react-redux'
 import { Store } from 'redux'
 import { ReduxStore } from 'src/modules/reducer'
 import { Global } from 'src/components/global'
+import { ExNextPageContext } from 'next'
+import { authenticate } from 'src/modules/services'
+import { actions } from 'src/modules/auth'
 
 interface AppProps extends NextAppProps {
   ua: string
@@ -21,6 +24,10 @@ interface AppProps extends NextAppProps {
 class NextApp extends App<AppProps> {
   static async getInitialProps({ Component, ctx }: AppContext) {
     let pageProps = {}
+
+    const { req, store } = ctx as ExNextPageContext
+    const credential = await authenticate(req)
+    await store.dispatch(actions.setCredential(credential))
 
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx)
@@ -48,7 +55,7 @@ class NextApp extends App<AppProps> {
             <CssBaseline />
             <StyledThemeProvider theme={theme}>
               <Provider store={store}>
-                <Global {...pageProps}>
+                <Global>
                   <Component {...pageProps} />
                 </Global>
               </Provider>

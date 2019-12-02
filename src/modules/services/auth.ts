@@ -1,24 +1,13 @@
 import { ExNextPageContext } from 'next'
 import { auth } from 'src/firebase/client'
-import Router from 'next/router'
 import { Credential } from 'src/firebase/interface'
+import Router from 'next/router'
 
-export const authenticate = async (
-  req: ExNextPageContext['req'],
-  res: ExNextPageContext['res'],
-  loginRequired: boolean
-): Promise<Credential | undefined> => {
+export const authenticate = async (req: ExNextPageContext['req']): Promise<Credential | undefined> => {
   let credential: Credential | undefined = undefined
   // サーバー上での処理
   if (req && req.session) {
     const credential = req.session.credential
-    // userがnullの場合は未認証なので、sign_inにredirectする
-    if (!credential && loginRequired) {
-      res!.writeHead(302, {
-        Location: '/sign_in'
-      })
-      res!.end()
-    }
     return credential
     // ブラウザ上での処理
   } else {
@@ -31,11 +20,26 @@ export const authenticate = async (
         displayName: user.displayName,
         avatarURL: user.photoURL
       }
-    } else if (loginRequired) {
-      // redirect
-      Router.push('/sign_in')
     }
   }
 
   return credential
+}
+
+export const authorize = async (res: ExNextPageContext['res'], store: ExNextPageContext['store']) => {
+  const credential = store.getState().auth.credential
+
+  // サーバー上での処理
+  if (res && !credential) {
+    res!.writeHead(302, {
+      Location: '/sign_in'
+    })
+    res!.end()
+    return
+  }
+
+  // ブラウザ上
+  if (!res && !credential) {
+    Router.push('/sign_in')
+  }
 }
