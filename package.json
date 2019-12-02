@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "nodemon server/run.ts",
+    "start:prd": "NODE_ENV=production node dist/src/run.js",
     "build": "yarn build:next && yarn build:server",
     "build:next": "next build",
     "build:server": "tsc -b ./src/tsconfig.server.json",
