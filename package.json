@@ -7,7 +7,7 @@
     "build": "yarn build:next && yarn build:server",
     "build:next": "next build",
     "build:server": "tsc -b ./src/tsconfig.server.json",
-    "lint": "eslint --fix -c ./.eslintrc.js './**/*.{ts,tsx}'",
+    "lint": "eslint --fix -c ./.eslintrc.js './src/**/*.{ts,tsx}'",
     "deploy": "firebase deploy"
   },
   "dependencies": {
@@ -60,9 +60,8 @@
     "@types/session-file-store": "1.2.0",
     "@types/styled-components": "^4.1.18",
     "@types/ua-parser-js": "^0.7.33",
-    "@typescript-eslint/eslint-plugin": "^1.11.0",
-    "@typescript-eslint/parser": "^1.11.0",
-    "@zeit/next-typescript": "^1.1.1",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
     "eslint": "^6.0.1",
@@ -88,7 +87,7 @@
   },
   "lint-staged": {
     "*.{.ts,tsx}": [
-      "eslint --fix -c ./.eslintrc.js './**/*.{ts,tsx}'",
+      "eslint --fix -c ./.eslintrc.js './src/**/*.{ts,tsx}'",
       "git add"
     ]
   }
