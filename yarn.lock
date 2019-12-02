@@ -4163,10 +4163,10 @@ fork-ts-checker-webpack-plugin@1.3.4:
     tapable "^1.0.0"
     worker-rpc "^0.1.0"
 
-formik-material-ui@^0.0.20:
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/formik-material-ui/-/formik-material-ui-0.0.20.tgz#1a98d6c31974afe7d1373a87b1d9671caecce093"
-  integrity sha512-SkHf0pehv4ipnviFB++CI7iXPRX+VI/BmjXXjqSxnaC1eUAz0InfKK6s0uK6hfO87boHTDfcPeECNh8prwUzEQ==
+formik-material-ui@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/formik-material-ui/-/formik-material-ui-1.0.0.tgz#87e36a7b3b8c54678aa484b1d89076fdfb63780b"
+  integrity sha512-m9Q9PrebdT2XQRY8LbxAecXgXeQ8Sxa/UC/skG2ekwt+x5E1N3vvOw2A91GHi7rXkhNO32nQTDu6z7HJ3phLzA==
 
 formik@^2.0.6:
   version "2.0.6"
