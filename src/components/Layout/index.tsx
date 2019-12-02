@@ -5,6 +5,7 @@ import { Credential } from 'src/firebase/interface'
 import { useDispatch, useSelector } from 'react-redux'
 import { signOut } from 'src/modules/auth'
 import { ReduxStore } from 'src/modules/reducer'
+import { CircularProgress } from '@material-ui/core'
 
 type Props = {
   title?: string
@@ -28,7 +29,7 @@ export const Layout: React.FunctionComponent<Props> = ({
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <MenuAppBar credential={credential} handleSignOut={handleSignOut} />
-      {isLoading && <div>{'loadign....'}</div>}
+      {isLoading && <CircularProgress />}
       {error && <div>{error.message}</div>}
       {children}
       <footer>
