@@ -2,7 +2,6 @@ import React, { useCallback } from 'react'
 import { ExNextPageContext } from 'next'
 import Router from 'next/router'
 import { auth } from 'src/firebase/client'
-import { Layout } from 'src/components/Layout'
 import { useDispatch } from 'react-redux'
 import { signInWithGoogle } from 'src/modules/auth'
 
@@ -17,10 +16,10 @@ const SignIn = (_: Props) => {
   )
 
   return (
-    <Layout>
+    <>
       <div>ログインページ</div>
       <button onClick={handleSignIn}>SignIn</button>
-    </Layout>
+    </>
   )
 }
 

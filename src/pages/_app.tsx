@@ -11,6 +11,7 @@ import { makeStore } from 'src/store'
 import { Provider } from 'react-redux'
 import { Store } from 'redux'
 import { ReduxStore } from 'src/modules/reducer'
+import { Global } from 'src/components/global'
 
 interface AppProps extends NextAppProps {
   ua: string
@@ -47,7 +48,9 @@ class NextApp extends App<AppProps> {
             <CssBaseline />
             <StyledThemeProvider theme={theme}>
               <Provider store={store}>
-                <Component {...pageProps} />
+                <Global {...pageProps}>
+                  <Component {...pageProps} />
+                </Global>
               </Provider>
             </StyledThemeProvider>
           </MuiThemeProvider>

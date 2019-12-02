@@ -12,7 +12,7 @@ type Props = {
   credential?: Credential
 }
 
-export const Layout: React.FunctionComponent<Props> = ({
+export const Global: React.FunctionComponent<Props> = ({
   children,
   title = 'This is the default title',
   credential
