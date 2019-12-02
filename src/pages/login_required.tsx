@@ -6,15 +6,14 @@ import { Layout } from 'src/components/Layout'
 import { Credential } from 'src/firebase/interface'
 
 type InitialProps = {
-  token: string
-  userID: string
+  credential: Credential
 }
 
 type Props = {} & InitialProps
 
-const LoginRequired = ({ userID }: Props) => {
+const LoginRequired = ({ credential }: Props) => {
   return (
-    <Layout userID={userID}>
+    <Layout credential={credential}>
       <div>ログイン済みユーザーのみが見れる</div>
       <div>
         初期レンダリング後の認証情報に関して、AuthContextを使うかfirebase authのSDKのcurrentUserを使うかは要相談
@@ -27,8 +26,8 @@ const LoginRequired = ({ userID }: Props) => {
 }
 
 LoginRequired.getInitialProps = async ({ req, res }: ExNextPageContext): Promise<InitialProps> => {
-  const { uid: userID, token } = (await authenticate(req, res, true)) as Credential
-  return { userID, token }
+  const credential = (await authenticate(req, res, true)) as Credential
+  return { credential }
 }
 
 export default LoginRequired

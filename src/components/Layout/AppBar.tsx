@@ -10,6 +10,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Menu from '@material-ui/core/Menu'
 // import Link from 'next/link'
 import { Link } from 'src/components/atoms'
+import { Credential } from 'src/firebase/interface'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,13 +25,13 @@ const useStyles = makeStyles(theme => ({
 }))
 
 interface Props {
-  userID?: string
+  credential?: Credential
   handleSignOut: () => void
 }
 
-export const MenuAppBar = ({ userID, handleSignOut }: Props) => {
+export const MenuAppBar = ({ credential, handleSignOut }: Props) => {
   const classes = useStyles({})
-  const [anchorEl, setAnchorEl] = React.useState<EventTarget & HTMLButtonElement | undefined>(undefined)
+  const [anchorEl, setAnchorEl] = React.useState<(EventTarget & HTMLButtonElement) | undefined>(undefined)
   const open = Boolean(anchorEl)
 
   const handleMenu = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => setAnchorEl(e.currentTarget)
@@ -47,7 +48,7 @@ export const MenuAppBar = ({ userID, handleSignOut }: Props) => {
           <Typography variant="h6" className={classes.title}>
             <Link href="/">NextJS Firebase Boilerplate</Link>{' '}
           </Typography>
-          {userID && (
+          {credential && (
             <div>
               <IconButton
                 aria-label="Account of current user"
@@ -82,7 +83,7 @@ export const MenuAppBar = ({ userID, handleSignOut }: Props) => {
               </Menu>
             </div>
           )}
-          {!userID && <Link href="/sign_in">SignIn</Link>}
+          {!credential && <Link href="/sign_in">SignIn</Link>}
         </Toolbar>
       </AppBar>
     </div>
