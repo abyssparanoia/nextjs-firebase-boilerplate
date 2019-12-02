@@ -1,8 +1,10 @@
-import * as React from 'react'
+import React, { useCallback } from 'react'
 import Head from 'next/head'
 import { MenuAppBar } from './AppBar'
-import { useSignOut } from 'src/modules/services'
 import { Credential } from 'src/firebase/interface'
+import { useDispatch, useSelector } from 'react-redux'
+import { signOut } from 'src/modules/auth'
+import { ReduxStore } from 'src/modules/reducer'
 
 type Props = {
   title?: string
@@ -14,7 +16,9 @@ export const Layout: React.FunctionComponent<Props> = ({
   title = 'This is the default title',
   credential
 }) => {
-  const { isLoading, error, handleSignOut } = useSignOut()
+  const dispatch = useDispatch()
+  const handleSignOut = useCallback(() => dispatch(signOut()), [dispatch])
+  const { isLoading, error } = useSelector((state: ReduxStore) => ({ ...state.auth }))
 
   return (
     <div>

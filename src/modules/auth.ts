@@ -8,7 +8,8 @@ import Router from 'next/router'
 const actionCreator = actionCreatorFactory('auth')
 
 export const actions = {
-  signInWithGoogle: actionCreator.async<void, { credential: Credential }, Error>('SIGN_IN_WITH_GOOGLE')
+  signInWithGoogle: actionCreator.async<void, { credential: Credential }, Error>('SIGN_IN_WITH_GOOGLE'),
+  signOut: actionCreator.async<void, void, {}>('SIGN_OUT')
 }
 
 export interface State {
@@ -27,8 +28,19 @@ export const signInWithGoogle = () => async (dispatch: Dispatch) => {
     const credential = await repository.signInWithGoogle()
     dispatch(actions.signInWithGoogle.done({ result: { credential } }))
     Router.push('/')
-  } catch (err) {
-    dispatch(actions.signInWithGoogle.failed({ error: err }))
+  } catch (error) {
+    dispatch(actions.signInWithGoogle.failed({ error: error }))
+  }
+}
+
+export const signOut = () => async (dispatch: Dispatch) => {
+  try {
+    dispatch(actions.signOut.started())
+    await repository.signOut()
+    dispatch(actions.signOut.done({}))
+    Router.push('/sign_in')
+  } catch (error) {
+    dispatch(actions.signOut.failed({ error }))
   }
 }
 
