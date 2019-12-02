@@ -2,7 +2,11 @@ import { auth, firebase, FirebaseAuthenticationError } from 'src/firebase/client
 import { AxiosClient } from './httpClient'
 import { Credential } from 'src/firebase/interface'
 
-export const signInWithGoogle = async () => auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+export const signInWithGoogle = async () => {
+  await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+  const credential = await createSession(auth.currentUser)
+  return credential
+}
 
 interface ISignInWithEmailAndPassword {
   email: string
