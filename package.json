@@ -25,7 +25,7 @@
     "express": "4.17.1",
     "express-session": "1.16.2",
     "faker": "^4.1.0",
-    "firebase": "6.3.5",
+    "firebase": "7.5.0",
     "firebase-admin": "8.3.0",
     "firebase-functions": "^3.3.0",
     "formik": "^2.0.6",
