@@ -1383,18 +1383,10 @@
     "@types/node" "*"
     "@types/range-parser" "*"
 
-"@types/express-session@*":
+"@types/express-session@*", "@types/express-session@1.15.16":
   version "1.15.16"
   resolved "https://registry.yarnpkg.com/@types/express-session/-/express-session-1.15.16.tgz#91ba1f47a2fc2088811e8d7c17702ec92d8a8b23"
   integrity sha512-vWQpNt9t/zc4bTX+Ow5powZb9n3NwOM0SYsAJ7PYj5vliB6FA40ye5sW5fZTw8+ekbzJf/sgvtQocf7IryJBJw==
-  dependencies:
-    "@types/express" "*"
-    "@types/node" "*"
-
-"@types/express-session@1.15.13":
-  version "1.15.13"
-  resolved "https://registry.yarnpkg.com/@types/express-session/-/express-session-1.15.13.tgz#47ae56b28b187bc2f38dc9b7050c3d1086f2c717"
-  integrity sha512-BLRzO/ZfjTTLSRakUJxB0p5I5NmBHuyHkXDyh8sezdCMYxpqXrvMljKwle81I9AeCAzdq6nfz6qafmYLQ/rU9A==
   dependencies:
     "@types/express" "*"
     "@types/node" "*"
