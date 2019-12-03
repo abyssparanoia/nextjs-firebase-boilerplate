@@ -78,7 +78,7 @@
     "react-docgen-typescript-loader": "^3.1.0",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
-    "ts-node": "8.3.0",
+    "ts-node": "8.5.4",
     "typescript": "3.7.2"
   },
   "husky": {
