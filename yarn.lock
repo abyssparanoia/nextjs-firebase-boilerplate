@@ -1576,10 +1576,10 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
-"@types/session-file-store@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@types/session-file-store/-/session-file-store-1.2.0.tgz#9a92c3bc2e21e7b20c188f35d8d2d60b87e4c60d"
-  integrity sha512-xKVpSJXg7Xu7gbZjflsVO+FUVUDTYrRN3yUR7R4q/4e0j+IAdE1BW+CBtadM2H733iXpRudGsA3i34imV2KhoA==
+"@types/session-file-store@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@types/session-file-store/-/session-file-store-1.2.1.tgz#701d84cc1e7d9ed0e6023a4b1f14d9e4c83e4d2f"
+  integrity sha512-7k4fs9ZMsZvVREw76GT9STL37dvDogDaL5CYj4QAssbixRm6Q8g9d+/gmhVK7L7XsgvEPSkj9VZlYTLMmoKORw==
   dependencies:
     "@types/express" "*"
     "@types/express-session" "*"
