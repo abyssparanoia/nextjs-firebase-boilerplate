@@ -2,25 +2,23 @@ import React, { useCallback } from 'react'
 import { ExNextPageContext } from 'next'
 import Router from 'next/router'
 import { auth } from 'src/firebase/client'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { signInWithGoogle } from 'src/modules/auth'
+import { SignInTemplate } from 'src/components/templates/sign_in'
+import { ReduxStore } from 'src/modules/reducer'
 
 type Props = {}
 
 const SignIn = (_: Props) => {
+  const { isLoading } = useSelector(({ auth }: ReduxStore) => ({
+    isLoading: auth.isLoading
+  }))
+
   const dispatch = useDispatch()
 
-  const handleSignIn = useCallback(
-    (_: React.MouseEvent<HTMLButtonElement, MouseEvent>) => dispatch(signInWithGoogle()),
-    [dispatch]
-  )
+  const handleSignIn = useCallback(() => dispatch(signInWithGoogle()), [dispatch])
 
-  return (
-    <>
-      <div>ログインページ</div>
-      <button onClick={handleSignIn}>SignIn</button>
-    </>
-  )
+  return <SignInTemplate isLoading={isLoading} handleSignInWithGoogle={handleSignIn} />
 }
 
 SignIn.getInitialProps = async ({ req, res }: ExNextPageContext): Promise<void> => {
