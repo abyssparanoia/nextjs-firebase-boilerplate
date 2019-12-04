@@ -4,7 +4,6 @@ import { MenuAppBar } from './AppBar'
 import { useDispatch, useSelector } from 'react-redux'
 import { signOut } from 'src/modules/auth'
 import { ReduxStore } from 'src/modules/reducer'
-import { CircularProgress } from '@material-ui/core'
 
 type Props = {
   title?: string
@@ -13,7 +12,7 @@ type Props = {
 export const Global: React.FunctionComponent<Props> = ({ children, title = 'This is the default title' }) => {
   const dispatch = useDispatch()
   const handleSignOut = useCallback(() => dispatch(signOut()), [dispatch])
-  const { isLoading, error, credential } = useSelector((state: ReduxStore) => ({ ...state.auth }))
+  const { error, credential } = useSelector((state: ReduxStore) => ({ ...state.auth }))
 
   return (
     <div>
@@ -23,7 +22,6 @@ export const Global: React.FunctionComponent<Props> = ({ children, title = 'This
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <MenuAppBar credential={credential} handleSignOut={handleSignOut} />
-      {isLoading && <CircularProgress />}
       {error && <div>{error.message}</div>}
       {children}
       <footer>
