@@ -8917,10 +8917,10 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
-swr@^0.1.8:
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/swr/-/swr-0.1.12.tgz#00aebc430121446b3f63519137c0ca84c1e2a759"
-  integrity sha512-bYZWem/uMJluyYy64LXOWpUg7wiedRVsQBK2STBG6crjpiR/VA23/200nKvfAZtwrPA+E4oazMQCHXZ4LPbU3A==
+swr@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-0.1.13.tgz#0453f8f84e774bca7ea215aece40237136d2c34f"
+  integrity sha512-5MjXCs1hWwkyPBCQ84Hcq0vlijj19I1R64Ma0q/xeF1MN0AZB+Kj5HUrIyVSDDUubvtq0KuaewVlhcytEHiqGw==
   dependencies:
     fast-deep-equal "2.0.1"
 
