@@ -50,10 +50,10 @@ export const appFactory = async () => {
 
   // nextjs routing
   server.get('*', (req, res) => handle(req, res))
-  // server.post('*', (req, res) => handle(req, res))
-  // server.put('*', (req, res) => handle(req, res))
-  // server.patch('*', (req, res) => handle(req, res))
-  // server.delete('*', (req, res) => handle(req, res))
+  server.post('*', (req, res) => handle(req, res))
+  server.put('*', (req, res) => handle(req, res))
+  server.patch('*', (req, res) => handle(req, res))
+  server.delete('*', (req, res) => handle(req, res))
 
   return server
 }
