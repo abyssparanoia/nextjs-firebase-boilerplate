@@ -16,16 +16,6 @@
 > cp .env.tmpl .env
 ```
 
-### how to run on docker
-
-```bash
-# build
-$ docker-compose build
-
-# run
-$ docker-compose up -d
-```
-
 ### how to run on local
 
 ```bash
