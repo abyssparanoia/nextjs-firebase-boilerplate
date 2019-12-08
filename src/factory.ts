@@ -3,6 +3,7 @@ import next from 'next'
 import { auth, db } from './firebase/admin'
 import session, { SessionOptions } from 'express-session'
 import * as bodyParser from 'body-parser'
+import cors from 'cors'
 import { FireSessionStore } from './fire-sesion-store'
 
 const dev = process.env.NODE_ENV !== 'production'
@@ -24,6 +25,7 @@ export const appFactory = async () => {
   await app.prepare()
   const server = express()
 
+  server.use(cors())
   server.use(bodyParser.json())
   server.use(session(sessionOptions))
 
