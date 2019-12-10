@@ -7951,10 +7951,10 @@ react-fast-compare@^2.0.1:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
 
-react-google-button@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/react-google-button/-/react-google-button-0.6.0.tgz#5dd66251f92fb274b8eff6b0970e611ecf884894"
-  integrity sha512-uSGBp4Are6xVEEqE+gSSOGGYTj5bi2+fYa07PqOG5svl3Xi7S2YIu4uT/xFtmVnOwjo8mgErFEAqTDB+j8fqgw==
+react-google-button@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/react-google-button/-/react-google-button-0.7.0.tgz#3bea75ad0ffcc09f05d91e8348794b4917e7b6e6"
+  integrity sha512-ANetSkF9bZZe5uIMflzg+WXoa2Zskc0/KhbuSIfs+6cANCb0FpcsorJrensLap8QrPwGIp0qFMOQLbGT6xBlDQ==
   dependencies:
     prop-types "^15.7.2"
 
