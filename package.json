@@ -62,7 +62,7 @@
     "@types/session-file-store": "1.2.1",
     "@types/styled-components": "^4.1.18",
     "@types/ua-parser-js": "^0.7.33",
-    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/eslint-plugin": "^2.11.0",
     "@typescript-eslint/parser": "^2.11.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
