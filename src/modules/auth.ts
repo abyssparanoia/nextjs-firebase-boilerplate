@@ -24,11 +24,21 @@ const initialState: State = {
   isLoading: false
 }
 
+const redirectAfterSignIn = () => {
+  const redirectTo = Router.query.redirectTo as string | undefined
+
+  if (!redirectTo) {
+    Router.push('/')
+  } else {
+    Router.push(redirectTo)
+  }
+}
+
 export const signInWithGoogle = () => async (dispatch: Dispatch) => {
   try {
     dispatch(actions.signInWithGoogle.started())
     const credential = await repository.signInWithGoogle()
-    Router.push('/')
+    redirectAfterSignIn()
     dispatch(actions.signInWithGoogle.done({ result: { credential } }))
   } catch (error) {
     dispatch(actions.signInWithGoogle.failed({ error: error }))
