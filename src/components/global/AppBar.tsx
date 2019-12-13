@@ -8,7 +8,6 @@ import MenuIcon from '@material-ui/icons/Menu'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import MenuItem from '@material-ui/core/MenuItem'
 import Menu from '@material-ui/core/Menu'
-// import Link from 'next/link'
 import { Link } from 'src/components/atoms'
 import { Credential } from 'src/firebase/interface'
 
