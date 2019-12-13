@@ -1,4 +1,5 @@
 import { ExNextPageContext } from 'next'
+import { stringify } from 'query-string'
 import { auth } from 'src/firebase/client'
 import { Credential } from 'src/firebase/interface'
 import Router from 'next/router'
@@ -26,20 +27,27 @@ export const authenticate = async (req: ExNextPageContext['req']): Promise<Crede
   return credential
 }
 
-export const authorize = async (res: ExNextPageContext['res'], store: ExNextPageContext['store']) => {
+export const authorize = async (
+  req: ExNextPageContext['req'],
+  res: ExNextPageContext['res'],
+  store: ExNextPageContext['store']
+) => {
   const credential = store.getState().auth.credential
 
   // サーバー上での処理
-  if (res && !credential) {
+  if (req && res && !credential) {
+    const redirectTo = req.url
+
     res!.writeHead(302, {
-      Location: '/sign_in'
+      Location: `/sign_in?${stringify({ redirectTo })}`
     })
-    res!.end()
+    res.end()
     return
   }
 
   // ブラウザ上
   if (!res && !credential) {
-    Router.push('/sign_in')
+    const redirectTo = Router.pathname
+    Router.push(`/sign_in?${stringify({ redirectTo })}`)
   }
 }
