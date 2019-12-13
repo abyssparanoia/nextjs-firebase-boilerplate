@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express'
 import next from 'next'
 import { auth, db } from './firebase/admin'
+import { Credential } from './firebase/interface'
 import session, { SessionOptions } from 'express-session'
 import * as bodyParser from 'body-parser'
 import cors from 'cors'
@@ -38,9 +39,9 @@ export const appFactory = async () => {
   server.post('/api/session', async (req: Request, res: Response) => {
     if (!req.body) return res.sendStatus(400)
 
-    const credential = req.body
+    const { token, uid, avatarURL, displayName } = req.body as Credential
 
-    req.session!.credential = credential
+    req.session!.credential = { token, uid, avatarURL, displayName }
 
     return res.sendStatus(200)
   })
