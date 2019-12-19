@@ -1,6 +1,7 @@
 export interface Credential {
   uid: string
-  token: string
+  accessToken: string
+  refreshToken: string
   displayName: string | null
   avatarURL?: string | null
 }

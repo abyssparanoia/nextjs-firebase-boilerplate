@@ -37,7 +37,8 @@ export const createSession = async (firebaseUser: firebase.User | null) => {
 
   const credential: Credential = {
     uid: firebaseUser.uid,
-    token: idTokenResult.token,
+    accessToken: idTokenResult.token,
+    refreshToken: firebaseUser.refreshToken,
     displayName: firebaseUser.displayName,
     avatarURL: firebaseUser.photoURL
   }

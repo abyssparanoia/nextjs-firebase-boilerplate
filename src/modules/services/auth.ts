@@ -10,7 +10,7 @@ export const authenticate = async (req: ExNextPageContext['req']): Promise<Crede
   if (req && req.session) {
     const credential = req.session.credential
 
-    if (credential && credential.token) {
+    if (credential && credential.accessToken) {
       await req.firebaseAuth
         .verifyIdToken(
           'eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ1OThkYjVjZjE1ZWNhOTI0OWJhZTUzMDYzOWVkYzUzNmMzYzViYjUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZGlzY3VzcGluIiwiYXVkIjoiZGlzY3VzcGluIiwiYXV0aF90aW1lIjoxNTc2NDg1NTkyLCJ1c2VyX2lkIjoiU05QckI5bG5sYWFVYTluWWVueGFjUkF4VUJ2MiIsInN1YiI6IlNOUHJCOWxubGFhVWE5blllbnhhY1JBeFVCdjIiLCJpYXQiOjE1NzY0ODU1OTIsImV4cCI6MTU3NjQ4OTE5MiwiZW1haWwiOiJ5LnN1Z2ltb3RvLnBhcmFub2lhQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTA1MjE0NTA0ODQ1OTAzMjUyMDcyIl0sImVtYWlsIjpbInkuc3VnaW1vdG8ucGFyYW5vaWFAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZ29vZ2xlLmNvbSJ9fQ.Rm-LFLWbaGSIXdC2lN2vhoNjpgWX22PzIPnnKZ89YKLXc2pNz1CD72HRRkPQVWehrv5Jsw7pLBLlewDLTy_3s2qCiQGFmXDtqos8lz1b0j4fMIAi2iE1J1Mzu_MdyrcL8se3oL5hf6HrPgmnm0srC38CwmWm1aUs3_uLSTnHD4b6A6td4q7ZJNjOc5qD8b_gSRWmCWBCs6rivdGasih5W018Swiow6INxLFu1P_g2OHI1zKZzDXZvnU5XOAE1vE3q47V_e8ZzKF7fFZo0fiet7WzTmscDiTcJ64dj_xxHwac6BzP26-A_zxxFui-yXtphMuBVrKmVaLhq8MY1WLYSw'
@@ -27,10 +27,12 @@ export const authenticate = async (req: ExNextPageContext['req']): Promise<Crede
   } else {
     const user = auth.currentUser
     if (user) {
+      console.log(user.refreshToken)
       const idTokenResult = await user.getIdTokenResult(true)
       return {
         uid: user.uid,
-        token: idTokenResult.token,
+        accessToken: idTokenResult.token,
+        refreshToken: user.refreshToken,
         displayName: user.displayName,
         avatarURL: user.photoURL
       }
