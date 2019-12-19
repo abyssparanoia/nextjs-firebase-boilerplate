@@ -1,5 +1,6 @@
 import { auth, firebase, FirebaseAuthenticationError } from 'src/firebase/client'
 import { Credential } from 'src/firebase/interface'
+import { HttpClient } from './httpClient'
 
 export const signInWithGoogle = async () => {
   await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
@@ -16,8 +17,6 @@ export const signInWithEmailAndPassword = ({ email, password }: ISignInWithEmail
   auth.signInWithEmailAndPassword(email, password)
 
 export const signOut = async () => {
-  // await new AxiosClient({ url: `/api/session` }).delete().then(res => console.log(res))
-
   await fetch(`/api/session`, {
     method: 'DELETE',
     credentials: 'same-origin'
@@ -37,9 +36,8 @@ export const createSession = async (firebaseUser: firebase.User | null) => {
 
   const credential: Credential = {
     uid: firebaseUser.uid,
-    token: idTokenResult.token,
-    displayName: firebaseUser.displayName,
-    avatarURL: firebaseUser.photoURL
+    accessToken: idTokenResult.token,
+    refreshToken: firebaseUser.refreshToken
   }
 
   await fetch(`/api/session`, {
@@ -50,4 +48,29 @@ export const createSession = async (firebaseUser: firebase.User | null) => {
   })
 
   return credential
+}
+
+interface IRefreshIDTokenRequest {
+  refreshToken: string
+  grantType: 'refresh_token'
+}
+
+interface IRefreshIDTokenResponse {
+  idToken: string
+  refreshToken: string
+  userId: string
+  tokenType: string
+  expiresIn: string
+  projectId: string
+}
+
+export const refreshIDToken = async ({ refreshToken }: Pick<IRefreshIDTokenRequest, 'refreshToken'>) => {
+  const param: IRefreshIDTokenRequest = { refreshToken, grantType: 'refresh_token' }
+
+  const res = await new HttpClient({
+    url: `https://securetoken.googleapis.com/v1/token?key=${process.env.FIREBASE_CLIENT_API_KEY}`,
+    convert: true
+  }).post<IRefreshIDTokenResponse>(param)
+
+  return res.data
 }

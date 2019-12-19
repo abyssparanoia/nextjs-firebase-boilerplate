@@ -3,23 +3,34 @@ import { stringify } from 'query-string'
 import { auth } from 'src/firebase/client'
 import { Credential } from 'src/firebase/interface'
 import Router from 'next/router'
+import { refreshIDToken } from 'src/modules/repositories/auth'
 
 export const authenticate = async (req: ExNextPageContext['req']): Promise<Credential | undefined> => {
   let credential: Credential | undefined = undefined
-  // サーバー上での処理
+  // on server
   if (req && req.session) {
     const credential = req.session.credential
+
+    if (credential && credential.accessToken) {
+      await req.firebaseAuth.verifyIdToken(credential.accessToken).catch(async err => {
+        if (err.code === 'auth/id-token-expired') {
+          const { refreshToken, idToken } = await refreshIDToken({ refreshToken: credential.refreshToken })
+          credential.accessToken = idToken
+          credential.refreshToken = refreshToken
+        }
+      })
+    }
+
     return credential
-    // ブラウザ上での処理
+    // on browser
   } else {
     const user = auth.currentUser
     if (user) {
       const idTokenResult = await user.getIdTokenResult(true)
       return {
         uid: user.uid,
-        token: idTokenResult.token,
-        displayName: user.displayName,
-        avatarURL: user.photoURL
+        accessToken: idTokenResult.token,
+        refreshToken: user.refreshToken
       }
     }
   }
@@ -34,7 +45,7 @@ export const authorize = async (
 ) => {
   const credential = store.getState().auth.credential
 
-  // サーバー上での処理
+  // on server
   if (req && res && !credential) {
     const redirectTo = req.url
 
@@ -45,7 +56,7 @@ export const authorize = async (
     return
   }
 
-  // ブラウザ上
+  // on browser
   if (!res && !credential) {
     const redirectTo = Router.pathname
     Router.push(`/sign_in?${stringify({ redirectTo })}`)
