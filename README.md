@@ -16,6 +16,8 @@
 > cp .env.tmpl .env
 ```
 
+- replace a value of `FIREBASE_CLIENT_API_KEY` to active key.
+
 ### how to run on local
 
 ```bash
