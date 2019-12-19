@@ -17,8 +17,6 @@ export const signInWithEmailAndPassword = ({ email, password }: ISignInWithEmail
   auth.signInWithEmailAndPassword(email, password)
 
 export const signOut = async () => {
-  // await new AxiosClient({ url: `/api/session` }).delete().then(res => console.log(res))
-
   await fetch(`/api/session`, {
     method: 'DELETE',
     credentials: 'same-origin'
