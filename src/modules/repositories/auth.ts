@@ -72,7 +72,7 @@ export const refreshIDToken = async ({ refreshToken }: Pick<IRefreshIDTokenReque
   const param: IRefreshIDTokenRequest = { refreshToken, grantType: 'refresh_token' }
 
   const res = await new HttpClient({
-    url: `https://securetoken.googleapis.com/v1/token?key=${process.env.API_KEY}`,
+    url: `https://securetoken.googleapis.com/v1/token?key=${process.env.FIREBASE_CLIENT_API_KEY}`,
     convert: true
   }).post<IRefreshIDTokenResponse>(param)
 
