@@ -7,7 +7,7 @@ import { refreshIDToken } from 'src/modules/repositories/auth'
 
 export const authenticate = async (req: ExNextPageContext['req']): Promise<Credential | undefined> => {
   let credential: Credential | undefined = undefined
-  // サーバー上での処理
+  // on server
   if (req && req.session) {
     const credential = req.session.credential
 
@@ -22,7 +22,7 @@ export const authenticate = async (req: ExNextPageContext['req']): Promise<Crede
     }
 
     return credential
-    // ブラウザ上での処理
+    // on browser
   } else {
     const user = auth.currentUser
     if (user) {
@@ -47,7 +47,7 @@ export const authorize = async (
 ) => {
   const credential = store.getState().auth.credential
 
-  // サーバー上での処理
+  // on server
   if (req && res && !credential) {
     const redirectTo = req.url
 
@@ -58,7 +58,7 @@ export const authorize = async (
     return
   }
 
-  // ブラウザ上
+  // on browser
   if (!res && !credential) {
     const redirectTo = Router.pathname
     Router.push(`/sign_in?${stringify({ redirectTo })}`)
