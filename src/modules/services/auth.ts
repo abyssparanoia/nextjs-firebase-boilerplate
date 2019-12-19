@@ -30,9 +30,7 @@ export const authenticate = async (req: ExNextPageContext['req']): Promise<Crede
       return {
         uid: user.uid,
         accessToken: idTokenResult.token,
-        refreshToken: user.refreshToken,
-        displayName: user.displayName,
-        avatarURL: user.photoURL
+        refreshToken: user.refreshToken
       }
     }
   }

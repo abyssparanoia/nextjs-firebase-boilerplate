@@ -37,9 +37,7 @@ export const createSession = async (firebaseUser: firebase.User | null) => {
   const credential: Credential = {
     uid: firebaseUser.uid,
     accessToken: idTokenResult.token,
-    refreshToken: firebaseUser.refreshToken,
-    displayName: firebaseUser.displayName,
-    avatarURL: firebaseUser.photoURL
+    refreshToken: firebaseUser.refreshToken
   }
 
   await fetch(`/api/session`, {
