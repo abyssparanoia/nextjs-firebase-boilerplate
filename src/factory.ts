@@ -39,9 +39,9 @@ export const appFactory = async () => {
   server.post('/api/session', async (req: Request, res: Response) => {
     if (!req.body) return res.sendStatus(400)
 
-    const { accessToken, refreshToken, uid, avatarURL, displayName } = req.body as Credential
+    const { accessToken, refreshToken, uid } = req.body as Credential
 
-    req.session!.credential = { accessToken, refreshToken, uid, avatarURL, displayName }
+    req.session!.credential = { accessToken, refreshToken, uid }
 
     return res.sendStatus(200)
   })
