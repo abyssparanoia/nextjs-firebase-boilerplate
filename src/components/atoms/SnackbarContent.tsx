@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   }
 }))
 
-interface IProps extends SnackbarContentProps {
+interface IProps extends Omit<SnackbarContentProps, 'variant'> {
   message: string
   variant: keyof typeof variantIcon
   onClose: () => void
