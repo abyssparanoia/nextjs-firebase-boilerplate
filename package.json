@@ -59,7 +59,7 @@
     "@types/node": "13.1.7",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.8.4",
-    "@types/react-redux": "^7.1.5",
+    "@types/react-redux": "^7.1.6",
     "@types/redux-logger": "^3.0.7",
     "@types/session-file-store": "1.2.1",
     "@types/styled-components": "^4.4.2",
