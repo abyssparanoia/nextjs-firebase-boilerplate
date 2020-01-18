@@ -82,7 +82,7 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "ts-node": "8.6.2",
-    "typescript": "3.7.4"
+    "typescript": "3.7.5"
   },
   "husky": {
     "hooks": {
