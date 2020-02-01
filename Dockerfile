@@ -1,13 +1,14 @@
-ARG NODE_VERSION=12
-
-FROM node:${NODE_VERSION}-alpine AS builder
+FROM node:lts-alpine
 
 RUN mkdir -p /web
 ADD . /web
 WORKDIR /web
 
-RUN npm install
+RUN yarn
+RUN yarn build
+
+ENV PORT 3000
 
 EXPOSE 3000
 
-CMD ["npm", "run", "start:dev"]
+CMD ["yarn", "start:prd"]
