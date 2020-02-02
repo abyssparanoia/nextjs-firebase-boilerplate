@@ -4,32 +4,33 @@ on: [pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
         node-version: [10.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-  
-    - name: Run a one-line script
-      run: echo Hello, world!
-      
-      
-    - name: install deps
-      run: yarn
-      
-    - name: prepare file
-      run: |
-        cp .env.tmpl .env
-        cp dummy.firebase.client.key.json firebase.client.key.json 
-        cp dummy.firebase.admin.key.json firebase.admin.key.json
-        
-    - name: build
-      run: yarn build
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      - name: install deps
+        run: yarn
+
+      - name: prepare file
+        run: |
+          cp .env.tmpl .env
+          cp dummy.firebase.client.key.json firebase.client.key.json 
+          cp dummy.firebase.admin.key.json firebase.admin.key.json
+
+      - name: lint
+        run: yarn lint
+
+      - name: build
+        run: yarn build
