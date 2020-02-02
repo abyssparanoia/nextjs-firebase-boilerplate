@@ -2,12 +2,13 @@
 
 ### what is this?
 
-`This is the type-safe frontend SSR boilerplate using nextjs, typescript and firebase.`
+`This is the type-safe frontend SSR boilerplate using nextjs, preact, typescript and firebase.`
 
 ### feature
 
 - support refreshing token on server when token is expired.
 - serving on serverless platform because we use firestore as a session store.
+- using preact for minimizing a bundle size
 
 ### setup
 
