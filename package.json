@@ -16,7 +16,7 @@
     "@material-ui/icons": "^4.2.1",
     "@material-ui/lab": "^4.0.0-alpha.40",
     "@quentin-sommer/react-useragent": "^3.1.0",
-    "preact": "^10.2.1",
+    "preact": "^10.3.0",
     "preact-render-to-string": "^5.1.4",
     "react": "github:preact-compat/react#1.0.0",
     "react-dom": "github:preact-compat/react-dom#1.0.0",
