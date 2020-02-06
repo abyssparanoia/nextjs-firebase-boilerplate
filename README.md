@@ -9,6 +9,7 @@
 - support refreshing token on server when token is expired.
 - serving on serverless platform because we use firestore as a session store.
 - using preact for minimizing a bundle size
+- support monorepo and we use nest.js as backend framework
 
 ### setup
 
@@ -30,6 +31,9 @@
 # install npm packages
 $ yarn
 
-# run
+# web run
 $ yarn workspace @abyssparanoia/web start:dev
+
+# backend run
+$ yarn workspace @abyssparanoia/backend start:dev
 ```
