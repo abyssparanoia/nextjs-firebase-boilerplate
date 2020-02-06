@@ -25,9 +25,9 @@ jobs:
 
       - name: prepare file
         run: |
-          cp .env.tmpl .env
-          cp dummy.firebase.client.key.json firebase.client.key.json 
-          cp dummy.firebase.admin.key.json firebase.admin.key.json
+          cp packages/web/.env.tmpl packages/web/.env
+          cp packages/web/dummy.firebase.client.key.json packages/web/firebase.client.key.json 
+          cp packages/web/dummy.firebase.admin.key.json packages/web/firebase.admin.key.json
 
       - name: lint
         run: yarn lint

@@ -9,14 +9,15 @@
 - support refreshing token on server when token is expired.
 - serving on serverless platform because we use firestore as a session store.
 - using preact for minimizing a bundle size
+- support monorepo and we use nest.js as backend framework
 
 ### setup
 
 1. prepare firebase project
-2. save client key as `firebase.client.key.json`
-3. save admin key as `firebase.admin.key.json`
+2. save client key as `firebase.client.key.json` in packages/web
+3. save admin key as `firebase.admin.key.json` in packages/web
 
-4. prepare dotenv
+4. prepare dotenv in packages/web
 
 ```bash
 > cp .env.tmpl .env
@@ -30,6 +31,9 @@
 # install npm packages
 $ yarn
 
-# run
-$ yarn start:dev
+# web run
+$ yarn workspace @abyssparanoia/web start:dev
+
+# backend run
+$ yarn workspace @abyssparanoia/backend start:dev
 ```
