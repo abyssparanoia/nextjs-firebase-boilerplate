@@ -13,10 +13,10 @@
 ### setup
 
 1. prepare firebase project
-2. save client key as `firebase.client.key.json`
-3. save admin key as `firebase.admin.key.json`
+2. save client key as `firebase.client.key.json` in packages/web
+3. save admin key as `firebase.admin.key.json` in packages/web
 
-4. prepare dotenv
+4. prepare dotenv in packages/web
 
 ```bash
 > cp .env.tmpl .env
@@ -31,5 +31,5 @@
 $ yarn
 
 # run
-$ yarn start:dev
+$ yarn workspace @abyssparanoia/web start:dev
 ```
