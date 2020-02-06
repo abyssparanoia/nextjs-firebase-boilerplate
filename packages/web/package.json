@@ -9,7 +9,7 @@
     "build": "run-p -l build:*",
     "build:next": "next build",
     "build:server": "tsc -b ./src/tsconfig.server.json",
-    "lint": "eslint --fix -c ./.eslintrc.js './src/**/*.{ts,tsx}'",
+    "lint": "eslint --fix -c ./.eslintrc.json './src/**/*.{ts,tsx}'",
     "deploy": "firebase deploy"
   },
   "dependencies": {
