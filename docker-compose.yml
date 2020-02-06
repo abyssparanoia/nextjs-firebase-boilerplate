@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  web: &node-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - .:.
+    command: ash -c "yarn workspace @abyssparanoia/web start:dev"
+
+  backend: &node-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3001
+    volumes:
+      - .:.
+    command: ash -c "yarn workspace @abyssparanoia/backend start:dev"
