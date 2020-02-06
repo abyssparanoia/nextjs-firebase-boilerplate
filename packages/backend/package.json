@@ -21,6 +21,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
+    "@abyssparanoia/interface": "0.0.1",
     "@nestjs/common": "^6.0.0",
     "@nestjs/core": "^6.0.0",
     "@nestjs/platform-express": "^6.0.0",
