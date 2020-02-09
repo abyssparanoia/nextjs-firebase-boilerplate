@@ -12,7 +12,6 @@
     "start:dev": "concurrently --handle-input \"wait-on dist/main.js && nodemon\" \"tsc -w -p tsconfig.build.json\" ",
     "start:debug": "nodemon --config nodemon-debug.json",
     "start:prod": "node dist/main.js",
-    "lint": "eslint --fix -c ./.eslintrc.json './src/**/*.ts'",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
