@@ -5,7 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import Avatar from '@material-ui/core/Avatar'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
 import LockIcon from '@material-ui/icons/LockOutlined'
-import CircularProgress from '@material-ui/core/CircularProgress'
+import { Progress } from 'src/components/moleclues/Progress'
 import GoogleButton from 'react-google-button'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -48,7 +48,7 @@ export const SignInTemplate = ({ isLoading, handleSignInWithGoogle }: Props) => 
 
   return (
     <main className={classes.main}>
-      {isLoading && <CircularProgress />}
+      {isLoading && <Progress />}
       <CssBaseline />
       <Paper className={classes.paper}>
         <Avatar className={classes.avatar}>
