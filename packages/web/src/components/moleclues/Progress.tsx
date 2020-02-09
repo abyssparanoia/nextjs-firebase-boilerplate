@@ -23,7 +23,7 @@ export const Progress = (): JSX.Element => {
   return (
     <ProgressWrapper>
       <ProgressInner>
-        <CircularIndeterminate />
+        <CircularIndeterminate color="secondary" />
       </ProgressInner>
     </ProgressWrapper>
   )
