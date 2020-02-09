@@ -25,6 +25,13 @@
 
 - replace a value of `FIREBASE_CLIENT_API_KEY` to active key.
 
+### Apps
+
+| Package                                    | Localhost             | Prodction  |
+| :----------------------------------------- | :-------------------- | :--------- |
+| **[[next.js] web](./packages/web)**        | http://localhost:3000 | web.\*     |
+| **[[nestjs] backend](./packages/backend)** | http://localhost:3001 | backend.\* |
+
 ### how to run on local
 
 ```bash
