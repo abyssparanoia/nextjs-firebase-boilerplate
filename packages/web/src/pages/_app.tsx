@@ -25,9 +25,9 @@ class NextApp extends App<AppProps> {
   static async getInitialProps({ Component, ctx }: AppContext) {
     let pageProps = {}
 
-    const { req, store } = ctx as ExNextPageContext
+    const { store } = ctx as ExNextPageContext
     if (!store.getState().auth.credential) {
-      const credential = await authenticate(req)
+      const credential = await authenticate(ctx as ExNextPageContext)
       await store.dispatch(actions.setCredential(credential))
     }
 

@@ -8,8 +8,8 @@ const About = (_: Props) => {
   return <div>About page</div>
 }
 
-About.getInitialProps = async ({ req, res, store }: ExNextPageContext): Promise<void> => {
-  await authorize(req, res, store)
+About.getInitialProps = async (ctx: ExNextPageContext): Promise<void> => {
+  await authorize(ctx)
 }
 
 export default About
