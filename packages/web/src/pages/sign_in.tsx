@@ -1,11 +1,10 @@
 import React, { useCallback } from 'react'
 import { ExNextPageContext } from 'next'
-import Router from 'next/router'
-import { auth } from 'src/firebase/client'
 import { useDispatch, useSelector } from 'react-redux'
 import { signInWithGoogle } from 'src/modules/auth'
 import { SignInTemplate } from 'src/components/templates/sign_in'
 import { ReduxStore } from 'src/modules/reducer'
+import { redirect } from 'src/modules/services'
 
 type Props = {}
 
@@ -21,19 +20,11 @@ const SignIn = (_: Props) => {
   return <SignInTemplate isLoading={isLoading} handleSignInWithGoogle={handleSignIn} />
 }
 
-SignIn.getInitialProps = async ({ req, res }: ExNextPageContext): Promise<void> => {
-  // ログイン済みだった場合はredirectを行う
-  // サーバー上での処理
+SignIn.getInitialProps = async (ctx: ExNextPageContext): Promise<void> => {
+  const { req } = ctx
+  // redirect when already authenticated
   if (req && req.session && req.session.credential) {
-    res!.writeHead(302, {
-      Location: '/'
-    })
-    res!.end()
-    // ブラウザ上での処理
-  } else {
-    if (auth.currentUser) {
-      Router.push('/')
-    }
+    redirect(ctx, '/')
   }
 }
 

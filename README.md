@@ -38,6 +38,9 @@
 # install npm packages
 $ yarn
 
+# run web and backend by a commnad
+$ yarn start
+
 # web run
 $ yarn workspace @abyssparanoia/web start:dev
 

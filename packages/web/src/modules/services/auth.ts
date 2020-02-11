@@ -5,7 +5,7 @@ import { Credential } from 'src/firebase/interface'
 import Router from 'next/router'
 import { refreshIDToken } from 'src/modules/repositories/auth'
 
-export const authenticate = async (req: ExNextPageContext['req']): Promise<Credential | undefined> => {
+export const authenticate = async ({ req }: ExNextPageContext): Promise<Credential | undefined> => {
   let credential: Credential | undefined = undefined
   // on server
   if (req && req.session) {
@@ -38,11 +38,7 @@ export const authenticate = async (req: ExNextPageContext['req']): Promise<Crede
   return credential
 }
 
-export const authorize = async (
-  req: ExNextPageContext['req'],
-  res: ExNextPageContext['res'],
-  store: ExNextPageContext['store']
-) => {
+export const authorize = async ({ req, res, store }: ExNextPageContext) => {
   const credential = store.getState().auth.credential
 
   // on server
