@@ -56,7 +56,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
-    "@types/body-parser": "1.17.1",
+    "@types/body-parser": "1.19.0",
     "@types/cors": "^2.8.6",
     "@types/express-session": "1.15.16",
     "@types/faker": "^4.1.9",
