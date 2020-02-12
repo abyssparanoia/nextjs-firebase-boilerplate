@@ -4,7 +4,7 @@ import { Dispatch } from 'redux'
 import { Credential } from 'src/firebase/interface'
 import * as repository from './repositories'
 import Router from 'next/router'
-import { addError } from './error'
+import { pushFeedback } from './feedback'
 
 const actionCreator = actionCreatorFactory('auth')
 
@@ -42,7 +42,7 @@ export const signInWithGoogle = () => async (dispatch: Dispatch) => {
     dispatch(actions.signInWithGoogle.done({ result: { credential } }))
   } catch (error) {
     dispatch(actions.signInWithGoogle.failed({ error: error }))
-    dispatch(addError(error))
+    dispatch(pushFeedback({ variant: 'error', message: error.message }))
   }
 }
 
@@ -54,7 +54,7 @@ export const signOut = () => async (dispatch: Dispatch) => {
     dispatch(actions.signOut.done({}))
   } catch (error) {
     dispatch(actions.signOut.failed({ error }))
-    dispatch(addError(error))
+    dispatch(pushFeedback({ variant: 'error', message: error.message }))
   }
 }
 
