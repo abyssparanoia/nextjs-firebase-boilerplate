@@ -66,7 +66,7 @@
     "@types/react-redux": "7.1.7",
     "@types/redux-logger": "3.0.7",
     "@types/session-file-store": "1.2.1",
-    "@types/styled-components": "4.4.3",
+    "@types/styled-components": "5.0.0",
     "@types/ua-parser-js": "0.7.33",
     "babel-loader": "8.0.6",
     "babel-plugin-styled-components": "1.10.7",
