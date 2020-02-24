@@ -6,3 +6,5 @@ interface BaseRequest<Param, Query, Body> {
 }
 
 export type CreateRequestType<P, Q, B, K extends RequestKeys> = Pick<BaseRequest<P, Q, B>, K>
+
+export type PropType<T, P extends keyof T> = T[P]
