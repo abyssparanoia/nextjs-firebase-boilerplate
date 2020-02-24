@@ -2,7 +2,7 @@ import { HttpClient } from './httpClient'
 import { SignInRequest } from '@abyssparanoia/interface'
 
 export const samplePost = async () => {
-  const req: SignInRequest = {
+  const req: SignInRequest['body'] = {
     userID: 'userID',
     password: 'password'
   }
