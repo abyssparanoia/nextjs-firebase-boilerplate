@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently 'yarn workspace @abyssparanoia/backend start:dev' 'yarn workspace @abyssparanoia/web start:dev' ",
+    "start": "lerna run start:dev --stream",
     "build": "lerna run build --include-dependencies",
     "lint": "eslint --fix -c ./.eslintrc.json './packages/**/*.{ts,tsx}'",
     "test": "lerna run test",
