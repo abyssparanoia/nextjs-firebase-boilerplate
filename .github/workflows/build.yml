@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [12.x]
 
     steps:
       - uses: actions/checkout@v1
@@ -17,20 +17,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      - name: install deps
-        run: yarn
-
       - name: prepare file
         run: |
           cp packages/web/.env.tmpl packages/web/.env
           cp packages/web/dummy.firebase.client.key.json packages/web/firebase.client.key.json 
           cp packages/web/dummy.firebase.admin.key.json packages/web/firebase.admin.key.json
 
+      - name: install deps and build
+        run: yarn
+
       - name: lint
         run: yarn lint
-
-      - name: build
-        run: yarn build
