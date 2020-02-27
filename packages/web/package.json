@@ -55,7 +55,7 @@
     "typescript-fsa-reducers": "1.2.1"
   },
   "devDependencies": {
-    "@babel/core": "7.8.4",
+    "@babel/core": "7.8.6",
     "@types/body-parser": "1.19.0",
     "@types/cors": "2.8.6",
     "@types/express-session": "1.15.16",
