@@ -10,7 +10,6 @@
     "outDir": "./dist",
     "jsx": "preserve",
     "baseUrl": "./",
-    "incremental": true,
     "strict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
@@ -20,12 +19,10 @@
     "allowJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "noEmit": true
   },
   "exclude": ["node_modules", "dist"],
   "include": ["next-env.d.ts", "src/types/*.d.ts", "**/*.ts", "**/*.tsx"]
