@@ -4,7 +4,6 @@
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "incremental": true,
     "module": "commonjs",
     "outDir": "./dist",
     "noFallthroughCasesInSwitch": true,

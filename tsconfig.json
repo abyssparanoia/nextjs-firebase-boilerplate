@@ -10,7 +10,6 @@
     "outDir": "./dist",
     "jsx": "preserve",
     "baseUrl": "./",
-    "incremental": true,
     "strict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
