@@ -58,7 +58,7 @@
     "@babel/core": "7.8.6",
     "@types/body-parser": "1.19.0",
     "@types/cors": "2.8.6",
-    "@types/express-session": "1.15.16",
+    "@types/express-session": "1.17.0",
     "@types/faker": "4.1.10",
     "@types/node": "13.7.6",
     "@types/react": "16.9.23",
