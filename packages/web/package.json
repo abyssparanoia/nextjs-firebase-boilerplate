@@ -43,7 +43,7 @@
     "next-offline": "5.0.0",
     "next-redux-wrapper": "5.0.0",
     "path": "0.12.7",
-    "query-string": "6.11.0",
+    "query-string": "6.11.1",
     "react-google-button": "0.7.0",
     "react-redux": "7.2.0",
     "redux": "4.0.5",
