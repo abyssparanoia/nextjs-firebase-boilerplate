@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "lerna run start:dev --stream",
+    "start": "lerna run start --stream",
     "build": "lerna run build --include-dependencies",
     "lint": "eslint --fix -c ./.eslintrc.json './packages/**/*.{ts,tsx}'",
     "test": "lerna run test",
-    "clean": "lerna run clean && lerna clean --y",
-    "postinstall": "yarn build"
+    "clean": "lerna run clean && lerna clean --y"
   },
   "devDependencies": {
-    "@types/jest": "25.1.4",
+    "@types/jest": "24.9.0",
     "@types/supertest": "2.0.8",
     "@typescript-eslint/eslint-plugin": "2.22.0",
     "@typescript-eslint/parser": "2.22.0",
@@ -22,7 +21,7 @@
     "eslint-plugin-react": "7.19.0",
     "eslint-plugin-react-hooks": "2.5.0",
     "husky": "4.2.3",
-    "jest": "25.1.0",
+    "jest": "24.9.0",
     "lerna": "3.20.2",
     "lint-staged": "10.0.8",
     "nodemon": "2.0.2",

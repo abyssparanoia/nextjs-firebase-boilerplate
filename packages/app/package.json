@@ -1,0 +1,48 @@
+{
+  "name": "@abyssparanoia/app",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "PORT=3002 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@capacitor/core": "1.5.1",
+    "@ionic/react": "^5.0.0",
+    "@ionic/react-router": "^5.0.0",
+    "@types/styled-components": "^5.0.1",
+    "ionicons": "^5.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "1.5.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^8.0.3",
+    "@types/node": "^12.12.24",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-router": "^5.1.4",
+    "@types/react-router-dom": "^5.1.3",
+    "react-scripts": "3.4.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "An Ionic project"
+}

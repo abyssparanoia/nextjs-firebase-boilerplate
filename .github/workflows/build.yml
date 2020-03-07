@@ -23,8 +23,11 @@ jobs:
           cp packages/web/dummy.firebase.client.key.json packages/web/firebase.client.key.json 
           cp packages/web/dummy.firebase.admin.key.json packages/web/firebase.admin.key.json
 
-      - name: install deps and build
+      - name: install deps
         run: yarn
 
       - name: lint
         run: yarn lint
+
+      - name: build
+        run: yarn build

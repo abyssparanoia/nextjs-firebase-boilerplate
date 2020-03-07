@@ -16,7 +16,7 @@
     "noImplicitReturns": true,
     "noImplicitAny": true,
     "types": ["node"],
-    "allowJs": true,
+    "allowJs": false,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",

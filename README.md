@@ -8,8 +8,9 @@
 
 - support refreshing token on server when token is expired.
 - serving on serverless platform because we use firestore as a session store.
-- using preact for minimizing a bundle size
+- ~using preact for minimizing a bundle size~ // I will fix bug currently
 - support monorepo and we use nest.js as backend framework
+- support ionic react for PWA and native app using capacitor
 
 ### setup
 
@@ -30,6 +31,7 @@
 | Package                                    | Localhost             | Prodction  |
 | :----------------------------------------- | :-------------------- | :--------- |
 | **[[next.js] web](./packages/web)**        | http://localhost:3000 | web.\*     |
+| **[[next.js] app](./packages/app)**        | http://localhost:3002 | app.\*     |
 | **[[nestjs] backend](./packages/backend)** | http://localhost:3001 | backend.\* |
 
 ### how to run on local
@@ -38,12 +40,18 @@
 # install npm packages
 $ yarn
 
+# build deps
+$ yarn build
+
 # run web and backend by a commnad
 $ yarn start
 
 # web run
-$ yarn workspace @abyssparanoia/web start:dev
+$ yarn workspace @abyssparanoia/web start
 
 # backend run
-$ yarn workspace @abyssparanoia/backend start:dev
+$ yarn workspace @abyssparanoia/backend start
+
+# ionic run
+$ yarn workspace @abyssparanoia/app start
 ```
