@@ -17,8 +17,9 @@
 1. prepare firebase project
 2. save client key as `firebase.client.key.json` in packages/web
 3. save admin key as `firebase.admin.key.json` in packages/web
+4. save admin key as `firebase.client.key.json` in packages/app/src
 
-4. prepare dotenv in packages/web
+5. prepare dotenv in packages/web
 
 ```bash
 > cp .env.tmpl .env
