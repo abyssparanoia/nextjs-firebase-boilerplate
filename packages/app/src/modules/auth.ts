@@ -39,7 +39,7 @@ export const signInWithGoogle = () => async (dispatch: Dispatch) => {
     dispatch(actions.signInWithGoogle.started())
     await repository.signInWithGoogle()
     // redirectAfterSignIn()
-    push('/tab1')
+    dispatch(push('/tab1'))
     dispatch(actions.signInWithGoogle.done({ result: { firebaseUser: auth.currentUser! } }))
   } catch (error) {
     dispatch(actions.signInWithGoogle.failed({ error: error }))
@@ -51,7 +51,7 @@ export const signOut = () => async (dispatch: Dispatch) => {
   try {
     dispatch(actions.signOut.started())
     await repository.signOut()
-    push('/sign_in')
+    dispatch(push('/sign_in'))
     dispatch(actions.signOut.done({}))
   } catch (error) {
     dispatch(actions.signOut.failed({ error }))
