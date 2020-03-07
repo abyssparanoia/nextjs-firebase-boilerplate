@@ -10,6 +10,7 @@
 - serving on serverless platform because we use firestore as a session store.
 - ~using preact for minimizing a bundle size~ // I will fix bug currently
 - support monorepo and we use nest.js as backend framework
+- support ionic react for PWA and native app using capacitor
 
 ### setup
 
