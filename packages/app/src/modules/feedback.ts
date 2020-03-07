@@ -39,6 +39,6 @@ export const reducer = reducerWithInitialState(initialState)
   })
   .case(actions.popFeedback, (state, payload) => ({
     ...state,
-    list: state.list.filter(feedback => feedback.id != payload.id)
+    list: state.list.filter(feedback => feedback.id !== payload.id)
   }))
   .build()
