@@ -7,8 +7,7 @@
     "build": "lerna run build --include-dependencies",
     "lint": "eslint --fix -c ./.eslintrc.json './packages/**/*.{ts,tsx}'",
     "test": "lerna run test",
-    "clean": "lerna run clean && lerna clean --y",
-    "postinstall": "yarn build"
+    "clean": "lerna run clean && lerna clean --y"
   },
   "devDependencies": {
     "@types/jest": "24.9.0",
