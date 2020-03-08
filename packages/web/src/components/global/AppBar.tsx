@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -8,8 +8,10 @@ import MenuIcon from '@material-ui/icons/Menu'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import MenuItem from '@material-ui/core/MenuItem'
 import Menu from '@material-ui/core/Menu'
+import { useDispatch, useSelector } from 'react-redux'
+import { signOut } from 'src/modules/auth'
 import { Link } from 'src/components/atoms'
-import { Credential } from 'src/firebase/interface'
+import { ReduxStore } from 'src/modules/reducer'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,13 +25,18 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-interface Props {
-  credential?: Credential
-  handleSignOut: () => void
-}
+interface Props {}
 
-export const MenuAppBar = ({ credential, handleSignOut }: Props) => {
+export const MenuAppBar = (_: Props) => {
   const classes = useStyles({})
+
+  const { credential } = useSelector(({ auth: { credential } }: ReduxStore) => ({
+    credential
+  }))
+
+  const dispatch = useDispatch()
+  const handleSignOut = useCallback(() => dispatch(signOut()), [dispatch])
+
   const [anchorEl, setAnchorEl] = React.useState<(EventTarget & HTMLButtonElement) | undefined>(undefined)
   const open = Boolean(anchorEl)
 

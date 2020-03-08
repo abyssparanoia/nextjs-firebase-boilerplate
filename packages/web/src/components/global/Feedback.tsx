@@ -1,19 +1,23 @@
-import React from 'react'
-import { Feedback } from 'src/modules/feedback'
+import React, { useCallback } from 'react'
 import { Snackbar } from 'src/components/moleclues/Snackbar'
+import { ReduxStore } from 'src/modules/reducer'
+import { popFeedback } from 'src/modules/feedback'
+import { useDispatch, useSelector } from 'react-redux'
 
-interface Props {
-  feedbackList: Feedback[]
-  popFeedback: (id: string) => void
-}
+interface Props {}
 
-export const GlobalFeedback = ({ feedbackList, popFeedback }: Props) => {
-  const closeHandler = (id: string) => () => popFeedback(id)
+export const GlobalFeedback = (_: Props) => {
+  const { feedbackList } = useSelector(({ feedback: { list } }: ReduxStore) => ({
+    feedbackList: list
+  }))
+
+  const dispatch = useDispatch()
+  const handlePopFeedback = useCallback((id: string) => () => dispatch(popFeedback({ id })), [dispatch])
 
   return (
     <>
       {feedbackList.map(({ id, variant, message }) => (
-        <Snackbar key={id} variant={variant} message={message} onClose={closeHandler(id)} />
+        <Snackbar key={id} variant={variant} message={message} onClose={handlePopFeedback(id)} />
       ))}
     </>
   )
