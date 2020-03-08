@@ -5,17 +5,22 @@ import * as repository from './repositories'
 import { pushFeedback } from './feedback'
 import { push } from 'connected-react-router'
 import { auth } from '../firebase/client'
-import { User as FirebaseUser } from 'firebase'
+import { User as FirebaseUser, Unsubscribe } from 'firebase'
+import { ReduxStore } from './reducer'
 
 const actionCreator = actionCreatorFactory('auth')
 
 export const actions = {
+  subscribeIdToken: actionCreator.async<void, { firebaseUser?: FirebaseUser | null }, Error>('SUBSCRIBE_ID_TOKEN'),
+  setUnsubscriber: actionCreator<{ unsubscriber: Unsubscribe }>('SET_UNSUBSCRIBE'),
+  unsubscribe: actionCreator<void>('UNSUBSCRIBE'),
   signInWithGoogle: actionCreator.async<void, { firebaseUser: FirebaseUser }, Error>('SIGN_IN_WITH_GOOGLE'),
   signOut: actionCreator.async<void, void, Error>('SIGN_OUT')
 }
 
 export interface State {
-  firebaseUser?: FirebaseUser
+  firebaseUser?: FirebaseUser | null
+  unsubscriber?: Unsubscribe
   isLoading: boolean
   error?: Error
 }
@@ -33,6 +38,30 @@ const initialState: State = {
 //     Router.push(redirectTo)
 //   }
 // }
+
+const sleep = (msec: number) => new Promise(resolve => setTimeout(resolve, msec))
+
+export const subscribeIdToken = () => async (dispatch: Dispatch) => {
+  try {
+    dispatch(actions.subscribeIdToken.started)
+    await sleep(500)
+    const unsubscriber = auth.onIdTokenChanged(firebaseUser => {
+      dispatch(actions.subscribeIdToken.done({ result: { firebaseUser } }))
+    })
+    dispatch(actions.setUnsubscriber({ unsubscriber }))
+  } catch (error) {
+    dispatch(actions.subscribeIdToken.failed({ error }))
+    dispatch(pushFeedback({ variant: 'error', message: error.message }))
+  }
+}
+
+export const unsubscribe = () => async (dispatch: Dispatch, getState: () => ReduxStore) => {
+  const {
+    auth: { unsubscriber }
+  } = getState()
+  unsubscriber && unsubscriber()
+  dispatch(actions.unsubscribe())
+}
 
 export const signInWithGoogle = () => async (dispatch: Dispatch) => {
   try {
@@ -60,6 +89,28 @@ export const signOut = () => async (dispatch: Dispatch) => {
 }
 
 export const reducer = reducerWithInitialState(initialState)
+  .case(actions.subscribeIdToken.started, state => ({
+    ...state,
+    isLoading: true
+  }))
+  .case(actions.subscribeIdToken.done, (state, { result: { firebaseUser } }) => ({
+    ...state,
+    isLoading: false,
+    firebaseUser
+  }))
+  .case(actions.subscribeIdToken.failed, (state, { error }) => ({
+    ...state,
+    isLoading: false,
+    error
+  }))
+  .case(actions.setUnsubscriber, (state, { unsubscriber }) => ({
+    ...state,
+    unsubscriber
+  }))
+  .case(actions.unsubscribe, state => ({
+    ...state,
+    unsubscriber: undefined
+  }))
   .case(actions.signInWithGoogle.started, state => ({
     ...state,
     isLoading: true
