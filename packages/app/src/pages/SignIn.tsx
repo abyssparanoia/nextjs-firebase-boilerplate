@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react'
 import { IonButton, IonContent } from '@ionic/react'
 import { useDispatch } from 'react-redux'
-import { signInWithGoogle } from '../../../modules/auth'
+import { signInWithGoogle } from '../modules/auth'
 
-export const SignInTemplate = () => {
+export const SignIn = () => {
   const dispatch = useDispatch()
   const handleGoogleSignIn = useCallback(() => {
     dispatch(signInWithGoogle())
