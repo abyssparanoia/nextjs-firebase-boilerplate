@@ -1,9 +1,17 @@
-import React from 'react'
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react'
+import React, { useCallback } from 'react'
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react'
 import ExploreContainer from '../components/ExploreContainer'
 import './Tab1.css'
+import { useDispatch } from 'react-redux'
+import { signOut } from '../modules/auth'
 
 const Tab1: React.FC = () => {
+  const dispatch = useDispatch()
+
+  const handleSignOut = useCallback(() => {
+    dispatch(signOut())
+  }, [dispatch])
+
   return (
     <IonPage>
       <IonHeader>
@@ -18,6 +26,7 @@ const Tab1: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <ExploreContainer name="Tab 1 page" />
+        <IonButton onClick={handleSignOut}>Sign Out</IonButton>
       </IonContent>
     </IonPage>
   )
