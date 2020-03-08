@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "abyssparanoia-f6d72"
+  },
+  "targets": {
+    "abyssparanoia-f6d72": {
+      "hosting": {
+        "ionic": [
+          "abyssparanoia-f6d72"
+        ]
+      }
+    }
+  }
+}
