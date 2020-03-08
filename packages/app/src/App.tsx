@@ -30,7 +30,7 @@ import '@ionic/react/css/display.css'
 
 /* Theme variables */
 import './theme/variables.css'
-import SignIn from './pages/SignIn'
+import { SignIn } from './pages/SignIn'
 import { Authentication } from './components/global/Authentication'
 import { Authorization } from './components/global/Authorization'
 
