@@ -39,12 +39,9 @@ const initialState: State = {
 //   }
 // }
 
-const sleep = (msec: number) => new Promise(resolve => setTimeout(resolve, msec))
-
 export const subscribeIdToken = () => async (dispatch: Dispatch) => {
   try {
     dispatch(actions.subscribeIdToken.started)
-    await sleep(500)
     const unsubscriber = auth.onIdTokenChanged(firebaseUser => {
       dispatch(actions.subscribeIdToken.done({ result: { firebaseUser } }))
     })
