@@ -5,6 +5,6 @@ export type IAuthUser = Claims & { uid: string }
 
 export const AuthUser = createParamDecorator(
   (_, req): IAuthUser => {
-    return { ...req }
+    return { ...req.claims }
   }
 )
