@@ -8,6 +8,7 @@ import { auth } from '../firebase/client'
 import { User as FirebaseUser, Unsubscribe } from 'firebase'
 import { ReduxStore } from './reducer'
 import { Claims } from '@abyssparanoia/interface'
+import { parse } from 'query-string'
 
 const actionCreator = actionCreatorFactory('auth')
 
@@ -35,15 +36,13 @@ const initialState: State = {
   isLoading: false
 }
 
-// const redirectAfterSignIn = () => {
-//   const redirectTo = Router.query.redirectTo as string | undefined
-
-//   if (!redirectTo) {
-//     Router.push('/')
-//   } else {
-//     Router.push(redirectTo)
-//   }
-// }
+const checkRedirectPath = (search: string) => {
+  const { redirect_to } = parse(search)
+  if (typeof redirect_to === 'string') {
+    return redirect_to
+  }
+  return undefined
+}
 
 export const subscribeIdToken = () => async (dispatch: Dispatch) => {
   try {
@@ -71,12 +70,17 @@ export const unsubscribe = () => async (dispatch: Dispatch, getState: () => Redu
   dispatch(actions.unsubscribe())
 }
 
-export const signInWithGoogle = () => async (dispatch: Dispatch) => {
+export const signInWithGoogle = () => async (dispatch: Dispatch, getState: () => ReduxStore) => {
   try {
     dispatch(actions.signInWithGoogle.started())
     const { claims } = await repository.signInWithGoogle()
-    // redirectAfterSignIn()
-    dispatch(push('/tab1'))
+    const {
+      router: {
+        location: { search }
+      }
+    } = getState()
+    const redirectPath = checkRedirectPath(search)
+    dispatch(push(redirectPath ? redirectPath : '/tab1'))
     dispatch(actions.signInWithGoogle.done({ result: { firebaseUser: auth.currentUser!, claims } }))
   } catch (error) {
     dispatch(actions.signInWithGoogle.failed({ error: error }))
