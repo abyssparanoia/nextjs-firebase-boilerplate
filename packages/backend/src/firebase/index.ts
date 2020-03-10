@@ -1,4 +1,5 @@
 import * as admin from 'firebase-admin'
+require('dotenv').config()
 
 const app = process.env.GCLOUD_PROJECT
   ? admin.initializeApp()

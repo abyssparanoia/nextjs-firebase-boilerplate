@@ -3,6 +3,7 @@ import { AppModule } from './app.module'
 import { ValidationPipe } from './pipes/validation'
 import { Logger } from '@nestjs/common'
 import { Request as ExpressRequest, Response as ExpressResponse } from 'express'
+require('dotenv').config()
 
 function requestLogger(logger: Logger): (req: ExpressRequest, res: ExpressResponse, next: () => void) => void {
   return (req, res, next): void => {
