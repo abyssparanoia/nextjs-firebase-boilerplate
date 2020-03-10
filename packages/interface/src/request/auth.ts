@@ -1,4 +1,5 @@
 import { CreateRequestType } from './base'
+import { User } from '../entity'
 
 export type SignInRequest = CreateRequestType<
   null,
@@ -9,3 +10,8 @@ export type SignInRequest = CreateRequestType<
   },
   'body'
 >
+
+export type SignInResponse = {
+  user: User
+  customToken: string
+}

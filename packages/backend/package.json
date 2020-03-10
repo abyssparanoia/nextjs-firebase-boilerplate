@@ -21,10 +21,13 @@
   "dependencies": {
     "@abyssparanoia/interface": "0.0.1",
     "@nestjs/common": "6.11.11",
+    "@nestjs/config": "^0.2.4",
     "@nestjs/core": "6.11.11",
     "@nestjs/platform-express": "6.11.11",
     "class-transformer": "0.2.3",
     "class-validator": "0.11.0",
+    "dotenv": "^8.2.0",
+    "firebase-admin": "^8.9.2",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
     "rxjs": "6.5.4"
