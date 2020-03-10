@@ -7,19 +7,25 @@ import { push } from 'connected-react-router'
 import { auth } from '../firebase/client'
 import { User as FirebaseUser, Unsubscribe } from 'firebase'
 import { ReduxStore } from './reducer'
+import { Claims } from '@abyssparanoia/interface'
 
 const actionCreator = actionCreatorFactory('auth')
 
 export const actions = {
-  subscribeIdToken: actionCreator.async<void, { firebaseUser?: FirebaseUser | null }, Error>('SUBSCRIBE_ID_TOKEN'),
+  subscribeIdToken: actionCreator.async<void, { firebaseUser?: FirebaseUser | null; claims?: Claims }, Error>(
+    'SUBSCRIBE_ID_TOKEN'
+  ),
   setUnsubscriber: actionCreator<{ unsubscriber: Unsubscribe }>('SET_UNSUBSCRIBE'),
   unsubscribe: actionCreator<void>('UNSUBSCRIBE'),
-  signInWithGoogle: actionCreator.async<void, { firebaseUser: FirebaseUser }, Error>('SIGN_IN_WITH_GOOGLE'),
+  signInWithGoogle: actionCreator.async<void, { firebaseUser: FirebaseUser; claims: Claims }, Error>(
+    'SIGN_IN_WITH_GOOGLE'
+  ),
   signOut: actionCreator.async<void, void, Error>('SIGN_OUT')
 }
 
 export interface State {
   firebaseUser?: FirebaseUser | null
+  claims?: Claims
   unsubscriber?: Unsubscribe
   isLoading: boolean
   error?: Error
@@ -42,8 +48,13 @@ const initialState: State = {
 export const subscribeIdToken = () => async (dispatch: Dispatch) => {
   try {
     dispatch(actions.subscribeIdToken.started)
-    const unsubscriber = auth.onIdTokenChanged(firebaseUser => {
-      dispatch(actions.subscribeIdToken.done({ result: { firebaseUser } }))
+    const unsubscriber = auth.onIdTokenChanged(async firebaseUser => {
+      let claims: Claims | undefined
+      if (firebaseUser) {
+        const result = await firebaseUser.getIdTokenResult()
+        claims = result.claims as Claims
+      }
+      dispatch(actions.subscribeIdToken.done({ result: { firebaseUser, claims } }))
     })
     dispatch(actions.setUnsubscriber({ unsubscriber }))
   } catch (error) {
@@ -63,10 +74,10 @@ export const unsubscribe = () => async (dispatch: Dispatch, getState: () => Redu
 export const signInWithGoogle = () => async (dispatch: Dispatch) => {
   try {
     dispatch(actions.signInWithGoogle.started())
-    await repository.signInWithGoogle()
+    const { claims } = await repository.signInWithGoogle()
     // redirectAfterSignIn()
     dispatch(push('/tab1'))
-    dispatch(actions.signInWithGoogle.done({ result: { firebaseUser: auth.currentUser! } }))
+    dispatch(actions.signInWithGoogle.done({ result: { firebaseUser: auth.currentUser!, claims } }))
   } catch (error) {
     dispatch(actions.signInWithGoogle.failed({ error: error }))
     dispatch(pushFeedback({ variant: 'error', message: error.message }))
@@ -90,10 +101,11 @@ export const reducer = reducerWithInitialState(initialState)
     ...state,
     isLoading: true
   }))
-  .case(actions.subscribeIdToken.done, (state, { result: { firebaseUser } }) => ({
+  .case(actions.subscribeIdToken.done, (state, { result: { firebaseUser, claims } }) => ({
     ...state,
     isLoading: false,
-    firebaseUser
+    firebaseUser,
+    claims
   }))
   .case(actions.subscribeIdToken.failed, (state, { error }) => ({
     ...state,
@@ -112,10 +124,11 @@ export const reducer = reducerWithInitialState(initialState)
     ...state,
     isLoading: true
   }))
-  .case(actions.signInWithGoogle.done, (state, { result: { firebaseUser } }) => ({
+  .case(actions.signInWithGoogle.done, (state, { result: { firebaseUser, claims } }) => ({
     ...state,
     isLoading: false,
-    firebaseUser
+    firebaseUser,
+    claims
   }))
   .case(actions.signInWithGoogle.failed, (state, payload) => ({
     ...state,
