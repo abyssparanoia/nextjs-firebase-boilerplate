@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@capacitor/core": "1.5.1",
-    "@ionic/react": "5.0.4",
+    "@ionic/react": "5.0.5",
     "@ionic/react-router": "5.0.4",
     "axios": "0.19.2",
     "connected-react-router": "6.7.0",
