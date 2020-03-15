@@ -17,7 +17,9 @@ export const authenticate = async ({ req }: ExNextPageContext): Promise<Credenti
           const { refreshToken, idToken } = await refreshIDToken({ refreshToken: credential.refreshToken })
           credential.accessToken = idToken
           credential.refreshToken = refreshToken
+          return
         }
+        throw err
       })
     }
 
