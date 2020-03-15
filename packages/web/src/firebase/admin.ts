@@ -23,8 +23,5 @@ declare global {
       firebaseAuth: admin.auth.Auth
       firebaseStore: admin.firestore.Firestore
     }
-    interface Session {
-      credential?: Credential
-    }
   }
 }
