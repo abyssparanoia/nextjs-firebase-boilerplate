@@ -14,7 +14,6 @@ import { ReduxStore } from 'src/modules/reducer'
 import { Global } from 'src/components/global'
 import { ExNextPageContext } from 'next'
 import { authenticate } from 'src/modules/services'
-import { actions } from 'src/modules/auth'
 
 interface AppProps extends NextAppProps {
   ua: string
@@ -27,8 +26,7 @@ class NextApp extends App<AppProps> {
 
     const { store } = ctx as ExNextPageContext
     if (!store.getState().auth.credential) {
-      const credential = await authenticate(ctx as ExNextPageContext)
-      await store.dispatch(actions.setCredential(credential))
+      await authenticate(ctx as ExNextPageContext)
     }
 
     if (Component.getInitialProps) {

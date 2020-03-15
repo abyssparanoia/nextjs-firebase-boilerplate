@@ -1,7 +1,6 @@
 import actionCreatorFactory from 'typescript-fsa'
 import { reducerWithInitialState } from 'typescript-fsa-reducers'
 import { Dispatch } from 'redux'
-import { samplePost } from 'src/modules/repositories'
 
 const timeout = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms))
 
@@ -25,7 +24,6 @@ const initialState: State = {
 export const fetchTableList = () => async (dispatch: Dispatch) => {
   dispatch(actions.fetchTableList.started())
   await timeout(1500)
-  await samplePost()
   // mock data
   const list = ['users', 'posts', 'post_favorites']
   return dispatch(actions.fetchTableList.done({ result: { list } }))

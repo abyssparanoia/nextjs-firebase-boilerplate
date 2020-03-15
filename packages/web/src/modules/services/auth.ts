@@ -1,39 +1,32 @@
 import { ExNextPageContext } from 'next'
 import { stringify } from 'query-string'
-import { auth } from 'src/firebase/client'
 import { Credential } from 'src/firebase/interface'
 import Router from 'next/router'
-import { refreshIDToken } from 'src/modules/repositories/auth'
+import { refreshIDToken, setCredentialToCookie, getCredentialFromCookie } from 'src/modules/repositories/auth'
+import { actions } from 'src/modules/auth'
 
-export const authenticate = async ({ req }: ExNextPageContext): Promise<Credential | undefined> => {
-  let credential: Credential | undefined = undefined
+export const authenticate = async (ctx: ExNextPageContext): Promise<Credential | undefined> => {
+  const { req, store } = ctx
+
+  const credential = getCredentialFromCookie(ctx)
+
   // on server
-  if (req && req.session) {
-    const credential = req.session.credential
-
-    if (credential && credential.accessToken) {
-      await req.firebaseAuth.verifyIdToken(credential.accessToken).catch(async err => {
-        if (err.code === 'auth/id-token-expired') {
-          const { refreshToken, idToken } = await refreshIDToken({ refreshToken: credential.refreshToken })
-          credential.accessToken = idToken
-          credential.refreshToken = refreshToken
-        }
-      })
-    }
-
-    return credential
-    // on browser
-  } else {
-    const user = auth.currentUser
-    if (user) {
-      const idTokenResult = await user.getIdTokenResult(true)
-      return {
-        uid: user.uid,
-        accessToken: idTokenResult.token,
-        refreshToken: user.refreshToken
+  if (req && credential) {
+    await req.firebaseAuth.verifyIdToken(credential.accessToken).catch(async err => {
+      if (err.code === 'auth/id-token-expired') {
+        const { refreshToken, idToken: accessToken, userId: uid } = await refreshIDToken({
+          refreshToken: credential.refreshToken!
+        })
+        setCredentialToCookie({ refreshToken, accessToken, uid }, ctx)
+        credential.accessToken = accessToken
+        credential.refreshToken = refreshToken
+        return
       }
-    }
+      throw err
+    })
   }
+
+  await store.dispatch(actions.setCredential(credential))
 
   return credential
 }

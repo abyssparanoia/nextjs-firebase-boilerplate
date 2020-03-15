@@ -1,10 +1,41 @@
+import { parseCookies, setCookie, destroyCookie } from 'nookies'
 import { auth, firebase, FirebaseAuthenticationError } from 'src/firebase/client'
 import { Credential } from 'src/firebase/interface'
 import { HttpClient } from './httpClient'
+import { NextPageContext } from 'next'
+
+export const getCredentialFromCookie = (ctx?: NextPageContext): Credential | undefined => {
+  const { accessToken, refreshToken, uid } = (parseCookies(ctx) as unknown) as Partial<Credential>
+  if (accessToken && refreshToken && uid) {
+    return { accessToken, refreshToken, uid }
+  }
+  return undefined
+}
+
+export const setCredentialToCookie = (cred: Credential, ctx?: NextPageContext) => {
+  setCookie(ctx, 'accessToken', cred.accessToken, {
+    maxAge: 30 * 24 * 60 * 60,
+    path: '/'
+  })
+  setCookie(ctx, 'refreshToken', cred.refreshToken, {
+    maxAge: 30 * 24 * 60 * 60,
+    path: '/'
+  })
+  setCookie(ctx, 'uid', cred.uid, {
+    maxAge: 30 * 24 * 60 * 60,
+    path: '/'
+  })
+}
+
+const destroyCredential = (ctx?: NextPageContext) => {
+  destroyCookie(ctx, 'accessToken')
+  destroyCookie(ctx, 'refreshToken')
+  destroyCookie(ctx, 'uid')
+}
 
 export const signInWithGoogle = async () => {
   await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
-  const credential = await createSession(auth.currentUser)
+  const credential = await createSession()
   return credential
 }
 
@@ -17,15 +48,12 @@ export const signInWithEmailAndPassword = ({ email, password }: ISignInWithEmail
   auth.signInWithEmailAndPassword(email, password)
 
 export const signOut = async () => {
-  await fetch(`/api/session`, {
-    method: 'DELETE',
-    credentials: 'same-origin'
-  })
-
-  await auth.signOut()
+  destroyCredential()
+  return auth.signOut()
 }
 
-export const createSession = async (firebaseUser: firebase.User | null) => {
+export const createSession = async () => {
+  const firebaseUser = auth.currentUser
   if (!firebaseUser) {
     throw new Error('認証に失敗しました')
   }
@@ -40,12 +68,7 @@ export const createSession = async (firebaseUser: firebase.User | null) => {
     refreshToken: firebaseUser.refreshToken
   }
 
-  await fetch(`/api/session`, {
-    method: 'POST',
-    headers: new Headers({ 'Content-Type': 'application/json' }),
-    credentials: 'same-origin',
-    body: JSON.stringify({ ...credential })
-  })
+  setCredentialToCookie(credential)
 
   return credential
 }

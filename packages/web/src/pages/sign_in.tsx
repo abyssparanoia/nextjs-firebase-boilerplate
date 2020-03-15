@@ -75,9 +75,9 @@ const SignIn = (_: Props) => {
 }
 
 SignIn.getInitialProps = async (ctx: ExNextPageContext): Promise<void> => {
-  const { req } = ctx
+  const { store } = ctx
   // redirect when already authenticated
-  if (req && req.session && req.session.credential) {
+  if (store.getState().auth.credential) {
     redirect(ctx, '/')
   }
 }

@@ -5,7 +5,7 @@ import { Store } from 'redux'
 import { ReduxStore } from 'src/modules/reducer'
 
 declare module 'next' {
-  type ExNextPageContext = NextPageContext & {
+  type ExNextPageContext = Omit<NextPageContext, 'store'> & {
     req?: Express.Request
     res?: Express.Response
     store: Store<ReduxStore>
