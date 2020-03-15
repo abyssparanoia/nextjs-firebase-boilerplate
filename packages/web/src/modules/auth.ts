@@ -5,6 +5,7 @@ import { Credential } from 'src/firebase/interface'
 import * as repository from './repositories'
 import Router from 'next/router'
 import { pushFeedback } from './feedback'
+import { refreshIDToken, setCredentialToCookie } from './repositories'
 
 const actionCreator = actionCreatorFactory('auth')
 
@@ -32,6 +33,30 @@ const redirectAfterSignIn = () => {
   } else {
     Router.push(redirectTo)
   }
+}
+
+export const wrapHttpRequest = async (dispatch: Dispatch, fn: () => Promise<any>, credential: Credential) => {
+  let res: ReturnType<typeof fn>
+  try {
+    res = await fn()
+  } catch (err) {
+    if (err.message !== 'token.expired') {
+      throw err
+    }
+
+    const { refreshToken, idToken: accessToken, userId: uid } = await refreshIDToken({
+      refreshToken: credential.refreshToken
+    })
+    credential.accessToken = accessToken
+    credential.refreshToken = refreshToken
+    credential.uid = uid
+    setCredentialToCookie(credential)
+    dispatch(actions.setCredential(credential))
+
+    res = await fn()
+  }
+
+  return res
 }
 
 export const signInWithGoogle = () => async (dispatch: Dispatch) => {
