@@ -3,9 +3,10 @@ import { stringify } from 'query-string'
 import { Credential } from 'src/firebase/interface'
 import Router from 'next/router'
 import { refreshIDToken, setCredentialToCookie, getCredentialFromCookie } from 'src/modules/repositories/auth'
+import { actions } from 'src/modules/auth'
 
 export const authenticate = async (ctx: ExNextPageContext): Promise<Credential | undefined> => {
-  const { req } = ctx
+  const { req, store } = ctx
 
   const credential = getCredentialFromCookie(ctx)
 
@@ -24,6 +25,8 @@ export const authenticate = async (ctx: ExNextPageContext): Promise<Credential |
       throw err
     })
   }
+
+  await store.dispatch(actions.setCredential(credential))
 
   return credential
 }
