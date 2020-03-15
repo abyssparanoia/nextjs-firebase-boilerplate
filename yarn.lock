@@ -12761,7 +12761,7 @@ nodemon@2.0.2:
     undefsafe "^2.0.2"
     update-notifier "^2.5.0"
 
-nookies@^2.1.1:
+nookies@2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/nookies/-/nookies-2.1.1.tgz#89658d0e75d32911e1614635fa62cf3dfd002eae"
   integrity sha512-ciGuW6z5nKRRmu3mobdoN/oKFflKuNOp2H5viAcdlE21/PxjDk/2Oo3bLq3Y10yNfr0gIvKV0rfRPqrtRSz3iw==
