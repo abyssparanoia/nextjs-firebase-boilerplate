@@ -2,6 +2,7 @@ import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import Jarvis from 'webpack-jarvis'
 import webpack from 'webpack'
+import { API_ENDPOINT_DEV } from './constants.babel'
 
 const ENTRY_POINT = '../../'
 
@@ -79,7 +80,7 @@ export const renderer = {
       port: 1337
     }),
     new webpack.EnvironmentPlugin({
-      API_ENDPOINT: 'http://localhost:3000'
+      API_ENDPOINT: API_ENDPOINT_DEV
     })
   ],
 
