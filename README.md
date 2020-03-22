@@ -30,11 +30,12 @@
 
 ### Apps
 
-| Package                                    | Localhost             | Prodction  |
-| :----------------------------------------- | :-------------------- | :--------- |
-| **[[next.js] web](./packages/web)**        | http://localhost:3000 | web.\*     |
-| **[[next.js] app](./packages/app)**        | http://localhost:3002 | app.\*     |
-| **[[nestjs] backend](./packages/backend)** | http://localhost:3001 | backend.\* |
+| Package                                        | Localhost             | Prodction  |
+| :--------------------------------------------- | :-------------------- | :--------- |
+| **[[next.js] web](./packages/web)**            | http://localhost:3000 | web.\*     |
+| **[[next.js] app](./packages/app)**            | http://localhost:3002 | app.\*     |
+| **[[nestjs] backend](./packages/backend)**     | http://localhost:3001 | backend.\* |
+| **[[electron] electron](./packages/electron)** | http://localhost:3003 | native app |
 
 ### how to run on local
 
@@ -56,4 +57,7 @@ $ yarn workspace @abyssparanoia/backend start
 
 # ionic run
 $ yarn workspace @abyssparanoia/app start
+
+# electron run
+$ yarn workspace @abyssparanoia/electron start
 ```
