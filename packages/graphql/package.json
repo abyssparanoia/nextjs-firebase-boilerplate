@@ -6,11 +6,12 @@
   "module": "esm/index.js",
   "typings": "esm/index.d.ts",
   "scripts": {
-    "build": "graphql-codegen --config codegen.yml && run-p -l build:*",
+    "build": "graphql-codegen --config codegen.yml && run-p -l build:* && yarn format",
     "build:cjs": "tsc --project . --module commonjs --outDir ./cjs",
     "build:esm": "tsc --project . --module es2015 --outDir ./esm",
     "clean": "rimraf esm cjs",
     "lint": "tsc -p . --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "prebuild": "yarn clean"
   },
   "dependencies": {

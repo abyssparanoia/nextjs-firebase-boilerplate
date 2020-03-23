@@ -22,7 +22,7 @@ export type MutationCreateUserArgs = {
 
 export type Query = {
   __typename?: 'Query'
-  users: Array<User>
+  list: Array<User>
 }
 
 export type User = {
@@ -46,7 +46,7 @@ export type CreateUserMutation = { __typename?: 'Mutation' } & {
 export type ListUsersQueryVariables = {}
 
 export type ListUsersQuery = { __typename?: 'Query' } & {
-  users: Array<{ __typename?: 'User' } & Pick<User, 'id' | 'name'>>
+  list: Array<{ __typename?: 'User' } & Pick<User, 'id' | 'name'>>
 }
 
 export const CreateUserDocument = gql`
@@ -89,7 +89,7 @@ export type CreateUserMutationOptions = ApolloReactCommon.BaseMutationOptions<
 >
 export const ListUsersDocument = gql`
   query ListUsers {
-    users {
+    list {
       id
       name
     }

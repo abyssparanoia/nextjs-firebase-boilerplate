@@ -2,7 +2,7 @@ import { Resolver, Query, Args, Mutation } from '@nestjs/graphql'
 import { User } from './user.entity'
 import { UserCreateInput } from './dto/user.input'
 
-const users = [
+const list = [
   {
     id: '1',
     name: 'Aさん'
@@ -16,8 +16,8 @@ const users = [
 @Resolver('User')
 export class UserResolver {
   @Query(() => [User])
-  async users(): Promise<User[]> {
-    return users
+  async list(): Promise<User[]> {
+    return list
   }
 
   @Mutation(() => User)
