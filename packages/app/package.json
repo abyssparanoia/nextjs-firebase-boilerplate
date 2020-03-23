@@ -10,6 +10,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@abyssparanoia/interface": "0.0.1",
     "@capacitor/core": "1.5.1",
     "@ionic/react": "5.0.5",
     "@ionic/react-router": "5.0.5",
