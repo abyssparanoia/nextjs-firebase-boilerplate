@@ -23,7 +23,7 @@ jobs:
           cp dummy.firebase.client.key.json packages/web/firebase.client.key.json 
           cp dummy.firebase.admin.key.json packages/web/firebase.admin.key.json
           cp dummy.firebase.client.key.json packages/app/src/firebase/firebase.client.key.json
-          cp dummy.firebase.client.key.json packages/web-static-graphql/src/firebase/firebase.client.key.json
+          cp dummy.firebase.client.key.json packages/web-static-graphql/firebase.client.key.json
 
       - name: install deps
         run: yarn
