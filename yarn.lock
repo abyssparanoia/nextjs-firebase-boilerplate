@@ -9192,7 +9192,7 @@ firebase-functions@3.5.0:
     jsonwebtoken "^8.5.1"
     lodash "^4.17.14"
 
-firebase@7.12.0:
+firebase@7.12.0, firebase@^7.12.0:
   version "7.12.0"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-7.12.0.tgz#aafaa51f0b081e356c2df670e39f8bd7c2f7d774"
   integrity sha512-OXOOYE1RATpkBPEbiwW4qlz/raXkpAEqtxXeRKDIqJcSuzK2oyBVj5zrME1sqk77e0gjIlpbvpV0Vm36cFgpYg==

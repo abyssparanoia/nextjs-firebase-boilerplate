@@ -4,6 +4,8 @@ import { useListUsersQuery } from '@abyssparanoia/graphql'
 import ApolloClient from 'apollo-client'
 import { NormalizedCacheObject } from 'apollo-cache-inmemory'
 import Router from 'next/router'
+import { auth } from 'src/firebase/client'
+import firebase from 'firebase'
 
 type InitialProps = {
   apollo: ApolloClient<NormalizedCacheObject>
@@ -28,6 +30,21 @@ const Index = (props: Props) => {
           ))}
         </div>
       )}
+      <Button
+        onClick={async () => {
+          await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+        }}
+      >
+        sign in
+      </Button>
+
+      <Button
+        onClick={async () => {
+          await auth.signOut()
+        }}
+      >
+        sign out
+      </Button>
     </div>
   )
 }

@@ -3,27 +3,58 @@ import React from 'react'
 import withApollo from 'next-with-apollo'
 import { NextPageContext } from 'next'
 import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory'
-import { ApolloLink } from 'apollo-link'
+import { ApolloLink, fromPromise } from 'apollo-link'
 import { ApolloClient } from 'apollo-client'
 import { createHttpLink } from 'apollo-link-http'
-// import { setContext, ContextSetter } from 'apollo-link-context'
+import { setContext, ContextSetter } from 'apollo-link-context'
 import { onError, ErrorHandler } from 'apollo-link-error'
 import { ApolloProvider } from '@apollo/react-hooks'
+import { auth } from 'src/firebase/client'
+import Router from 'next/router'
 
-// export const setter = (context?: NextPageContext): ContextSetter => (_, _prevContext) => {
-//   if (!token) {
-//     return {}
-//   }
-//   return {
-//     headers: {
-//       Authorization: `Bearer ${token}`
-//     }
-//   }
-// }
+export const setter = (_?: NextPageContext): ContextSetter => async (_, _prevContext) => {
+  const token = await auth.currentUser?.getIdToken()
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const errorHandler = (context?: NextPageContext): ErrorHandler => ({ graphQLErrors, operation, forward }) => {
-  console.error(graphQLErrors)
+  console.log(token)
+
+  if (!token) {
+    return {}
+  }
+  return {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+}
+
+export const errorHandler = (_?: NextPageContext): ErrorHandler => ({ graphQLErrors, operation, forward }) => {
+  if (graphQLErrors) {
+    graphQLErrors.some(({ extensions }) => {
+      switch (extensions && extensions.code) {
+        case 'UNAUTHENTICATED':
+          return fromPromise(
+            auth.currentUser ? auth.currentUser.getIdToken(true) : new Promise<undefined>(resolve => resolve(undefined))
+          )
+            .filter(value => Boolean(value))
+            .flatMap(token => {
+              if (!token) {
+                Router.push('/sign_in')
+                throw new Error(`no token`)
+              }
+              const oldHeaders = operation.getContext().headers
+              operation.setContext({
+                headers: {
+                  ...oldHeaders,
+                  authorization: `Bearer ${token}`
+                }
+              })
+              return forward(operation)
+            })
+        default:
+          return false
+      }
+    })
+  }
 }
 
 const isBrowser = typeof window !== 'undefined'
@@ -40,8 +71,7 @@ export default withApollo<NormalizedCacheObject>(
     return new ApolloClient({
       connectToDevTools: isBrowser,
       ssrMode: false,
-      //   link: ApolloLink.from([setContext(setter(ctx)), onError(errorHandler(ctx)), withHttp]),
-      link: ApolloLink.from([onError(errorHandler(ctx)), withHttp]),
+      link: ApolloLink.from([setContext(setter(ctx)), onError(errorHandler(ctx)), withHttp]),
       cache: new InMemoryCache()
     })
   },
