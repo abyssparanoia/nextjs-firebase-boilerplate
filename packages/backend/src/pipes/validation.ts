@@ -29,9 +29,9 @@ export class ValidationPipe implements PipeTransform<any> {
     const result: {
       [key: string]: any
     } = {}
-    errors.forEach(el => {
+    errors.forEach((el) => {
       let prop = el.property
-      Object.entries(el.constraints).forEach(constraint => {
+      Object.entries(el.constraints).forEach((constraint) => {
         result[prop + constraint[0]] = `${constraint[1]}`
       })
     })
@@ -40,6 +40,6 @@ export class ValidationPipe implements PipeTransform<any> {
 
   private toValidate(metatype: String | Boolean | Number | Array<any> | Object): boolean {
     const types = [String, Boolean, Number, Array, Object]
-    return !types.find(type => metatype === type)
+    return !types.find((type) => metatype === type)
   }
 }

@@ -15,7 +15,7 @@ const Index = (_: Props) => {
   const dispatch = useDispatch()
 
   const handleClick = useCallback(() => dispatch(pushFeedback({ variant: 'info', message: 'hello world!' })), [
-    dispatch
+    dispatch,
   ])
 
   console.log(tableList)

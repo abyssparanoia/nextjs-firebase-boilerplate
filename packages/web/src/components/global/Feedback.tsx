@@ -8,7 +8,7 @@ interface Props {}
 
 export const GlobalFeedback = (_: Props) => {
   const { feedbackList } = useSelector(({ feedback: { list } }: ReduxStore) => ({
-    feedbackList: list
+    feedbackList: list,
   }))
 
   const dispatch = useDispatch()

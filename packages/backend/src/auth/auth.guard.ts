@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
     }
     const idToken = authorization.slice(7, authorization.length)
 
-    const decodedIdToken = await auth.verifyIdToken(idToken).catch(err => {
+    const decodedIdToken = await auth.verifyIdToken(idToken).catch((err) => {
       console.error(err)
       throw new ForbiddenException(`${err.message}`)
     })

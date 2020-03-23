@@ -2,12 +2,12 @@ import actionCreatorFactory from 'typescript-fsa'
 import { reducerWithInitialState } from 'typescript-fsa-reducers'
 import { Dispatch } from 'redux'
 
-const timeout = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms))
+const timeout = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms))
 
 const actionCreator = actionCreatorFactory('table')
 
 export const actions = {
-  fetchTableList: actionCreator.async<void, { list: string[] }, Error>('list')
+  fetchTableList: actionCreator.async<void, { list: string[] }, Error>('list'),
 }
 
 export interface State {
@@ -18,7 +18,7 @@ export interface State {
 
 const initialState: State = {
   list: [],
-  isLoading: false
+  isLoading: false,
 }
 
 export const fetchTableList = () => async (dispatch: Dispatch) => {
@@ -30,9 +30,9 @@ export const fetchTableList = () => async (dispatch: Dispatch) => {
 }
 
 export const reducer = reducerWithInitialState(initialState)
-  .case(actions.fetchTableList.started, state => ({
+  .case(actions.fetchTableList.started, (state) => ({
     ...state,
-    isLoading: true
+    isLoading: true,
   }))
   .case(actions.fetchTableList.done, (state, payload) => ({ ...state, isLoading: false, list: payload.result.list }))
   .case(actions.fetchTableList.failed, (state, payload) => ({ ...state, isLoading: false, error: payload.error }))

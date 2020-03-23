@@ -12,10 +12,10 @@ export const authenticate = async (ctx: ExNextPageContext): Promise<Credential |
 
   // on server
   if (req && credential) {
-    await req.firebaseAuth.verifyIdToken(credential.accessToken).catch(async err => {
+    await req.firebaseAuth.verifyIdToken(credential.accessToken).catch(async (err) => {
       if (err.code === 'auth/id-token-expired') {
         const { refreshToken, idToken: accessToken, userId: uid } = await refreshIDToken({
-          refreshToken: credential.refreshToken!
+          refreshToken: credential.refreshToken!,
         })
         setCredentialToCookie({ refreshToken, accessToken, uid }, ctx)
         credential.accessToken = accessToken
@@ -39,7 +39,7 @@ export const authorize = async ({ req, res, store }: ExNextPageContext) => {
     const redirectTo = req.url
 
     res!.writeHead(302, {
-      Location: `/sign_in?${stringify({ redirectTo })}`
+      Location: `/sign_in?${stringify({ redirectTo })}`,
     })
     res.end()
     return

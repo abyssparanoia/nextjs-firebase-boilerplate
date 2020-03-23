@@ -12,7 +12,7 @@ const actionCreator = actionCreatorFactory('auth')
 export const actions = {
   signInWithGoogle: actionCreator.async<void, { credential: Credential }, Error>('SIGN_IN_WITH_GOOGLE'),
   signOut: actionCreator.async<void, void, Error>('SIGN_OUT'),
-  setCredential: actionCreator<Credential | undefined>('SET_CREDENTIAL')
+  setCredential: actionCreator<Credential | undefined>('SET_CREDENTIAL'),
 }
 
 export interface State {
@@ -22,7 +22,7 @@ export interface State {
 }
 
 const initialState: State = {
-  isLoading: false
+  isLoading: false,
 }
 
 const redirectAfterSignIn = () => {
@@ -45,7 +45,7 @@ export const wrapHttpRequest = async (dispatch: Dispatch, fn: () => Promise<any>
     }
 
     const { refreshToken, idToken: accessToken, userId: uid } = await refreshIDToken({
-      refreshToken: credential.refreshToken
+      refreshToken: credential.refreshToken,
     })
     credential.accessToken = accessToken
     credential.refreshToken = refreshToken
@@ -86,34 +86,34 @@ export const signOut = () => async (dispatch: Dispatch) => {
 export const reducer = reducerWithInitialState(initialState)
   .case(actions.setCredential, (state, payload) => ({
     ...state,
-    credential: payload
+    credential: payload,
   }))
-  .case(actions.signInWithGoogle.started, state => ({
+  .case(actions.signInWithGoogle.started, (state) => ({
     ...state,
-    isLoading: true
+    isLoading: true,
   }))
   .case(actions.signInWithGoogle.done, (state, payload) => ({
     ...state,
     isLoading: false,
-    credential: payload.result.credential
+    credential: payload.result.credential,
   }))
   .case(actions.signInWithGoogle.failed, (state, payload) => ({
     ...state,
     isLoading: false,
-    error: payload.error
+    error: payload.error,
   }))
-  .case(actions.signOut.started, state => ({
+  .case(actions.signOut.started, (state) => ({
     ...state,
     isLoading: true,
-    error: undefined
+    error: undefined,
   }))
-  .case(actions.signOut.done, state => ({
+  .case(actions.signOut.done, (state) => ({
     ...state,
     isLoading: false,
-    credential: undefined
+    credential: undefined,
   }))
   .case(actions.signOut.failed, (state, payload) => ({
     ...state,
     isLoading: false,
-    error: payload.error
+    error: payload.error,
   }))

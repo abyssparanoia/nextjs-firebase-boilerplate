@@ -10,7 +10,7 @@ const variantIcon = {
   success: CheckCircleIcon,
   warning: WarningIcon,
   error: ErrorIcon,
-  info: InfoIcon
+  info: InfoIcon,
 }
 
 interface IProps extends Omit<SnackbarProps, 'open'> {
@@ -35,7 +35,7 @@ export const Snackbar = ({ message, variant, onClose, open }: IProps) => {
     <MuiSnackbar
       anchorOrigin={{
         vertical: 'top',
-        horizontal: 'center'
+        horizontal: 'center',
       }}
       open={isOpen}
       autoHideDuration={3000}

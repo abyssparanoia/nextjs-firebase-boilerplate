@@ -14,33 +14,33 @@ const variantIcon = {
   success: CheckCircleIcon,
   warning: WarningIcon,
   error: ErrorIcon,
-  info: InfoIcon
+  info: InfoIcon,
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
   success: {
-    backgroundColor: green[600]
+    backgroundColor: green[600],
   },
   error: {
-    backgroundColor: theme.palette.error.dark
+    backgroundColor: theme.palette.error.dark,
   },
   info: {
-    backgroundColor: theme.palette.primary.main
+    backgroundColor: theme.palette.primary.main,
   },
   warning: {
-    backgroundColor: amber[700]
+    backgroundColor: amber[700],
   },
   icon: {
-    fontSize: 20
+    fontSize: 20,
   },
   iconVariant: {
     opacity: 0.9,
-    marginRight: theme.spacing(1)
+    marginRight: theme.spacing(1),
   },
   message: {
     display: 'flex',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 }))
 
 interface IProps extends Omit<SnackbarContentProps, 'variant'> {
@@ -67,7 +67,7 @@ export const SnackbarContent = (props: IProps) => {
       action={[
         <IconButton key="close" aria-label="Close" color="inherit" onClick={onClose}>
           <CloseIcon className={classes.icon} />
-        </IconButton>
+        </IconButton>,
       ]}
       {...other}
     />

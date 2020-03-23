@@ -15,15 +15,15 @@ export const getCredentialFromCookie = (ctx?: NextPageContext): Credential | und
 export const setCredentialToCookie = (cred: Credential, ctx?: NextPageContext) => {
   setCookie(ctx, 'accessToken', cred.accessToken, {
     maxAge: 30 * 24 * 60 * 60,
-    path: '/'
+    path: '/',
   })
   setCookie(ctx, 'refreshToken', cred.refreshToken, {
     maxAge: 30 * 24 * 60 * 60,
-    path: '/'
+    path: '/',
   })
   setCookie(ctx, 'uid', cred.uid, {
     maxAge: 30 * 24 * 60 * 60,
-    path: '/'
+    path: '/',
   })
 }
 
@@ -58,14 +58,14 @@ export const createSession = async () => {
     throw new Error('認証に失敗しました')
   }
 
-  const idTokenResult = await firebaseUser.getIdTokenResult(true).catch(err => {
+  const idTokenResult = await firebaseUser.getIdTokenResult(true).catch((err) => {
     throw new FirebaseAuthenticationError(err)
   })
 
   const credential: Credential = {
     uid: firebaseUser.uid,
     accessToken: idTokenResult.token,
-    refreshToken: firebaseUser.refreshToken
+    refreshToken: firebaseUser.refreshToken,
   }
 
   setCredentialToCookie(credential)
@@ -92,7 +92,7 @@ export const refreshIDToken = async ({ refreshToken }: Pick<IRefreshIDTokenReque
 
   const res = await new HttpClient({
     url: `https://securetoken.googleapis.com/v1/token?key=${process.env.FIREBASE_CLIENT_API_KEY}`,
-    convert: true
+    convert: true,
   }).post<IRefreshIDTokenResponse>(param)
 
   return res.data

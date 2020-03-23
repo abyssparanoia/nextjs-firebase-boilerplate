@@ -13,5 +13,5 @@ export const createRootReducer = () =>
   combineReducers({
     table: tableReducer,
     auth: authReducer,
-    feedback: feedbackReducer
+    feedback: feedbackReducer,
   })

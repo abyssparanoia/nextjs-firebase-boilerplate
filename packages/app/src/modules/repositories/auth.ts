@@ -25,10 +25,10 @@ export const signInWithEmailAndPassword = ({ email, password }: ISignInWithEmail
 
 const signIn = async () => {
   const {
-    data: { user, customToken }
+    data: { user, customToken },
   } = await new HttpClient({
     url: `${process.env.REACT_APP_API_HOST}/auth/sign_in`,
-    token: await getToken()
+    token: await getToken(),
   }).post<SignInResponse>({})
 
   await auth.signInWithCustomToken(customToken)

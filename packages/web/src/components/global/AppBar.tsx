@@ -13,16 +13,16 @@ import { signOut } from 'src/modules/auth'
 import { Link } from 'src/components/atoms'
 import { ReduxStore } from 'src/modules/reducer'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1
-  }
+    flexGrow: 1,
+  },
 }))
 
 interface Props {}
@@ -31,7 +31,7 @@ export const MenuAppBar = (_: Props) => {
   const classes = useStyles({})
 
   const { credential } = useSelector(({ auth: { credential } }: ReduxStore) => ({
-    credential
+    credential,
   }))
 
   const dispatch = useDispatch()
@@ -70,12 +70,12 @@ export const MenuAppBar = (_: Props) => {
                 anchorEl={anchorEl}
                 anchorOrigin={{
                   vertical: 'top',
-                  horizontal: 'right'
+                  horizontal: 'right',
                 }}
                 keepMounted
                 transformOrigin={{
                   vertical: 'top',
-                  horizontal: 'right'
+                  horizontal: 'right',
                 }}
                 open={open}
                 onClose={handleClose}

@@ -8,21 +8,21 @@ const theme = createMuiTheme({
       light: '#757ce8',
       main: '#282c34',
       dark: '#002884',
-      contrastText: '#fff'
+      contrastText: '#fff',
     },
     secondary: {
       light: '#ff7961',
       main: '#f44336',
       dark: '#ba000d',
-      contrastText: '#000'
+      contrastText: '#000',
     },
     error: {
-      main: red.A400
+      main: red.A400,
     },
     background: {
-      default: '#c9c9c9'
-    }
-  }
+      default: '#c9c9c9',
+    },
+  },
 })
 
 export default theme

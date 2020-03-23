@@ -5,8 +5,8 @@ import { Theme } from '@material-ui/core'
 
 const useStyles = makeStyles((theme: Theme) => ({
   button: {
-    margin: theme.spacing(1)
-  }
+    margin: theme.spacing(1),
+  },
 }))
 
 interface Props extends ButtonProps {}

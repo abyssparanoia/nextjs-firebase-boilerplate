@@ -13,10 +13,10 @@ export default class extends Document {
     // main ページのcssをここでレンダリングさせるためのenhancer
     ctx.renderPage = () =>
       originalRenderPage({
-        enhanceApp: App => props => ({
+        enhanceApp: (App) => (props) => ({
           ...styledComponentsSheet.collectStyles(<App {...props} />),
-          ...materialSheets.collect(<App {...props} />)
-        })
+          ...materialSheets.collect(<App {...props} />),
+        }),
       })
 
     const initialProps = await Document.getInitialProps(ctx)
@@ -28,7 +28,7 @@ export default class extends Document {
           {materialSheets.getStyleElement()}
           {styledComponentsSheet.getStyleElement()}
         </>
-      )
+      ),
     }
   }
 
