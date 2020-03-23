@@ -37,6 +37,9 @@ export default withApollo<NormalizedCacheObject>(
       credentials: 'same-origin'
     })
 
+    console.error('aaaaaaa')
+    console.error(isBrowser)
+
     return new ApolloClient({
       connectToDevTools: isBrowser,
       ssrMode: false,
