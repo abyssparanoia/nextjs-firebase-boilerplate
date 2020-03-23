@@ -1,5 +1,5 @@
 overwrite: true
-schema: '../backend-graphql/schema.graphql'
+schema: '../backend-graphql/src/schema.graphql'
 documents: ['src/queries/**.graphql', 'src/mutations/**.graphql']
 generates:
   src/react-apollo/generated.tsx:
