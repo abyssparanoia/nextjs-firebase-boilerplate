@@ -1,38 +1,25 @@
 import * as React from 'react'
-import App, { AppProps as NextAppProps, AppContext } from 'next/app'
+import App, { AppInitialProps } from 'next/app'
+import { ApolloProvider } from '@apollo/react-hooks'
+import { WithApolloProps } from 'next-with-apollo'
 import { StylesProvider } from '@material-ui/styles'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider as StyledThemeProvider } from 'styled-components'
 import Head from 'next/head'
 import theme from 'src/components/thema'
+import WithApollo from 'src/fixtures/withApollo'
 
-interface AppProps extends NextAppProps {
-  ua: string
-}
-
-class NextApp extends App<AppProps> {
-  static async getInitialProps({ Component, ctx }: AppContext) {
-    let pageProps = {}
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
-    }
-
-    return {
-      pageProps
-    }
-  }
-
+class NextApp extends App<AppInitialProps & WithApolloProps<{}>> {
   componentDidCatch = (error: Error, errorInfo: React.ErrorInfo) => {
     super.componentDidCatch(error, errorInfo)
   }
 
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, apollo } = this.props
 
     return (
-      <>
+      <ApolloProvider client={apollo}>
         <Head>
           <title>boiler</title>
         </Head>
@@ -44,9 +31,9 @@ class NextApp extends App<AppProps> {
             </StyledThemeProvider>
           </MuiThemeProvider>
         </StylesProvider>
-      </>
+      </ApolloProvider>
     )
   }
 }
 
-export default NextApp
+export default WithApollo(NextApp)
