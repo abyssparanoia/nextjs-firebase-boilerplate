@@ -6,5 +6,5 @@ const HealthCheck = () => {
 }
 
 export default dynamic(() => Promise.resolve(HealthCheck), {
-  ssr: false,
+  ssr: false
 })

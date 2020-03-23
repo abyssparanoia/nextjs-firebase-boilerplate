@@ -23,23 +23,23 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.up(400 + theme.spacing(6))]: {
         width: 400,
         marginLeft: 'auto',
-        marginRight: 'auto',
-      },
+        marginRight: 'auto'
+      }
     },
     paper: {
       marginTop: theme.spacing(16),
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      padding: `${theme.spacing(5)}px ${theme.spacing(3)}px ${theme.spacing(5)}px`,
+      padding: `${theme.spacing(5)}px ${theme.spacing(3)}px ${theme.spacing(5)}px`
     },
     space: {
-      height: 50,
+      height: 50
     },
     avatar: {
       margin: theme.spacing(2),
-      backgroundColor: theme.palette.secondary.main,
-    },
+      backgroundColor: theme.palette.secondary.main
+    }
   })
 )
 
@@ -47,7 +47,7 @@ type Props = {}
 
 const SignIn = (_: Props) => {
   const { isLoading } = useSelector(({ auth }: ReduxStore) => ({
-    isLoading: auth.isLoading,
+    isLoading: auth.isLoading
   }))
 
   const dispatch = useDispatch()

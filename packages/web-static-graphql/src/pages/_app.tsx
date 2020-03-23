@@ -20,7 +20,7 @@ class NextApp extends App<AppProps> {
     }
 
     return {
-      pageProps,
+      pageProps
     }
   }
 

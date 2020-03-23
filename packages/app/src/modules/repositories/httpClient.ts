@@ -14,8 +14,8 @@ export class HttpClient {
     this.axiosInstance = axios.create({
       headers: {
         'Content-Type': 'application/json',
-        Authorization: this.token ? `Bearer ${this.token}` : '',
-      },
+        Authorization: this.token ? `Bearer ${this.token}` : ''
+      }
     })
   }
 
@@ -70,7 +70,7 @@ export class HttpClient {
   public async delete<T = any>(): Promise<AxiosResponse<T>> {
     return this.axiosInstance.delete(this.basedUrl, {
       headers: { 'Content-Type': 'application/json', Authorization: this.token ? `Bearer ${this.token}` : '' },
-      data: null,
+      data: null
     })
   }
 }

@@ -17,5 +17,5 @@ export const createRootReducer = (history: History) =>
     router: connectRouter(history),
     table: tableReducer,
     auth: authReducer,
-    feedback: feedbackReducer,
+    feedback: feedbackReducer
   })

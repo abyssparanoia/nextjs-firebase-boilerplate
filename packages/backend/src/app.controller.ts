@@ -17,7 +17,7 @@ export class AppController {
     console.log(signInRequestDto)
     return {
       accessToken: 'accessToken',
-      refreshToken: 'refreshToken',
+      refreshToken: 'refreshToken'
     }
   }
 }

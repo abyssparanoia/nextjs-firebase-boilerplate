@@ -6,7 +6,7 @@ import { useHistory } from 'react-router'
 export const Authorization: React.FunctionComponent = ({ children }) => {
   const { firebaseUser, isLoading } = useSelector(({ auth: { firebaseUser, isLoading } }: ReduxStore) => ({
     firebaseUser,
-    isLoading,
+    isLoading
   }))
   const history = useHistory()
 
