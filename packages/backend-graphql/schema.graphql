@@ -4,10 +4,10 @@
 # -----------------------------------------------
 
 type Query {
-  recipes: [Recipe!]!
+  users: [User!]!
 }
 
-type Recipe {
+type User {
   id: ID!
-  title: String!
+  name: String!
 }

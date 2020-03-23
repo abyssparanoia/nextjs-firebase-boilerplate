@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
 import { GraphQLModule } from '@nestjs/graphql'
-import { RecipesModule } from './recipes/recipes.module'
+import { UserModule } from './user/user.module'
 
 @Module({
   imports: [
@@ -8,7 +8,7 @@ import { RecipesModule } from './recipes/recipes.module'
       playground: true,
       autoSchemaFile: 'schema.graphql'
     }),
-    RecipesModule
+    UserModule
   ]
 })
 export class AppModule {}
