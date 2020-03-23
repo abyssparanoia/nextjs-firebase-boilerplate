@@ -19,7 +19,7 @@ const Index = (props: Props) => {
       {loading && <div>loading.......</div>}
       {data && (
         <div>
-          {data.users.map(user => (
+          {data.list.map(user => (
             <li key={user.id}>{user.name}</li>
           ))}
         </div>
