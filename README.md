@@ -30,12 +30,13 @@
 
 ### Apps
 
-| Package                                        | Localhost             | Prodction  |
-| :--------------------------------------------- | :-------------------- | :--------- |
-| **[[next.js] web](./packages/web)**            | http://localhost:3000 | web.\*     |
-| **[[next.js] app](./packages/app)**            | http://localhost:3002 | app.\*     |
-| **[[nestjs] backend](./packages/backend)**     | http://localhost:3001 | backend.\* |
-| **[[electron] electron](./packages/electron)** | http://localhost:3003 | native app |
+| Package                                               | Localhost             | Prodction          |
+| :---------------------------------------------------- | :-------------------- | :----------------- |
+| **[[next.js] web](./packages/web)**                   | http://localhost:3000 | web.\*             |
+| **[[next.js] app](./packages/app)**                   | http://localhost:3002 | app.\*             |
+| **[[nestjs] backend](./packages/backend)**            | http://localhost:3001 | backend.\*         |
+| **[[nestjs] gql-server](./packages/backend-graphql)** | http://localhost:3003 | backend-graphql.\* |
+| **[[electron] electron](./packages/electron)**        | http://localhost:3004 | native app         |
 
 ### how to run on local
 
