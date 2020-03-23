@@ -12,12 +12,29 @@ import { ApolloProvider } from '@apollo/react-hooks'
 import { auth } from 'src/firebase/client'
 import Router from 'next/router'
 
+const sleep = (ms: number) => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve()
+    }, ms)
+  })
+}
+
 export const setter = (_?: NextPageContext): ContextSetter => async (_, _prevContext) => {
-  const token = await auth.currentUser?.getIdToken()
+  let token: string | undefined = undefined
+
+  token = await auth.currentUser?.getIdToken()
 
   if (!token) {
-    return {}
+    await sleep(500)
+    token = await auth.currentUser?.getIdToken()
+    console.log(token)
+
+    if (token) {
+      return {}
+    }
   }
+
   return {
     headers: {
       Authorization: `Bearer ${token}`
