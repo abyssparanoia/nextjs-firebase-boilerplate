@@ -11,7 +11,7 @@ type InitialProps = {
 
 type Props = {} & InitialProps
 
-const Index = (props: Props) => {
+const About = (props: Props) => {
   const { data, loading } = useListUsersQuery({ client: props.apollo })
 
   console.log(loading)
@@ -19,7 +19,7 @@ const Index = (props: Props) => {
 
   return (
     <div>
-      <Button onClick={() => Router.push('/about')}>please click here!</Button>
+      <Button onClick={() => Router.push('/')}>please click here!</Button>
       {loading && <div>loading.......</div>}
       {data && (
         <div>
@@ -32,4 +32,4 @@ const Index = (props: Props) => {
   )
 }
 
-export default Index
+export default About
