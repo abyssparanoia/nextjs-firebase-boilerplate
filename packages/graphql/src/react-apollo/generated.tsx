@@ -11,6 +11,15 @@ export type Scalars = {
   Float: number
 }
 
+export type Mutation = {
+  __typename?: 'Mutation'
+  createUser: User
+}
+
+export type MutationCreateUserArgs = {
+  param: UserCreateInput
+}
+
 export type Query = {
   __typename?: 'Query'
   users: Array<User>
@@ -19,6 +28,10 @@ export type Query = {
 export type User = {
   __typename?: 'User'
   id: Scalars['ID']
+  name: Scalars['String']
+}
+
+export type UserCreateInput = {
   name: Scalars['String']
 }
 
