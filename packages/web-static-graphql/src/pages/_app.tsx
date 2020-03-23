@@ -8,7 +8,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider as StyledThemeProvider } from 'styled-components'
 import Head from 'next/head'
 import theme from 'src/components/thema'
-import WithApollo from 'src/fixtures/withApollo'
+import withApollo from 'src/fixtures/withApollo'
 
 class NextApp extends App<AppInitialProps & WithApolloProps<{}>> {
   componentDidCatch = (error: Error, errorInfo: React.ErrorInfo) => {
@@ -27,7 +27,7 @@ class NextApp extends App<AppInitialProps & WithApolloProps<{}>> {
           <MuiThemeProvider theme={theme}>
             <CssBaseline />
             <StyledThemeProvider theme={theme}>
-              <Component {...pageProps} />
+              <Component {...pageProps} apollo={apollo} />
             </StyledThemeProvider>
           </MuiThemeProvider>
         </StylesProvider>
@@ -36,4 +36,4 @@ class NextApp extends App<AppInitialProps & WithApolloProps<{}>> {
   }
 }
 
-export default WithApollo(NextApp)
+export default withApollo(NextApp)

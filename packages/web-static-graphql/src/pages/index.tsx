@@ -1,22 +1,29 @@
 import React from 'react'
 import { Button } from '@material-ui/core'
 import { useListUsersQuery } from '@abyssparanoia/graphql'
+import ApolloClient from 'apollo-client'
+import { NormalizedCacheObject } from 'apollo-cache-inmemory'
 
-type InitialProps = {}
+type InitialProps = {
+  apollo: ApolloClient<NormalizedCacheObject>
+}
 
 type Props = {} & InitialProps
 
 const Index = (props: Props) => {
-  console.log(props)
-
-  const { data, loading } = useListUsersQuery()
-
-  console.log(data)
-  console.log(loading)
+  const { data, loading } = useListUsersQuery({ client: props.apollo })
 
   return (
     <div>
       <Button>please click here!</Button>
+      {loading && <div>loading.......</div>}
+      {data && (
+        <div>
+          {data.users.map(user => (
+            <li key={user.id}>{user.name}</li>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

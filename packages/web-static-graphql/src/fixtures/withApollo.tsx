@@ -37,9 +37,6 @@ export default withApollo<NormalizedCacheObject>(
       credentials: 'same-origin'
     })
 
-    console.error('aaaaaaa')
-    console.error(isBrowser)
-
     return new ApolloClient({
       connectToDevTools: isBrowser,
       ssrMode: false,
@@ -49,10 +46,12 @@ export default withApollo<NormalizedCacheObject>(
     })
   },
   {
-    render: ({ Page, props }) => (
-      <ApolloProvider client={props.apollo}>
-        <Page {...props} />
-      </ApolloProvider>
-    )
+    render: ({ Page, props }) => {
+      return (
+        <ApolloProvider client={props.apollo}>
+          <Page {...props} />
+        </ApolloProvider>
+      )
+    }
   }
 )
