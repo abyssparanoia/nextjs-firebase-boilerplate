@@ -15,8 +15,6 @@ import Router from 'next/router'
 export const setter = (_?: NextPageContext): ContextSetter => async (_, _prevContext) => {
   const token = await auth.currentUser?.getIdToken()
 
-  console.log(token)
-
   if (!token) {
     return {}
   }
