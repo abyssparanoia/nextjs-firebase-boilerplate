@@ -35,7 +35,7 @@
     "firebase": "7.13.1",
     "formik": "2.1.4",
     "formik-material-ui": "1.0.2",
-    "next": "9.3.2",
+    "next": "9.3.3",
     "next-offline": "5.0.0",
     "next-with-apollo": "5.0.0",
     "path": "0.12.7",
