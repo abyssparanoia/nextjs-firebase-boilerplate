@@ -137,7 +137,7 @@
     ts-invariant "^0.4.4"
     tslib "^1.10.0"
 
-"@apollo/react-hooks@3.1.4", "@apollo/react-hooks@^3.1.4":
+"@apollo/react-hooks@^3.1.4":
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/@apollo/react-hooks/-/react-hooks-3.1.4.tgz#2d966ed4fdf01729113850a72698faee490fd429"
   integrity sha512-yamD5a1Gu9fGQjZYEQn2nSG+BRyde4dy055agtYOvP/5/njJBSJ25tRFbjxKf7+YW9fsu2Xguib3anoQTuesNg==
@@ -17766,7 +17766,7 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-apollo@3.1.4:
+react-apollo@3.1.4, react-apollo@^3.1.4:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-3.1.4.tgz#9a882ce557cd6e4f3c9d87b066223e9b4c5d9130"
   integrity sha512-GDXTSava0wa9eWfPaVVhTFDZy06qbSxEW8JSJjd5l3mLIPwZoxdaI5EDjUr25h1XzsUJ/p3C64QHvsSiB9DrpQ==

@@ -8,7 +8,7 @@ import { ApolloClient } from 'apollo-client'
 import { createHttpLink } from 'apollo-link-http'
 import { setContext, ContextSetter } from 'apollo-link-context'
 import { onError, ErrorHandler } from 'apollo-link-error'
-import { ApolloProvider } from '@apollo/react-hooks'
+import { ApolloProvider } from 'react-apollo'
 import { auth } from 'src/firebase/client'
 import Router from 'next/router'
 
@@ -28,7 +28,6 @@ export const setter = (_?: NextPageContext): ContextSetter => async (_, _prevCon
   if (!token) {
     await sleep(500)
     token = await auth.currentUser?.getIdToken()
-    console.log(token)
 
     if (token) {
       return {}
