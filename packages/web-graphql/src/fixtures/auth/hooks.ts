@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { auth, firebase } from 'src/firebase/client'
 import { setTokenToCookie, removeTokenFromCookie, getTokenFromCookie } from './cookie'
-import useSWR from 'swr'
+import { SWRCachePath } from './swr-cache-path'
+import useSWR, { mutate } from 'swr'
 import { UnwrapFunc } from '../utility'
+import Router from 'next/router'
 
 const getIdTokenAsync = async () => {
   console.log(getTokenFromCookie())
@@ -11,9 +13,9 @@ const getIdTokenAsync = async () => {
 }
 
 export const useAuthCookie = () => {
-  const { data: idToken } = useSWR<UnwrapFunc<typeof getIdTokenAsync>, Error>('/cookie/auth', () => getIdTokenAsync(), {
-    refreshInterval: 100
-  })
+  const { data: idToken } = useSWR<UnwrapFunc<typeof getIdTokenAsync>, Error>(SWRCachePath.AUTH_COOKIE, () =>
+    getIdTokenAsync()
+  )
 
   console.log(idToken)
 
@@ -40,6 +42,8 @@ export const useSignIn = () => {
       const { refreshToken } = currentUser
       setTokenToCookie({ idToken, refreshToken })
       setIsLoading(false)
+      mutate(SWRCachePath.AUTH_COOKIE)
+      Router.push('/')
     } catch (err) {
       setIsLoading(false)
       setError(err)
@@ -62,6 +66,8 @@ export const useSignOut = () => {
       .then(() => {
         removeTokenFromCookie()
         setIsLoading(false)
+        mutate(SWRCachePath.AUTH_COOKIE)
+        Router.push('/sign_in')
       })
       .catch(err => {
         setIsLoading(false)

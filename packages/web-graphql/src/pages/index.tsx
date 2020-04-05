@@ -27,7 +27,6 @@ const Index = (_: Props) => {
         </div>
       )}
       {!idToken && <Button onClick={() => handleSignInWithGoogle()}>sign in</Button>}
-
       {idToken && <Button onClick={() => handleSignOut()}>sign out</Button>}
     </div>
   )
