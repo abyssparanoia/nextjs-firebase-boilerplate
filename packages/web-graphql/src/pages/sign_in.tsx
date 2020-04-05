@@ -1,15 +1,13 @@
 import React from 'react'
-import { NextPageContext } from 'next'
 import { Button } from '@material-ui/core'
 import { useSignIn } from 'src/fixtures/auth/hooks'
 
-type InitialProps = { pageContext: NextPageContext }
+type InitialProps = {}
 
 type Props = {} & InitialProps
 
-const SignIn = ({ pageContext }: Props) => {
+const SignIn = (_: Props) => {
   const { handleSignInWithGoogle } = useSignIn()
-  console.log(pageContext)
 
   return (
     <div>
