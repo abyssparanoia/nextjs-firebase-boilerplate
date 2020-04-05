@@ -1,7 +1,6 @@
 # Write your query or mutation here
 query ListUsers {
   list {
-    id
-    name
+    ...user
   }
 }
