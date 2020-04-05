@@ -7,8 +7,6 @@ import { UnwrapFunc } from '../utility'
 import Router from 'next/router'
 
 const getIdTokenAsync = async () => {
-  console.log(getTokenFromCookie())
-
   return getTokenFromCookie().idToken
 }
 
@@ -16,8 +14,6 @@ export const useAuthCookie = () => {
   const { data: idToken } = useSWR<UnwrapFunc<typeof getIdTokenAsync>, Error>(SWRCachePath.AUTH_COOKIE, () =>
     getIdTokenAsync()
   )
-
-  console.log(idToken)
 
   return { idToken }
 }
