@@ -4,10 +4,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start:dev": "next dev",
-    "start:prod": "serve ./out -p 8080",
+    "start:dev": "next dev -p 3005",
+    "start:prod": "next -p $PORT",
     "build": "run-p -l build:*",
-    "build:next": "next build && next export",
+    "build:next": "next build",
     "lint": "eslint --fix -c ./.eslintrc.json './src/**/*.{ts,tsx}'"
   },
   "dependencies": {
