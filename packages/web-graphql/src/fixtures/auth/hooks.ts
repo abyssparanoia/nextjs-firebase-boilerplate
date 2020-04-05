@@ -1,24 +1,19 @@
 import { useState } from 'react'
 import { auth, firebase } from 'src/firebase/client'
 import { setTokenToCookie, removeTokenFromCookie, getTokenFromCookie } from './cookie'
-import { NextPageContext } from 'next'
 import useSWR from 'swr'
-import { UnwrapFunc, isBrowser } from '../utility'
+import { UnwrapFunc } from '../utility'
 
-const getIdTokenAsync = async (ctx: NextPageContext) => {
-  if (isBrowser()) {
-    return getTokenFromCookie().idToken
-  }
+const getIdTokenAsync = async () => {
+  console.log(getTokenFromCookie())
 
-  return getTokenFromCookie(ctx).idToken
+  return getTokenFromCookie().idToken
 }
 
-export const useAuthCookie = (ctx: NextPageContext) => {
-  const { data: idToken } = useSWR<UnwrapFunc<typeof getIdTokenAsync>, Error>(
-    '/cookie/auth',
-    () => getIdTokenAsync(ctx),
-    { refreshInterval: 100 }
-  )
+export const useAuthCookie = () => {
+  const { data: idToken } = useSWR<UnwrapFunc<typeof getIdTokenAsync>, Error>('/cookie/auth', () => getIdTokenAsync(), {
+    refreshInterval: 100
+  })
 
   console.log(idToken)
 

@@ -1,19 +1,19 @@
 import React from 'react'
+import { ExNextPageContext } from 'next'
 import { Button } from '@material-ui/core'
 import { useListUsersQuery } from '@abyssparanoia/graphql'
 import Router from 'next/router'
-import { auth } from 'src/firebase/client'
-import firebase from 'firebase'
+import { authorize } from 'src/fixtures/auth/middleware'
+import { useAuthCookie, useSignIn, useSignOut } from 'src/fixtures/auth/hooks'
 
 type InitialProps = {}
-
 type Props = {} & InitialProps
 
 const Index = (_: Props) => {
   const { data, loading } = useListUsersQuery({})
-
-  console.log(loading)
-  console.log(data)
+  const { idToken } = useAuthCookie()
+  const { handleSignInWithGoogle } = useSignIn()
+  const { handleSignOut } = useSignOut()
 
   return (
     <div>
@@ -26,23 +26,16 @@ const Index = (_: Props) => {
           ))}
         </div>
       )}
-      <Button
-        onClick={async () => {
-          await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
-        }}
-      >
-        sign in
-      </Button>
+      {!idToken && <Button onClick={() => handleSignInWithGoogle()}>sign in</Button>}
 
-      <Button
-        onClick={async () => {
-          await auth.signOut()
-        }}
-      >
-        sign out
-      </Button>
+      {idToken && <Button onClick={() => handleSignOut()}>sign out</Button>}
     </div>
   )
+}
+
+Index.getInitialProps = async (ctx: ExNextPageContext) => {
+  await authorize(ctx)
+  return {}
 }
 
 export default Index

@@ -4,10 +4,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start:dev": "next dev -p 3005",
-    "start:prod": "next -p $PORT",
+    "start:dev": "nodemon --ext ts --watch src",
+    "start:prod": "NODE_ENV=production node dist/src/run.js",
     "build": "run-p -l build:*",
     "build:next": "next build",
+    "build:server": "tsc -b ./src/tsconfig.server.json",
     "lint": "eslint --fix -c ./.eslintrc.json './src/**/*.{ts,tsx}'"
   },
   "dependencies": {

@@ -1,7 +1,6 @@
-import { NextPageContext } from 'next'
+import { ExNextPageContext } from 'next'
 import { stringify } from 'query-string'
 import { getTokenFromCookie, setTokenToCookie } from './cookie'
-import { adminAuth } from 'src/firebase/admin'
 import { auth } from 'src/firebase/client'
 import { HttpClient } from 'src/fixtures/http-client'
 import Router from 'next/router'
@@ -31,7 +30,7 @@ const refreshIDToken = async ({ refreshToken }: Pick<IRefreshIDTokenRequest, 're
   return res.data
 }
 
-export const authorize = async (ctx: NextPageContext) => {
+export const authorize = async (ctx: ExNextPageContext) => {
   const { req, res } = ctx
 
   try {
@@ -39,7 +38,7 @@ export const authorize = async (ctx: NextPageContext) => {
 
     // check id token on server
     if (req && idToken && refreshToken) {
-      await adminAuth.verifyIdToken(idToken).catch(async err => {
+      await req.firebaseAuth.verifyIdToken(idToken).catch(async err => {
         if (err.code === 'auth/id-token-expired') {
           const { refreshToken: newRefreshToken, idToken: newIdToken } = await refreshIDToken({
             refreshToken
