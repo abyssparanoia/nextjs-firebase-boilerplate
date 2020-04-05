@@ -50,14 +50,14 @@ $ yarn build
 $ yarn start
 
 # web run
-$ yarn workspace @abyssparanoia/web start
+$ yarn workspace @abyssparanoia/web start:dev
 
 # backend run
-$ yarn workspace @abyssparanoia/backend start
+$ yarn workspace @abyssparanoia/backend start:dev
 
 # ionic run
-$ yarn workspace @abyssparanoia/app start
+$ yarn workspace @abyssparanoia/app start:dev
 
 # electron run
-$ yarn workspace @abyssparanoia/electron start
+$ yarn workspace @abyssparanoia/electron start:dev
 ```
