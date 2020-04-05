@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "nodemon --ext ts --watch src",
+    "start:dev": "nodemon --ext ts --watch src",
     "start:prod": "NODE_ENV=production node dist/src/run.js",
     "build": "run-p -l build:*",
     "build:next": "next build",
