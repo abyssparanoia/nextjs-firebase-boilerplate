@@ -1,17 +1,17 @@
 import { parseCookies, setCookie, destroyCookie } from 'nookies'
 import { NextPageContext } from 'next'
 
-export const getTokenFromCookie = (ctx?: NextPageContext): { accessToken?: string; refreshToken?: string } => {
-  const { accessToken, refreshToken } = parseCookies(ctx)
-  return { accessToken, refreshToken }
+export const getTokenFromCookie = (ctx?: NextPageContext): { idToken?: string; refreshToken?: string } => {
+  const { idToken, refreshToken } = parseCookies(ctx)
+  return { idToken, refreshToken }
 }
 
 export const setTokenToCookie = (
-  { accessToken, refreshToken }: { accessToken?: string; refreshToken?: string },
+  { idToken, refreshToken }: { idToken?: string; refreshToken?: string },
   ctx?: NextPageContext
 ): void => {
-  accessToken &&
-    setCookie(ctx, 'accessToken', accessToken, {
+  idToken &&
+    setCookie(ctx, 'idToken', idToken, {
       maxAge: 30 * 24 * 60 * 60,
       path: '/'
     })
@@ -23,6 +23,6 @@ export const setTokenToCookie = (
 }
 
 export const removeTokenFromCookie = (ctx?: NextPageContext): void => {
-  destroyCookie(ctx, 'accessToken')
+  destroyCookie(ctx, 'idToken')
   destroyCookie(ctx, 'refreshToken')
 }
