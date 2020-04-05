@@ -8,9 +8,10 @@ import { ApolloClient } from 'apollo-client'
 import { createHttpLink } from 'apollo-link-http'
 import { setContext, ContextSetter } from 'apollo-link-context'
 import { onError, ErrorHandler } from 'apollo-link-error'
-import { ApolloProvider } from '@apollo/react-hooks'
+import { ApolloProvider } from 'react-apollo'
 import { auth } from 'src/firebase/client'
 import Router from 'next/router'
+import { setTokenToCookie } from '../auth/cookie'
 
 const sleep = (ms: number) => {
   return new Promise(resolve => {
@@ -21,23 +22,22 @@ const sleep = (ms: number) => {
 }
 
 export const setter = (_?: NextPageContext): ContextSetter => async (_, _prevContext) => {
-  let token: string | undefined = undefined
+  let idToken: string | undefined = undefined
 
-  token = await auth.currentUser?.getIdToken()
+  idToken = await auth.currentUser?.getIdToken()
 
-  if (!token) {
+  if (!idToken) {
     await sleep(500)
-    token = await auth.currentUser?.getIdToken()
-    console.log(token)
+    idToken = await auth.currentUser?.getIdToken()
 
-    if (token) {
+    if (idToken) {
       return {}
     }
   }
 
   return {
     headers: {
-      Authorization: `Bearer ${token}`
+      Authorization: `Bearer ${idToken}`
     }
   }
 }
@@ -51,16 +51,17 @@ export const errorHandler = (_?: NextPageContext): ErrorHandler => ({ graphQLErr
             auth.currentUser ? auth.currentUser.getIdToken(true) : new Promise<undefined>(resolve => resolve(undefined))
           )
             .filter(value => Boolean(value))
-            .flatMap(token => {
-              if (!token) {
+            .flatMap(idToken => {
+              if (!idToken) {
                 Router.push('/sign_in')
                 throw new Error(`no token`)
               }
+              setTokenToCookie({ idToken })
               const oldHeaders = operation.getContext().headers
               operation.setContext({
                 headers: {
                   ...oldHeaders,
-                  authorization: `Bearer ${token}`
+                  authorization: `Bearer ${idToken}`
                 }
               })
               return forward(operation)
