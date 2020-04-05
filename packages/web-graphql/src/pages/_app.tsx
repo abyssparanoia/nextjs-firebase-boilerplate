@@ -1,6 +1,5 @@
 import * as React from 'react'
 import App, { AppInitialProps } from 'next/app'
-import { ApolloProvider } from '@apollo/react-hooks'
 import { WithApolloProps } from 'next-with-apollo'
 import { StylesProvider } from '@material-ui/styles'
 import { MuiThemeProvider } from '@material-ui/core/styles'
@@ -19,7 +18,7 @@ class NextApp extends App<AppInitialProps & WithApolloProps<{}>> {
     const { Component, pageProps, apollo } = this.props
 
     return (
-      <ApolloProvider client={apollo}>
+      <>
         <Head>
           <title>boiler</title>
         </Head>
@@ -31,7 +30,7 @@ class NextApp extends App<AppInitialProps & WithApolloProps<{}>> {
             </StyledThemeProvider>
           </MuiThemeProvider>
         </StylesProvider>
-      </ApolloProvider>
+      </>
     )
   }
 }
