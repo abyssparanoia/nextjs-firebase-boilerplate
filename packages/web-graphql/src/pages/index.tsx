@@ -1,20 +1,16 @@
 import React from 'react'
 import { Button } from '@material-ui/core'
 import { useListUsersQuery } from '@abyssparanoia/graphql'
-import ApolloClient from 'apollo-client'
-import { NormalizedCacheObject } from 'apollo-cache-inmemory'
 import Router from 'next/router'
 import { auth } from 'src/firebase/client'
 import firebase from 'firebase'
 
-type InitialProps = {
-  apollo: ApolloClient<NormalizedCacheObject>
-}
+type InitialProps = {}
 
 type Props = {} & InitialProps
 
-const Index = (props: Props) => {
-  const { data, loading } = useListUsersQuery({ client: props.apollo })
+const Index = (_: Props) => {
+  const { data, loading } = useListUsersQuery({})
 
   console.log(loading)
   console.log(data)
