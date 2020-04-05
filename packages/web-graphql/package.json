@@ -37,6 +37,7 @@
     "next": "9.3.4",
     "next-offline": "5.0.0",
     "next-with-apollo": "5.0.0",
+    "nookies": "^2.2.2",
     "path": "0.12.7",
     "query-string": "6.11.0",
     "react": "16.13.1",
