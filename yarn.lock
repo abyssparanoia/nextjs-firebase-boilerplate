@@ -3486,14 +3486,6 @@
     multer "1.4.2"
     tslib "1.11.1"
 
-"@nestjs/testing@6.11.11":
-  version "6.11.11"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-6.11.11.tgz#c9858e6516cccf923289919764ed9039376d9b3c"
-  integrity sha512-Mqu4IWZhnLdIFfVfueAFFCm3jPfQoWg+YmDLBsFS2kpab3az5gsRCZQv9R9CCHGa1hHKYWqM1lMcz1IQc70kww==
-  dependencies:
-    optional "0.1.4"
-    tslib "1.11.1"
-
 "@nestjs/testing@7.0.7":
   version "7.0.7"
   resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-7.0.7.tgz#c734ec7927efeccf24a6c58582ee0ee910d3045a"
