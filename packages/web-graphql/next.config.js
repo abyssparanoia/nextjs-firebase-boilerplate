@@ -4,7 +4,7 @@ const path = require('path')
 const Dotenv = require('dotenv-webpack')
 
 module.exports = {
-  webpack: (config) => {
+  webpack: config => {
     config.plugins = config.plugins || []
 
     config.plugins = [
@@ -12,8 +12,8 @@ module.exports = {
 
       new Dotenv({
         path: path.join(__dirname, '.env'),
-        systemvars: true,
-      }),
+        systemvars: true
+      })
     ]
 
     config.resolve.alias['src'] = path.join(__dirname, 'src')
@@ -23,5 +23,5 @@ module.exports = {
 
     return config
   },
-  distDir: 'dist/src/.next',
+  distDir: 'dist/src/.next'
 }

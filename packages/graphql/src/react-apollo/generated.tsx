@@ -35,27 +35,31 @@ export type UserCreateInput = {
   name: Scalars['String']
 }
 
+export type UserFragment = { __typename?: 'User' } & Pick<User, 'id' | 'name'>
+
 export type CreateUserMutationVariables = {
   param: UserCreateInput
 }
 
-export type CreateUserMutation = { __typename?: 'Mutation' } & {
-  createUser: { __typename?: 'User' } & Pick<User, 'id' | 'name'>
-}
+export type CreateUserMutation = { __typename?: 'Mutation' } & { createUser: { __typename?: 'User' } & UserFragment }
 
 export type ListUsersQueryVariables = {}
 
-export type ListUsersQuery = { __typename?: 'Query' } & {
-  list: Array<{ __typename?: 'User' } & Pick<User, 'id' | 'name'>>
-}
+export type ListUsersQuery = { __typename?: 'Query' } & { list: Array<{ __typename?: 'User' } & UserFragment> }
 
+export const UserFragmentDoc = gql`
+  fragment user on User {
+    id
+    name
+  }
+`
 export const CreateUserDocument = gql`
   mutation CreateUser($param: UserCreateInput!) {
     createUser(param: $param) {
-      id
-      name
+      ...user
     }
   }
+  ${UserFragmentDoc}
 `
 export type CreateUserMutationFn = ApolloReactCommon.MutationFunction<CreateUserMutation, CreateUserMutationVariables>
 
@@ -90,10 +94,10 @@ export type CreateUserMutationOptions = ApolloReactCommon.BaseMutationOptions<
 export const ListUsersDocument = gql`
   query ListUsers {
     list {
-      id
-      name
+      ...user
     }
   }
+  ${UserFragmentDoc}
 `
 
 /**

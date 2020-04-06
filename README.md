@@ -15,12 +15,10 @@
 ### setup
 
 1. prepare firebase project
-2. save client key as `firebase.client.key.json` in packages/web
-3. save admin key as `firebase.admin.key.json` in packages/web
-4. save client key as `firebase.client.key.json` in packages/app/src/firebase
-5. save admin key as `firebase.admin.key.json` in packages/backend
+2. save client key as `firebase.client.key.json` in packages/web and packages/web-graphql and packages/app/src/firebase
+3. save admin key as `firebase.admin.key.json` in packages/web and packages/web-graphql and packages/backend
 
-6. prepare dotenv in packages/web and packages/backend
+4. prepare dotenv in packages/web and packages/backend and packages/web-graphql
 
 ```bash
 > cp .env.tmpl .env
@@ -30,13 +28,14 @@
 
 ### Apps
 
-| Package                                               | Localhost             | Prodction          |
-| :---------------------------------------------------- | :-------------------- | :----------------- |
-| **[[next.js] web](./packages/web)**                   | http://localhost:3000 | web.\*             |
-| **[[next.js] app](./packages/app)**                   | http://localhost:3002 | app.\*             |
-| **[[nestjs] backend](./packages/backend)**            | http://localhost:3001 | backend.\*         |
-| **[[nestjs] gql-server](./packages/backend-graphql)** | http://localhost:3003 | backend-graphql.\* |
-| **[[electron] electron](./packages/electron)**        | http://localhost:3004 | native app         |
+| Package                                               | Localhost             | Prodction                 |
+| :---------------------------------------------------- | :-------------------- | :------------------------ |
+| **[[next.js] web](./packages/web)**                   | http://localhost:3000 | web.\*                    |
+| **[[nestjs] backend](./packages/backend)**            | http://localhost:3001 | backend.\*                |
+| **[[ionic] app](./packages/app)**                     | http://localhost:3002 | app.\*                    |
+| **[[nestjs] gql-server](./packages/backend-graphql)** | http://localhost:3003 | backend-graphql.\*        |
+| **[[electron] electron](./packages/electron)**        | http://localhost:3004 | native app                |
+| **[[nextks] web-graphQL](./packages/web-graphql)**    | http://localhost:3005 | graphQL supported web app |
 
 ### how to run on local
 
@@ -51,14 +50,14 @@ $ yarn build
 $ yarn start
 
 # web run
-$ yarn workspace @abyssparanoia/web start
+$ yarn workspace @abyssparanoia/web start:dev
 
 # backend run
-$ yarn workspace @abyssparanoia/backend start
+$ yarn workspace @abyssparanoia/backend start:dev
 
 # ionic run
-$ yarn workspace @abyssparanoia/app start
+$ yarn workspace @abyssparanoia/app start:dev
 
 # electron run
-$ yarn workspace @abyssparanoia/electron start
+$ yarn workspace @abyssparanoia/electron start:dev
 ```

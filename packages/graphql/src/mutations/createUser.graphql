@@ -1,6 +1,5 @@
 mutation CreateUser($param: UserCreateInput!) {
   createUser(param: $param) {
-    id
-    name
+    ...user
   }
 }
