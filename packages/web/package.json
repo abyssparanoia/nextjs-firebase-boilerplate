@@ -39,7 +39,7 @@
     "nookies": "2.2.2",
     "path": "0.12.7",
     "preact": "10.3.4",
-    "preact-render-to-string": "5.1.4",
+    "preact-render-to-string": "5.1.5",
     "query-string": "6.12.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -47,7 +47,7 @@
     "react-redux": "7.2.0",
     "redux": "4.0.5",
     "redux-thunk": "2.3.0",
-    "styled-components": "5.0.1",
+    "styled-components": "5.1.0",
     "swr": "0.2.0",
     "typescript-fsa": "3.0.0",
     "typescript-fsa-reducers": "1.2.1"
