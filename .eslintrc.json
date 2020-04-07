@@ -27,7 +27,8 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "require-atomic-updates": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "prettier/prettier": "warn"
   },
   "settings": {
     "react": {
