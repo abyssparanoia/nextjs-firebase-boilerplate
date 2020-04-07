@@ -17309,10 +17309,10 @@ postcss@7.0.27, postcss@^7, postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, pos
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-preact-render-to-string@5.1.4:
-  version "5.1.4"
-  resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-5.1.4.tgz#f26171f58f0e93b36236e4b0bee62ce561120b7c"
-  integrity sha512-fQyrkbn4Ustz5Gr4nQuTu2TIS+8IHqkIXf/SqstA2amgqLoPI6Z1e6Ttk5OL4jcE3MC6V+eaeRAed39sn8Oh4w==
+preact-render-to-string@5.1.5:
+  version "5.1.5"
+  resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-5.1.5.tgz#991877b954c85c666100d52f23e2eaea4c131472"
+  integrity sha512-/nc0b/FkOBIXFSy1etp9xI6dbHgs0EhtyXk9VuMwJ44w6YSVT+Gnwhp6Kc+C5AvEzv7wOcgvCfe62ksdEjQ0pw==
   dependencies:
     pretty-format "^3.8.0"
 
