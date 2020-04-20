@@ -34,7 +34,7 @@
     "@babel/helper-compilation-targets": "7.8.7",
     "@capacitor/cli": "2.0.1",
     "@testing-library/jest-dom": "5.5.0",
-    "@testing-library/react": "10.0.2",
+    "@testing-library/react": "10.0.3",
     "@testing-library/user-event": "10.0.2",
     "@types/node": "12.12.36",
     "@types/react": "16.9.34",
