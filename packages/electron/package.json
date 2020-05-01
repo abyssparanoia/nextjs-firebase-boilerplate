@@ -53,7 +53,7 @@
     "file-loader": "6.0.0",
     "html-webpack-plugin": "4.3.0",
     "identity-obj-proxy": "3.0.0",
-    "react-hot-loader": "4.12.20",
+    "react-hot-loader": "4.12.21",
     "redux-devtools-extension": "2.13.8",
     "redux-mock-store": "1.5.4",
     "source-map-loader": "0.2.4",
