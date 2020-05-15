@@ -51,7 +51,7 @@
   "devDependencies": {
     "@babel/core": "7.9.6",
     "@types/body-parser": "1.19.0",
-    "@types/faker": "4.1.11",
+    "@types/faker": "4.1.12",
     "@types/react": "16.9.35",
     "@types/react-dom": "16.9.8",
     "@types/styled-components": "5.1.0",
