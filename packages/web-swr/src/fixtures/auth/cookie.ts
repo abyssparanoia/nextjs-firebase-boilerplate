@@ -6,12 +6,12 @@ type Credential = {
   refreshToken: string
 }
 
-export const getTokenFromCookie = (ctx?: NextPageContext): Credential | undefined => {
+export const getTokenFromCookie = (ctx?: NextPageContext): Partial<Credential> => {
   const { idToken, refreshToken } = (parseCookies(ctx) as unknown) as Partial<Credential>
   if (idToken && refreshToken) {
     return { idToken, refreshToken }
   }
-  return undefined
+  return {}
 }
 
 export const setTokenToCookie = (cred: Credential, ctx?: NextPageContext) => {
