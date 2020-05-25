@@ -1,8 +1,6 @@
 import express, { Request, Response } from 'express'
 import next from 'next'
 import { adminAuth } from './firebase/admin'
-import * as bodyParser from 'body-parser'
-import cors from 'cors'
 
 const dev = process.env.NODE_ENV !== 'production'
 
@@ -12,9 +10,6 @@ const handle = app.getRequestHandler()
 export const appFactory = async () => {
   await app.prepare()
   const server = express()
-
-  server.use(cors())
-  server.use(bodyParser.json())
 
   server.use((req: Request, _: Response, next: Function) => {
     req.firebaseAuth = adminAuth
