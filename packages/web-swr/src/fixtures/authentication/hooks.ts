@@ -7,7 +7,7 @@ import { UnwrapFunc } from '../utility'
 import Router from 'next/router'
 
 const getIdTokenAsync = async () => {
-  return getTokenFromCookie().idToken
+  return getTokenFromCookie()?.idToken
 }
 
 export const useAuthCookie = () => {

@@ -6,7 +6,7 @@ type Credential = {
   refreshToken: string
 }
 
-export const getCredentialFromCookie = (ctx?: NextPageContext): Credential | undefined => {
+export const getTokenFromCookie = (ctx?: NextPageContext): Credential | undefined => {
   const { idToken, refreshToken } = (parseCookies(ctx) as unknown) as Partial<Credential>
   if (idToken && refreshToken) {
     return { idToken, refreshToken }
@@ -14,7 +14,7 @@ export const getCredentialFromCookie = (ctx?: NextPageContext): Credential | und
   return undefined
 }
 
-export const setCredentialToCookie = (cred: Credential, ctx?: NextPageContext) => {
+export const setTokenToCookie = (cred: Credential, ctx?: NextPageContext) => {
   setCookie(ctx, 'idToken', cred.idToken, {
     maxAge: 30 * 24 * 60 * 60,
     path: '/'
@@ -25,7 +25,7 @@ export const setCredentialToCookie = (cred: Credential, ctx?: NextPageContext) =
   })
 }
 
-export const destroyCredential = (ctx?: NextPageContext) => {
+export const removeTokenFromCookie = (ctx?: NextPageContext) => {
   destroyCookie(ctx, 'idToken')
   destroyCookie(ctx, 'refreshToken')
 }
