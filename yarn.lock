@@ -2389,16 +2389,6 @@
     pascal-case "3.1.1"
     tslib "~2.0.0"
 
-"@graphql-toolkit/common@0.10.4":
-  version "0.10.4"
-  resolved "https://registry.yarnpkg.com/@graphql-toolkit/common/-/common-0.10.4.tgz#7785f2a3f14559d0778859c49f4442078c196695"
-  integrity sha512-HQ3HaxCqX+UE8y/0h7LMDBBGSIKJxY/gaQesaksvE2Y+N4NpSWdiW6HpOcgXfC2HGf9yM0hEdsERzzL8z3mbHQ==
-  dependencies:
-    aggregate-error "3.0.1"
-    camel-case "4.1.1"
-    graphql-tools "5.0.0"
-    lodash "4.17.15"
-
 "@graphql-toolkit/common@0.10.6", "@graphql-toolkit/common@~0.10.6":
   version "0.10.6"
   resolved "https://registry.yarnpkg.com/@graphql-toolkit/common/-/common-0.10.6.tgz#43591fd3478ab27ec95bf39d5a8afdd17f0ac2fd"
@@ -2427,14 +2417,6 @@
     unixify "1.0.0"
     valid-url "1.0.9"
 
-"@graphql-toolkit/file-loading@0.10.4":
-  version "0.10.4"
-  resolved "https://registry.yarnpkg.com/@graphql-toolkit/file-loading/-/file-loading-0.10.4.tgz#50e8933e44b17853544c1fe63350df93f33a5e80"
-  integrity sha512-oUmy/sO3BJfax85pVKI7FZ6TWrViNuWXoJkRM293YV9bKGuYU9TgqZoHyM+oEqWO5ruXCL/nCdw3cIBau+rSNA==
-  dependencies:
-    globby "11.0.0"
-    unixify "1.0.0"
-
 "@graphql-toolkit/graphql-file-loader@~0.10.6":
   version "0.10.6"
   resolved "https://registry.yarnpkg.com/@graphql-toolkit/graphql-file-loader/-/graphql-file-loader-0.10.6.tgz#2b90b846ef2ca9d8dcb233fff86d714e4e9fefbc"
@@ -2449,16 +2431,6 @@
   integrity sha512-gTf3gWtc4ZH1OFLl79BRHX0DsjecV0xDxKLKFpGYx22ay72iJqddKFKXxRHeGWFjIrNIi90RUyKlKY8uGyYw2w==
   dependencies:
     "@graphql-toolkit/common" "0.10.6"
-    tslib "1.11.1"
-
-"@graphql-toolkit/schema-merging@0.10.4":
-  version "0.10.4"
-  resolved "https://registry.yarnpkg.com/@graphql-toolkit/schema-merging/-/schema-merging-0.10.4.tgz#2428590a531a33e9fe03be27cce9030f1c4c044b"
-  integrity sha512-naL6reYBuILLMrkMfKz0lOLL0kl6gGYnaaywnO/Dgp9F4NeAxDdAs5CV6Fy9NO5OzePFP58Dnc4sh2RyYrrFJg==
-  dependencies:
-    "@graphql-toolkit/common" "0.10.4"
-    deepmerge "4.2.2"
-    graphql-tools "5.0.0"
     tslib "1.11.1"
 
 "@graphql-toolkit/schema-merging@0.10.6", "@graphql-toolkit/schema-merging@~0.10.6":
@@ -4018,17 +3990,17 @@
     tslib "2.0.0"
     uuid "8.0.0"
 
-"@nestjs/graphql@7.3.11":
-  version "7.3.11"
-  resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-7.3.11.tgz#bdedf9433c8d83b12548fc68c2c9aa8944ff27f6"
-  integrity sha512-Etf3AzKElBGs8kqxajdyg93h+9GR1epyg8er2yVIHfzeypOjQn90oTb0RCbV2CPLz+1vbNSejqKlipefaUEloA==
+"@nestjs/graphql@7.4.0":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/graphql/-/graphql-7.4.0.tgz#09ad53fbd52bf10fc90be4eca6a8bc1acfc040dc"
+  integrity sha512-7rRHR8w58BWR+MnqY8IUycEVoazxN4NSluWZObAO3BC4bvuDeKdQZxxCFzEJdPdgEa5i9MN8xW0CWX2h4NNbhA==
   dependencies:
+    "@graphql-tools/merge" "6.0.3"
     "@nestjs/mapped-types" "0.0.5"
     chokidar "3.4.0"
     fast-glob "3.2.2"
     iterall "1.2.2"
     lodash "4.17.15"
-    merge-graphql-schemas "1.7.8"
     normalize-path "3.0.0"
     tslib "2.0.0"
     uuid "8.1.0"
@@ -15679,15 +15651,6 @@ merge-descriptors@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
   integrity sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=
-
-merge-graphql-schemas@1.7.8:
-  version "1.7.8"
-  resolved "https://registry.yarnpkg.com/merge-graphql-schemas/-/merge-graphql-schemas-1.7.8.tgz#11a0a672a38a61d988c09ffdebe1bd4f8418de48"
-  integrity sha512-C3EJ1i86OjmbcCT524wVPRl17M5VZzgyh9kIGYAlYnAILX+7xfh8cCbMKfehh9n4opZg6CtcPogCiVZ6PB2NyQ==
-  dependencies:
-    "@graphql-toolkit/file-loading" "0.10.4"
-    "@graphql-toolkit/schema-merging" "0.10.4"
-    tslib "1.11.1"
 
 merge-stream@^2.0.0:
   version "2.0.0"
