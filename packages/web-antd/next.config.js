@@ -41,6 +41,14 @@ module.exports = withCss(
       config.resolve.alias['pages'] = path.join(__dirname, '/src/pages')
       config.resolve.alias['components'] = path.join(__dirname, '/src/components')
 
+      config.node = {
+        fs: 'empty',
+        child_process: 'empty',
+        net: 'empty',
+        dns: 'empty',
+        tls: 'empty'
+      }
+
       const originalEntry = config.entry
       config.entry = async () => {
         const entries = await originalEntry()

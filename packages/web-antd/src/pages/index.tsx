@@ -1,8 +1,7 @@
 import React from 'react'
 import { ExNextPageContext } from 'next'
 import Router from 'next/router'
-import { authorize } from 'src/fixtures/auth/middleware'
-import { useAuthCookie, useSignIn, useSignOut } from 'src/fixtures/auth/hooks'
+import { authorize, useAuthCookie, useSignIn, useSignOut } from '@abyssparanoia/fixtures'
 import { Button } from 'antd'
 
 type InitialProps = {}
