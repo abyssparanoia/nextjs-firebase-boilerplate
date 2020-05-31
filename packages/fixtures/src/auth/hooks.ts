@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { auth, firebase } from 'src/firebase/client'
+import { auth, firebase } from '@abyssparanoia/firebase-client'
 import { setTokenToCookie, removeTokenFromCookie, getTokenFromCookie } from './cookie'
 import { SWRCachePath } from '../swr-cache-path'
 import useSWR, { mutate } from 'swr'

@@ -1,8 +1,9 @@
 import { ExNextPageContext } from 'next'
 import { stringify } from 'query-string'
 import { getTokenFromCookie, setTokenToCookie } from './cookie'
-import { auth } from 'src/firebase/client'
-import { HttpClient } from 'src/fixtures/utility'
+import { auth } from '@abyssparanoia/firebase-client'
+import { adminAuth } from '@abyssparanoia/firebase-admin'
+import { HttpClient } from '../utility'
 import Router from 'next/router'
 
 interface IRefreshIDTokenRequest {
@@ -38,7 +39,7 @@ export const authorize = async (ctx: ExNextPageContext) => {
 
     // check id token on server
     if (req && idToken && refreshToken) {
-      await req.firebaseAuth.verifyIdToken(idToken).catch(async err => {
+      await adminAuth.verifyIdToken(idToken).catch(async err => {
         if (err.code === 'auth/id-token-expired') {
           const { refreshToken: newRefreshToken, idToken: newIdToken } = await refreshIDToken({
             refreshToken
