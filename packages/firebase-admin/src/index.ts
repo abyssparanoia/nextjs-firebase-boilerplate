@@ -8,7 +8,13 @@ const app = process.env.GCLOUD_PROJECT
 
 const adminAuth = app.auth()
 
-export { app, adminAuth }
+const FIREBASE_CLIENT_API_KEY = process.env.FIREBASE_CLIENT_API_KEY
+
+if (!FIREBASE_CLIENT_API_KEY) {
+  throw new Error(`NO FIREBASE CLIENT API KEY`)
+}
+
+export { app, adminAuth, FIREBASE_CLIENT_API_KEY }
 
 declare global {
   namespace Express {
