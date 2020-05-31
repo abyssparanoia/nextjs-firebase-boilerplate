@@ -2,7 +2,15 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 
 if (!firebase.apps.length) {
-  firebase.initializeApp(require('../../firebase.client.key.json'))
+  firebase.initializeApp({
+    apiKey: 'AIzaSyDplQWqVixEDZGJccClbRQtYkZAcDlCrSU',
+    authDomain: 'abyssparanoia-f6d72.firebaseapp.com',
+    databaseURL: 'https://abyssparanoia-f6d72.firebaseio.com',
+    projectId: 'abyssparanoia-f6d72',
+    storageBucket: 'abyssparanoia-f6d72.appspot.com',
+    messagingSenderId: '513639928872',
+    appId: '1:513639928872:web:f4d66e9d0d21ca7fb3511d'
+  })
 }
 
 const auth = firebase.auth()
