@@ -1,6 +1,6 @@
 import { appFactory } from './factory'
 
-const PORT = process.env.PORT || 3005
+const PORT = process.env.PORT || 3007
 
 const run = async () => {
   try {
