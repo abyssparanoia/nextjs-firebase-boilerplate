@@ -35,7 +35,9 @@
 | **[[ionic] app](./packages/app)**                     | http://localhost:3002 | app.\*                    |
 | **[[nestjs] gql-server](./packages/backend-graphql)** | http://localhost:3003 | backend-graphql.\*        |
 | **[[electron] electron](./packages/electron)**        | http://localhost:3004 | native app                |
-| **[[nextks] web-graphQL](./packages/web-graphql)**    | http://localhost:3005 | graphQL supported web app |
+| **[[next.js] web-graphQL](./packages/web-graphql)**   | http://localhost:3005 | graphQL supported web app |
+| **[[next.js] web-swr](./packages/web-swr)**           | http://localhost:3006 | swr supported web app     |
+| **[[next.js] web-antd](./packages/web-antd)**         | http://localhost:3007 | antd supported web app    |
 
 ### how to run on local
 
