@@ -2,7 +2,6 @@ const withLess = require('@zeit/next-less')
 const lessToJS = require('less-vars-to-js')
 const fs = require('fs')
 const path = require('path')
-const Dotenv = require('dotenv-webpack')
 const withCss = require('@zeit/next-css')
 
 const themeVariables = lessToJS(fs.readFileSync(path.resolve(__dirname, './src/assets/antd-custom.less'), 'utf8'))
@@ -41,12 +40,16 @@ module.exports = withCss(
       config.resolve.alias['pages'] = path.join(__dirname, '/src/pages')
       config.resolve.alias['components'] = path.join(__dirname, '/src/components')
 
-      config.node = {
-        fs: 'empty',
-        child_process: 'empty',
-        net: 'empty',
-        dns: 'empty',
-        tls: 'empty'
+      if (!isServer) {
+        config.node = {
+          fs: 'empty',
+          child_process: 'empty',
+          net: 'empty',
+          dns: 'empty',
+          tls: 'empty',
+          'fast-crc32c': 'empty',
+          'firebase-admin': 'empty'
+        }
       }
 
       const originalEntry = config.entry
