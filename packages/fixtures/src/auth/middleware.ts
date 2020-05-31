@@ -1,34 +1,30 @@
 import { ExNextPageContext } from 'next'
+import { IncomingMessage } from 'http'
 import { stringify } from 'query-string'
 import { getTokenFromCookie, setTokenToCookie } from './cookie'
-import { auth } from '@abyssparanoia/firebase-client'
-import { adminAuth } from '@abyssparanoia/firebase-admin'
-import { HttpClient } from '../utility'
 import Router from 'next/router'
+import axios from 'axios'
 
-interface IRefreshIDTokenRequest {
-  refreshToken: string
-  grantType: 'refresh_token'
+const apiUrl = (path: string, req?: IncomingMessage) => {
+  if (req && typeof window === 'undefined') {
+    // this is running server-side, so we need an absolute URL
+    const { host } = req.headers
+    if (host && host.startsWith('localhost')) {
+      return `http://localhost:3000${path}`
+    }
+    return `https://${host}${path}`
+  }
+  return path
 }
 
-interface IRefreshIDTokenResponse {
+interface IValidateRequest {
   idToken: string
   refreshToken: string
-  userId: string
-  tokenType: string
-  expiresIn: string
-  projectId: string
 }
 
-const refreshIDToken = async ({ refreshToken }: Pick<IRefreshIDTokenRequest, 'refreshToken'>) => {
-  const param: IRefreshIDTokenRequest = { refreshToken, grantType: 'refresh_token' }
-
-  const res = await new HttpClient({
-    url: `https://securetoken.googleapis.com/v1/token?key=${process.env.FIREBASE_CLIENT_API_KEY}`,
-    convert: true
-  }).post<IRefreshIDTokenResponse>(param)
-
-  return res.data
+interface IValidateResponse {
+  idToken: string
+  refreshToken: string
 }
 
 export const authorize = async (ctx: ExNextPageContext) => {
@@ -39,25 +35,10 @@ export const authorize = async (ctx: ExNextPageContext) => {
 
     // check id token on server
     if (req && idToken && refreshToken) {
-      await adminAuth.verifyIdToken(idToken).catch(async err => {
-        if (err.code === 'auth/id-token-expired') {
-          const { refreshToken: newRefreshToken, idToken: newIdToken } = await refreshIDToken({
-            refreshToken
-          })
-          setTokenToCookie({ idToken: newIdToken, refreshToken: newRefreshToken }, ctx)
-          return
-        }
-        throw err
-      })
-      return
-    }
-
-    // check on browser
-    if (!req && idToken && refreshToken) {
-      const currentUser = auth.currentUser
-      if (!currentUser) {
-        throw new Error(`UNAUTHNETICATED`)
-      }
+      const param: IValidateRequest = { idToken, refreshToken }
+      const { data } = await axios.post<IValidateResponse>(apiUrl(`/api/validate`, req), { ...param })
+      setTokenToCookie({ idToken: data.idToken, refreshToken: data.refreshToken })
+      console.error('debug')
       return
     }
 
