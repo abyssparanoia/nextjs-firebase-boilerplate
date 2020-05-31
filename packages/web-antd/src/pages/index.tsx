@@ -21,9 +21,9 @@ const Index = (_: Props) => {
   )
 }
 
-Index.getInitialProps = async (ctx: ExNextPageContext) => {
+export const getServerSideProps = async (ctx: ExNextPageContext) => {
   await authorize(ctx)
-  return {}
+  return { props: {} }
 }
 
 export default Index
