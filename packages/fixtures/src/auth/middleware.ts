@@ -38,7 +38,6 @@ export const authorize = async (ctx: ExNextPageContext) => {
       const param: IValidateRequest = { idToken, refreshToken }
       const { data } = await axios.post<IValidateResponse>(apiUrl(`/api/validate`, req), { ...param })
       setTokenToCookie({ idToken: data.idToken, refreshToken: data.refreshToken })
-      console.error('debug')
       return
     }
 
