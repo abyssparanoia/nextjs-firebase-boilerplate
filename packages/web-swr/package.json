@@ -4,8 +4,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start:dev": "next",
-    "start:prod": "next start",
+    "start:dev": "next -p 3006",
+    "start:prod": "next start -p 3006",
     "build": "run-p -l build:*",
     "build:next": "next build",
     "lint": "eslint --fix -c ./.eslintrc.json './src/**/*.{ts,tsx}'"
