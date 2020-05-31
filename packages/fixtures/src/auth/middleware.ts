@@ -10,7 +10,7 @@ const apiUrl = (path: string, req?: IncomingMessage) => {
     // this is running server-side, so we need an absolute URL
     const { host } = req.headers
     if (host && host.startsWith('localhost')) {
-      return `http://localhost:3000${path}`
+      return `http://${host}${path}`
     }
     return `https://${host}${path}`
   }
