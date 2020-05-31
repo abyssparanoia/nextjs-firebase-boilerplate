@@ -3,6 +3,7 @@ import { ExNextPageContext } from 'next'
 import Router from 'next/router'
 import { authorize } from 'src/fixtures/auth/middleware'
 import { useAuthCookie, useSignIn, useSignOut } from 'src/fixtures/auth/hooks'
+import { Button } from 'antd'
 
 type InitialProps = {}
 type Props = {} & InitialProps
@@ -14,9 +15,9 @@ const Index = (_: Props) => {
 
   return (
     <div>
-      <button onClick={() => Router.push('/about')}>please click here!</button>
-      {!idToken && <button onClick={() => handleSignInWithGoogle()}>sign in</button>}
-      {idToken && <button onClick={() => handleSignOut()}>sign out</button>}
+      <Button onClick={() => Router.push('/about')}>please click here!</Button>
+      {!idToken && <Button onClick={() => handleSignInWithGoogle()}>sign in</Button>}
+      {idToken && <Button onClick={() => handleSignOut()}>sign out</Button>}
     </div>
   )
 }

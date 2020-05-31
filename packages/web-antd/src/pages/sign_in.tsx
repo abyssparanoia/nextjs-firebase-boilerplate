@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSignIn } from 'src/fixtures/auth/hooks'
+import { Button } from 'antd'
 
 type InitialProps = {}
 
@@ -10,7 +11,7 @@ const SignIn = (_: Props) => {
 
   return (
     <div>
-      <button onClick={() => handleSignInWithGoogle()}>sign in</button>
+      <Button onClick={() => handleSignInWithGoogle()}>sign in</Button>
     </div>
   )
 }

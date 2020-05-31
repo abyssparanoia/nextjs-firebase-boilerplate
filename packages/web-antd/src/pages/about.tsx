@@ -1,5 +1,6 @@
 import React from 'react'
 import Router from 'next/router'
+import { Button } from 'antd'
 
 type InitialProps = {}
 
@@ -8,7 +9,7 @@ type Props = {} & InitialProps
 const About = (_: Props) => {
   return (
     <div>
-      <button onClick={() => Router.push('/')}>please click here!</button>
+      <Button onClick={() => Router.push('/')}>please click here!</Button>
     </div>
   )
 }
