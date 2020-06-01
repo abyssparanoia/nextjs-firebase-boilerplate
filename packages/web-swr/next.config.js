@@ -1,20 +1,8 @@
-require('dotenv').config()
-
 const path = require('path')
-const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   webpack: config => {
     config.plugins = config.plugins || []
-
-    config.plugins = [
-      ...config.plugins,
-
-      new Dotenv({
-        path: path.join(__dirname, '.env'),
-        systemvars: true
-      })
-    ]
 
     config.resolve.alias['src'] = path.join(__dirname, 'src')
     config.resolve.alias['modules'] = path.join(__dirname, '/src/modules')
@@ -37,6 +25,15 @@ module.exports = {
           test: preactModules
         }
       }
+    }
+
+    const originalEntry = config.entry
+    config.entry = async () => {
+      const entries = await originalEntry()
+      if (entries['main.js'] && !entries['main.js'].includes('./polyfills.js')) {
+        entries['main.js'].unshift('./polyfills.js')
+      }
+      return entries
     }
 
     return config

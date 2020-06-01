@@ -1,8 +1,8 @@
 import React from 'react'
 import { ExNextPageContext } from 'next'
 import Router from 'next/router'
-import { authorize } from 'src/fixtures/auth/middleware'
-import { useAuthCookie, useSignIn, useSignOut } from 'src/fixtures/auth/hooks'
+import { authorize } from '@abyssparanoia/fixtures'
+import { useAuthCookie, useSignIn, useSignOut } from '@abyssparanoia/fixtures'
 
 type InitialProps = {}
 type Props = {} & InitialProps
@@ -21,9 +21,9 @@ const Index = (_: Props) => {
   )
 }
 
-Index.getInitialProps = async (ctx: ExNextPageContext) => {
+export const getServerSideProps = async (ctx: ExNextPageContext) => {
   await authorize(ctx)
-  return {}
+  return { props: {} }
 }
 
 export default Index

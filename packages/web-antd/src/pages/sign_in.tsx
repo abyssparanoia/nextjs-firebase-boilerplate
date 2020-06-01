@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSignIn } from 'src/fixtures/auth/hooks'
+import { useSignIn } from '@abyssparanoia/fixtures'
 import { Button } from 'antd'
 
 type InitialProps = {}

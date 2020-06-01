@@ -4,20 +4,18 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start:dev": "nodemon --ext ts --watch src",
-    "start:prod": "NODE_ENV=production node dist/src/run.js",
+    "start:dev": "next -p 3006",
+    "start:prod": "next start -p 3006",
     "build": "run-p -l build:*",
     "build:next": "next build",
-    "build:server": "tsc -b ./src/tsconfig.server.json",
     "lint": "eslint --fix -c ./.eslintrc.json './src/**/*.{ts,tsx}'"
   },
   "dependencies": {
+    "@abyssparanoia/fixtures": "0.0.1",
     "@quentin-sommer/react-useragent": "3.1.0",
     "axios": "0.19.2",
     "core-js": "3.6.5",
     "date-fns": "2.14.0",
-    "dotenv": "8.2.0",
-    "dotenv-webpack": "1.8.0",
     "faker": "4.1.0",
     "firebase": "7.14.6",
     "firebase-admin": "8.12.1",
