@@ -2996,10 +2996,10 @@
     ionicons "^5.0.1"
     tslib "^1.10.0"
 
-"@ionic/react-router@5.1.1":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-5.1.1.tgz#e46a75d8518b93c28fbc861e7710a4fd712ed98d"
-  integrity sha512-jv3jotjPbkTqwgyyjk0PGiVyrc+jBmG6yx0eKvFL+GYV81CPV+JA5P/krOqZaxvydXWqlgqke0yI1CQk8WbAZw==
+"@ionic/react-router@5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-5.2.0.tgz#f4cbe9092d2e17b4637b545614115478b1a38ff5"
+  integrity sha512-fzsV79AiPwJc5n6tVtmifhFURpcysePIfwP2ljXcka9U0h/hNJmZpadN8kIapZP4BLCjiG5rYzWLnt1wJKJI0A==
   dependencies:
     tslib "*"
 
