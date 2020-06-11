@@ -33,7 +33,7 @@
   "devDependencies": {
     "@babel/helper-compilation-targets": "7.10.2",
     "@capacitor/cli": "2.2.0",
-    "@testing-library/jest-dom": "5.9.0",
+    "@testing-library/jest-dom": "5.10.0",
     "@testing-library/react": "10.2.1",
     "@testing-library/user-event": "11.4.1",
     "@types/node": "12.12.47",
