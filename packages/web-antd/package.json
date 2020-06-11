@@ -37,7 +37,7 @@
     "swr": "0.2.2"
   },
   "devDependencies": {
-    "@babel/core": "7.10.1",
+    "@babel/core": "7.10.2",
     "@types/faker": "4.1.12",
     "@types/node": "13.13.12",
     "@types/react": "16.9.36",
