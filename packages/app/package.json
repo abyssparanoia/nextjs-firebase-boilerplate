@@ -31,7 +31,7 @@
     "typescript-fsa-reducers": "1.2.1"
   },
   "devDependencies": {
-    "@babel/helper-compilation-targets": "7.10.1",
+    "@babel/helper-compilation-targets": "7.10.2",
     "@capacitor/cli": "2.2.0",
     "@testing-library/jest-dom": "5.9.0",
     "@testing-library/react": "10.2.1",
