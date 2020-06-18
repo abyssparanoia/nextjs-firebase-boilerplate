@@ -13,7 +13,7 @@
     "@abyssparanoia/interface": "0.0.1",
     "@capacitor/core": "2.2.0",
     "@ionic/react": "5.2.2",
-    "@ionic/react-router": "5.2.1",
+    "@ionic/react-router": "5.2.2",
     "axios": "0.19.2",
     "connected-react-router": "6.8.0",
     "firebase": "7.15.1",
