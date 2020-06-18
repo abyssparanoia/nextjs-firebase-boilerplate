@@ -3017,10 +3017,10 @@
     ionicons "^5.0.1"
     tslib "^1.10.0"
 
-"@ionic/react-router@5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-5.2.1.tgz#b78a9346fdc4457f501315421bedde4baa722c31"
-  integrity sha512-B9a+7aSkfMTDzNmCUlNzcLp/1uOw/M6itlHDGbnHbWZlafCCda+2pO1PEteVgTfi2EGW7J29gHF6yvTduQ425g==
+"@ionic/react-router@5.2.2":
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-5.2.2.tgz#4b57f0a2ce2579255e71366db6f47d5c2c18f2bd"
+  integrity sha512-VYqHGeu463PorZVt+wZfRdGIWliQ2B8XzfcpRlHD7+hhQ2Ygwk5QrH7bBrXbnlyalSm7ppKxiHz3IHgUnKswpg==
   dependencies:
     tslib "*"
 
