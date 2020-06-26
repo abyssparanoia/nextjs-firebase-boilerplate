@@ -11959,10 +11959,10 @@ format@^0.2.0:
   resolved "https://registry.yarnpkg.com/format/-/format-0.2.2.tgz#d6170107e9efdc4ed30c9dc39016df942b5cb58b"
   integrity sha1-1hcBB+nv3E7TDJ3DkBbflCtctYs=
 
-formik-material-ui@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/formik-material-ui/-/formik-material-ui-2.0.0.tgz#76b0f6f96602a453001092c185938b50b32c9dbd"
-  integrity sha512-nVnh93mL4Mn32ZUfdmyqcfTLyMDSqrF47i9PZ805lE4MxRpUM5cVmxH3MyLJetliFxJ6LymmaAzKJSGbdk14Tw==
+formik-material-ui@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/formik-material-ui/-/formik-material-ui-2.0.1.tgz#29d1e2903e54c722f90ddacbaa1e3d253c2c6b72"
+  integrity sha512-kX+SJuFj9AdjLk7sfZczDfJIK8W/MnNtHWFZ182LkhN4743IFho7+VYycd2QL9qnEEv7vdZhbEm1ts+wp3nPEg==
 
 formik@2.1.4, formik@^2.1.4:
   version "2.1.4"
