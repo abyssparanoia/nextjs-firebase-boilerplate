@@ -33,7 +33,7 @@
     "dotenv-webpack": "1.8.0",
     "faker": "4.1.0",
     "firebase": "7.15.5",
-    "firebase-admin": "8.12.1",
+    "firebase-admin": "8.13.0",
     "formik": "2.1.4",
     "formik-material-ui": "2.0.1",
     "next": "9.4.4",
