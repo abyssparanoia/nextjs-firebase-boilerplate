@@ -27,7 +27,7 @@
     "dotenv-webpack": "2.0.0",
     "express": "4.17.1",
     "faker": "4.1.0",
-    "firebase": "7.15.5",
+    "firebase": "7.16.0",
     "firebase-admin": "8.13.0",
     "firebase-functions": "3.7.0",
     "formik": "2.1.4",
