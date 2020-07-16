@@ -34,7 +34,7 @@
     "faker": "4.1.0",
     "firebase": "7.16.0",
     "firebase-admin": "8.13.0",
-    "formik": "2.1.4",
+    "formik": "2.1.5",
     "formik-material-ui": "2.0.1",
     "next": "9.4.4",
     "next-offline": "5.0.2",
