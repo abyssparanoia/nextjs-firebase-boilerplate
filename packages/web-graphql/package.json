@@ -49,7 +49,7 @@
     "swr": "0.2.3"
   },
   "devDependencies": {
-    "@babel/core": "7.10.5",
+    "@babel/core": "7.11.1",
     "@types/body-parser": "1.19.0",
     "@types/faker": "4.1.12",
     "@types/react": "16.9.43",
