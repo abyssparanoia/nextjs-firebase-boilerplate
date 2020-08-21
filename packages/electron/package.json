@@ -63,7 +63,7 @@
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.10.3",
     "webpack-jarvis": "0.3.2",
-    "webpack-merge": "5.1.1"
+    "webpack-merge": "5.1.2"
   },
   "dependencies": {
     "@abyssparanoia/interface": "0.0.1",
