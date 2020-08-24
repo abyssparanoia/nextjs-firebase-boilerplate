@@ -57,7 +57,7 @@
     "redux-devtools-extension": "2.13.8",
     "redux-mock-store": "1.5.4",
     "source-map-loader": "1.0.2",
-    "ts-loader": "8.0.2",
+    "ts-loader": "8.0.3",
     "ts-node": "8.10.2",
     "webpack": "4.44.1",
     "webpack-cli": "3.3.12",
