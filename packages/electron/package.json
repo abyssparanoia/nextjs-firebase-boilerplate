@@ -50,7 +50,7 @@
     "electron": "9.1.0",
     "electron-builder": "21.2.0",
     "electron-load-devtool": "^1.2.0",
-    "file-loader": "6.0.0",
+    "file-loader": "6.1.0",
     "html-webpack-plugin": "4.4.1",
     "identity-obj-proxy": "3.0.0",
     "react-hot-loader": "4.12.21",
