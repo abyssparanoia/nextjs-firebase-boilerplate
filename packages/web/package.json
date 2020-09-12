@@ -31,7 +31,7 @@
     "firebase-admin": "9.1.1",
     "firebase-functions": "3.11.0",
     "formik": "2.1.5",
-    "formik-material-ui": "2.0.1",
+    "formik-material-ui": "3.0.0",
     "moment": "2.27.0",
     "next": "9.4.4",
     "next-offline": "5.0.2",
