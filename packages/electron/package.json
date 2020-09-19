@@ -59,7 +59,7 @@
     "source-map-loader": "1.1.0",
     "ts-loader": "8.0.3",
     "ts-node": "9.0.0",
-    "webpack": "4.44.1",
+    "webpack": "4.44.2",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.10.3",
     "webpack-jarvis": "0.3.2",
