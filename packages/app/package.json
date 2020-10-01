@@ -16,7 +16,7 @@
     "@ionic/react-router": "5.3.4",
     "axios": "0.20.0",
     "connected-react-router": "6.8.0",
-    "firebase": "7.21.1",
+    "firebase": "7.22.0",
     "ionicons": "5.1.2",
     "query-string": "6.13.4",
     "react": "16.13.1",
