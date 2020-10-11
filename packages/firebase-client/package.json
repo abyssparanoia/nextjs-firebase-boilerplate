@@ -14,6 +14,6 @@
     "prebuild": "yarn clean"
   },
   "dependencies": {
-    "firebase": "7.22.1"
+    "firebase": "7.23.0"
   }
 }
