@@ -27,7 +27,7 @@
     "next": "9.5.4",
     "next-offline": "5.0.2",
     "nookies": "2.4.0",
-    "null-loader": "4.0.0",
+    "null-loader": "4.0.1",
     "path": "0.12.7",
     "query-string": "6.13.5",
     "react": "16.13.1",
