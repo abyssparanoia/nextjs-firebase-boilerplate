@@ -33,7 +33,7 @@
     "formik": "2.2.0",
     "formik-material-ui": "3.0.0",
     "moment": "2.29.1",
-    "next": "9.5.4",
+    "next": "9.5.5",
     "next-offline": "5.0.2",
     "next-redux-wrapper": "5.0.0",
     "nookies": "2.4.0",
