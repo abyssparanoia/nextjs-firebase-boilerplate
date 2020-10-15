@@ -19,7 +19,7 @@
     "@abyssparanoia/firebase-admin": "0.0.1",
     "axios": "0.20.0",
     "convert-keys": "1.3.4",
-    "next": "9.5.4",
+    "next": "9.5.5",
     "nookies": "2.4.0",
     "swr": "0.3.5"
   }
