@@ -3947,10 +3947,10 @@
     ionicons "^5.1.2"
     tslib "^1.10.0"
 
-"@ionic/react-router@5.4.0":
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-5.4.0.tgz#f29304cfbf76f8fca6e59415da9ddc7a2f3ee84a"
-  integrity sha512-w/NbukbBt1zmNZ+iTWGIgUI4JYFzB6UfOT8XhQPiznaLKJiTqkXukQ15/W3uV1YKxGMhcEjYdmSWUkiiFMuLng==
+"@ionic/react-router@5.4.1":
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-5.4.1.tgz#6eb25d0972c9e9d7c7f35ada55336843664dbbc8"
+  integrity sha512-VKjeLtF9BJdpG5pHeQEVIioVMr3b+YVyw9aGXTDEqW0S6CYTpvzdhWmiISJUdID4RHiW+NEkwaInThJ2gU1iNw==
   dependencies:
     tslib "*"
 
