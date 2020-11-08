@@ -30,7 +30,7 @@
     "firebase": "7.24.0",
     "firebase-admin": "9.3.0",
     "firebase-functions": "3.11.0",
-    "formik": "2.2.1",
+    "formik": "2.2.3",
     "formik-material-ui": "3.0.0",
     "moment": "2.29.1",
     "next": "9.5.5",
