@@ -5061,10 +5061,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@nestjs/common@7.5.2":
-  version "7.5.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-7.5.2.tgz#8229081c8aab8a656c5509f1060411bfb8cf03eb"
-  integrity sha512-b1rKSOCO20qFgS9qr4Blu24XyVs+PAa4GIFDZxw+4HiPPKrU9PMLC3YdJ2K+wB1xEO9D7bmS0mlEz3fimD/z0A==
+"@nestjs/common@7.5.5":
+  version "7.5.5"
+  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-7.5.5.tgz#9c8bfcbe32ef7768d87cb458084271f7e38cc32e"
+  integrity sha512-dubDHjashfARGV8zhcANTsL5o0ZPm2xTB/BI12wgwTjCnM8WkaFqXpSCngqJyB3/XTFwllkP2g1ok6TwAZcSJw==
   dependencies:
     axios "0.21.0"
     iterare "1.2.1"
@@ -5083,12 +5083,12 @@
     lodash.set "4.3.2"
     uuid "8.3.1"
 
-"@nestjs/core@7.5.2":
-  version "7.5.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-7.5.2.tgz#8c358a753825041efc5012a24f545e54ac9df59f"
-  integrity sha512-StAYVexFqEch7NLV5wcjMwM/q2JKJ8Qi46bnsXVOxEQV8qlBc9aflJ3DWpM4pERvtUFJyfgo9iLk5IMQAPnnCg==
+"@nestjs/core@7.5.5":
+  version "7.5.5"
+  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-7.5.5.tgz#718b267174e292f82d15a2fde1f993b3dfd640f4"
+  integrity sha512-ktGOTgBSL8PoInLqcPWC8mPeCCHBaaEJX6LmzfbjHWCPRZqu96kiiQ1a245yTo/ifYrtaqQ7gAaHJpcszEAYwg==
   dependencies:
-    "@nuxtjs/opencollective" "0.2.2"
+    "@nuxtjs/opencollective" "0.3.2"
     fast-safe-stringify "2.0.7"
     iterare "1.2.1"
     object-hash "2.0.3"
@@ -5124,10 +5124,10 @@
   resolved "https://registry.yarnpkg.com/@nestjs/mapped-types/-/mapped-types-0.1.1.tgz#2fa9ff0f1ddbe66d5d1c80ae59df21c0ed0d1361"
   integrity sha512-FROYmmZ2F+tLJP/aHasPMX40iUHQPtEAzOAcfAp21baebN5iLUrdyTuphoXjIqubfPFSwtnAGpVm9kLJjQ//ig==
 
-"@nestjs/platform-express@7.5.2":
-  version "7.5.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-7.5.2.tgz#06de8ee148ff9d668987e4f1140ae5b371554b57"
-  integrity sha512-SgcWsBMrJ8Blhi1V24C8lBor+mx9ffpyyWmSZUWhNIfAtPHnfalie9K3Ny7b4Kv782l/4f5bewHQVbhDAe8Jog==
+"@nestjs/platform-express@7.5.5":
+  version "7.5.5"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-7.5.5.tgz#fc6bc076f345762d5d4f4c17bb502eec4b8f6783"
+  integrity sha512-LvUH4RAI+LGfD2ZBsCgp+IMmBdvejtJCg9jHTYP0UERZb8imoFxNt7v65a88yLrMA58CEzT02v6FH2LgP50MJA==
   dependencies:
     body-parser "1.19.0"
     cors "2.8.5"
@@ -5135,10 +5135,10 @@
     multer "1.4.2"
     tslib "2.0.3"
 
-"@nestjs/testing@7.5.2":
-  version "7.5.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-7.5.2.tgz#69ffe58d66d76489d2cad24984024623d3f08880"
-  integrity sha512-sFkkS6S97F9dFk8Kk5ksBLJGHQZ7n1S1s3BkHxwHwcJqglcpE45wyhoMQ/YzJP5uPyLkgqCQFT2Hst9ndpBV+Q==
+"@nestjs/testing@7.5.5":
+  version "7.5.5"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-7.5.5.tgz#510198af70e4d260907687ee7c9c98642ecfbb75"
+  integrity sha512-6CrDiwtFcMS4kjFFS1pm/0f00ji+32xOlKmojPaNLhmhPw39l5W/5R78iW9g6tFY/Qvm5zpbWz/FKaHxFJYOpQ==
   dependencies:
     optional "0.1.4"
     tslib "2.0.3"
@@ -5207,14 +5207,14 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@nuxtjs/opencollective@0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/opencollective/-/opencollective-0.2.2.tgz#26a761ebf588cc92a422d7cee996a66bd6e2761e"
-  integrity sha512-69gFVDs7mJfNjv9Zs5DFVD+pvBW+k1TaHSOqUWqAyTTfLcKI/EMYQgvEvziRd+zAFtUOoye6MfWh0qvinGISPw==
+"@nuxtjs/opencollective@0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/opencollective/-/opencollective-0.3.2.tgz#620ce1044f7ac77185e825e1936115bb38e2681c"
+  integrity sha512-um0xL3fO7Mf4fDxcqx9KryrB7zgRM5JSlvGN5AGkP6JLM5XEKyjeAiPbNxdXVXQ16isuAhYpvP88NgL2BGd6aA==
   dependencies:
-    chalk "^2.4.1"
-    consola "^2.3.0"
-    node-fetch "^2.3.0"
+    chalk "^4.1.0"
+    consola "^2.15.0"
+    node-fetch "^2.6.1"
 
 "@octokit/auth-token@^2.4.0":
   version "2.4.0"
@@ -10452,10 +10452,10 @@ connected-react-router@6.8.0, connected-react-router@^6.7.0:
   dependencies:
     prop-types "^15.7.2"
 
-consola@^2.3.0:
-  version "2.11.3"
-  resolved "https://registry.yarnpkg.com/consola/-/consola-2.11.3.tgz#f7315836224c143ac5094b47fd4c816c2cd1560e"
-  integrity sha512-aoW0YIIAmeftGR8GSpw6CGQluNdkWMWh3yEFjH/hmynTYnMtibXszii3lxCXmk8YxJtI3FAK5aTiquA5VH68Gw==
+consola@^2.15.0:
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/consola/-/consola-2.15.0.tgz#40fc4eefa4d2f8ef2e2806147f056ea207fcc0e9"
+  integrity sha512-vlcSGgdYS26mPf7qNi+dCisbhiyDnrN1zaRbw3CSuc2wGOMEGGPsp46PdRG5gqXwgtJfjxDkxRNAgRPr1B77vQ==
 
 console-browserify@^1.1.0:
   version "1.2.0"
