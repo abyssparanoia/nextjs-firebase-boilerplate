@@ -4020,10 +4020,10 @@
     ionicons "^5.1.2"
     tslib "^1.10.0"
 
-"@ionic/react-router@5.4.4":
-  version "5.4.4"
-  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-5.4.4.tgz#32d40304e1f166eb7ec62556675ccee01e7b083c"
-  integrity sha512-qixG87HeNjVAvWiOXyD6CCkU2OENETdWIYVjqpB56uoOlKwl8wlYe6lCBksG12gRrvINJgCvIMHMq23LG4LBEg==
+"@ionic/react-router@5.5.0":
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-5.5.0.tgz#0e6d4642d04ec0fdde974ea09aa251b6f41af21e"
+  integrity sha512-iIJ/vdTZo9I1JQ1dzVGXcU1iLav4XmmWBwXkwr+ohQwmNWlsOxGMQ2LCIc/59uhDElZ75YqkvJlcd0P1PSF7mw==
   dependencies:
     tslib "*"
 
