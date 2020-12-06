@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@abyssparanoia/interface": "0.0.1",
-    "@capacitor/core": "2.4.3",
+    "@capacitor/core": "2.4.4",
     "@ionic/react": "5.5.1",
     "@ionic/react-router": "5.5.1",
     "axios": "0.21.0",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@babel/helper-compilation-targets": "7.12.5",
-    "@capacitor/cli": "2.4.3",
+    "@capacitor/cli": "2.4.4",
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/react": "11.2.2",
     "@testing-library/user-event": "12.5.0",
