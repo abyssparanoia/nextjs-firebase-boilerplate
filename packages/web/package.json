@@ -28,7 +28,7 @@
     "express": "4.17.1",
     "faker": "5.1.0",
     "firebase": "7.24.0",
-    "firebase-admin": "9.4.1",
+    "firebase-admin": "9.4.2",
     "firebase-functions": "3.13.0",
     "formik": "2.2.5",
     "formik-material-ui": "3.0.1",
