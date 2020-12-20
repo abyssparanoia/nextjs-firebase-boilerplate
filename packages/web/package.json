@@ -62,7 +62,7 @@
     "@types/react-dom": "16.9.10",
     "@types/react-redux": "7.1.12",
     "@types/redux-logger": "3.0.8",
-    "@types/styled-components": "5.1.5",
+    "@types/styled-components": "5.1.7",
     "@types/ua-parser-js": "0.7.35",
     "babel-loader": "8.1.0",
     "babel-plugin-styled-components": "1.12.0",
