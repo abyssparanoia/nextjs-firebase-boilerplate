@@ -17,7 +17,7 @@
     "@material-ui/icons": "4.9.1",
     "@material-ui/lab": "4.0.0-alpha.56",
     "@quentin-sommer/react-useragent": "3.1.0",
-    "axios": "0.21.0",
+    "axios": "0.21.1",
     "body-parser": "1.19.0",
     "convert-keys": "1.3.4",
     "core-js": "3.8.1",
