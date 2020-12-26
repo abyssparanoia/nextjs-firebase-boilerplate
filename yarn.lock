@@ -6339,10 +6339,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.19.9.tgz#990ad687ad8b26ef6dcc34a4f69c33d40c95b679"
   integrity sha512-yj0DOaQeUrk3nJ0bd3Y5PeDRJ6W0r+kilosLA+dzF3dola/o9hxhMSg2sFvVcA2UHS5JSOsZp4S0c1OEXc4m1Q==
 
-"@types/node@13.13.36":
-  version "13.13.36"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.36.tgz#0c4d3c4e365396c84b1c595524e2faff7dd45b26"
-  integrity sha512-ctzZJ+XsmHQwe3xp07gFUq4JxBaRSYzKHPgblR76//UanGST7vfFNF0+ty5eEbgTqsENopzoDK090xlha9dccQ==
+"@types/node@13.13.38":
+  version "13.13.38"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.38.tgz#66a7c068305dbd64cf167d0f6b6b6be71dd453e1"
+  integrity sha512-oxo8j9doh7ab9NwDA9bCeFfjHRF/uzk+fTljCy8lMjZ3YzZGAXNDKhTE3Byso/oy32UTUQIXB3HCVHu3d2T3xg==
 
 "@types/node@^10.1.0":
   version "10.17.18"
@@ -24212,10 +24212,10 @@ svgo@^1.0.0, svgo@^1.2.2:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-swr@0.3.9:
-  version "0.3.9"
-  resolved "https://registry.yarnpkg.com/swr/-/swr-0.3.9.tgz#a179a795244c7b68684af6a632f1ad579e6a69e0"
-  integrity sha512-lyN4SjBzpoW4+v3ebT7JUtpzf9XyzrFwXIFv+E8ZblvMa5enSNaUBs4EPkL8gGA/GDMLngEmB53o5LaNboAPfg==
+swr@0.3.11:
+  version "0.3.11"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-0.3.11.tgz#f7f50ed26c06afea4249482cec504768a2272664"
+  integrity sha512-ya30LuRGK2R7eDlttnb7tU5EmJYJ+N6ytIOM2j0Hqs0qauJcDjVLDOGy7KmFeH5ivOwLHalFaIyYl2K+SGa7HQ==
   dependencies:
     dequal "2.0.2"
 
