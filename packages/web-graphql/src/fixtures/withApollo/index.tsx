@@ -13,7 +13,7 @@ import { auth } from 'src/firebase/client'
 import Router from 'next/router'
 import { setTokenToCookie } from '../auth/cookie'
 
-const sleep = (ms: number) => {
+const sleep = (ms: number): Promise<void> => {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve()
