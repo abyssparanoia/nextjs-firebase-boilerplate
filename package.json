@@ -49,5 +49,8 @@
       "yarn lint",
       "git add"
     ]
+  },
+  "dependencies": {
+    "simple-git": "^2.31.0"
   }
 }
