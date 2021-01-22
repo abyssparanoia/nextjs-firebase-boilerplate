@@ -1,7 +1,9 @@
-import gql from 'graphql-tag'
-import * as ApolloReactCommon from '@apollo/react-common'
-import * as ApolloReactHooks from '@apollo/react-hooks'
+import { gql } from '@apollo/client'
+import * as Apollo from '@apollo/client'
 export type Maybe<T> = T
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] }
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> }
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> }
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string
@@ -37,13 +39,13 @@ export type UserCreateInput = {
 
 export type UserFragment = { __typename?: 'User' } & Pick<User, 'id' | 'name'>
 
-export type CreateUserMutationVariables = {
+export type CreateUserMutationVariables = Exact<{
   param: UserCreateInput
-}
+}>
 
 export type CreateUserMutation = { __typename?: 'Mutation' } & { createUser: { __typename?: 'User' } & UserFragment }
 
-export type ListUsersQueryVariables = {}
+export type ListUsersQueryVariables = Exact<{ [key: string]: never }>
 
 export type ListUsersQuery = { __typename?: 'Query' } & { list: Array<{ __typename?: 'User' } & UserFragment> }
 
@@ -61,7 +63,7 @@ export const CreateUserDocument = gql`
   }
   ${UserFragmentDoc}
 `
-export type CreateUserMutationFn = ApolloReactCommon.MutationFunction<CreateUserMutation, CreateUserMutationVariables>
+export type CreateUserMutationFn = Apollo.MutationFunction<CreateUserMutation, CreateUserMutationVariables>
 
 /**
  * __useCreateUserMutation__
@@ -81,16 +83,13 @@ export type CreateUserMutationFn = ApolloReactCommon.MutationFunction<CreateUser
  * });
  */
 export function useCreateUserMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<CreateUserMutation, CreateUserMutationVariables>
+  baseOptions?: Apollo.MutationHookOptions<CreateUserMutation, CreateUserMutationVariables>
 ) {
-  return ApolloReactHooks.useMutation<CreateUserMutation, CreateUserMutationVariables>(CreateUserDocument, baseOptions)
+  return Apollo.useMutation<CreateUserMutation, CreateUserMutationVariables>(CreateUserDocument, baseOptions)
 }
 export type CreateUserMutationHookResult = ReturnType<typeof useCreateUserMutation>
-export type CreateUserMutationResult = ApolloReactCommon.MutationResult<CreateUserMutation>
-export type CreateUserMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  CreateUserMutation,
-  CreateUserMutationVariables
->
+export type CreateUserMutationResult = Apollo.MutationResult<CreateUserMutation>
+export type CreateUserMutationOptions = Apollo.BaseMutationOptions<CreateUserMutation, CreateUserMutationVariables>
 export const ListUsersDocument = gql`
   query ListUsers {
     list {
@@ -115,16 +114,14 @@ export const ListUsersDocument = gql`
  *   },
  * });
  */
-export function useListUsersQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<ListUsersQuery, ListUsersQueryVariables>
-) {
-  return ApolloReactHooks.useQuery<ListUsersQuery, ListUsersQueryVariables>(ListUsersDocument, baseOptions)
+export function useListUsersQuery(baseOptions?: Apollo.QueryHookOptions<ListUsersQuery, ListUsersQueryVariables>) {
+  return Apollo.useQuery<ListUsersQuery, ListUsersQueryVariables>(ListUsersDocument, baseOptions)
 }
 export function useListUsersLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<ListUsersQuery, ListUsersQueryVariables>
+  baseOptions?: Apollo.LazyQueryHookOptions<ListUsersQuery, ListUsersQueryVariables>
 ) {
-  return ApolloReactHooks.useLazyQuery<ListUsersQuery, ListUsersQueryVariables>(ListUsersDocument, baseOptions)
+  return Apollo.useLazyQuery<ListUsersQuery, ListUsersQueryVariables>(ListUsersDocument, baseOptions)
 }
 export type ListUsersQueryHookResult = ReturnType<typeof useListUsersQuery>
 export type ListUsersLazyQueryHookResult = ReturnType<typeof useListUsersLazyQuery>
-export type ListUsersQueryResult = ApolloReactCommon.QueryResult<ListUsersQuery, ListUsersQueryVariables>
+export type ListUsersQueryResult = Apollo.QueryResult<ListUsersQuery, ListUsersQueryVariables>
