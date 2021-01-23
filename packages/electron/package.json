@@ -26,8 +26,8 @@
     "yarn": "^1.16.0"
   },
   "devDependencies": {
-    "@babel/core": "7.12.3",
-    "@babel/register": "7.12.1",
+    "@babel/core": "7.12.10",
+    "@babel/register": "7.12.10",
     "@storybook/addon-actions": "5.3.21",
     "@storybook/addon-backgrounds": "5.3.21",
     "@storybook/addon-knobs": "5.3.21",
