@@ -31,7 +31,7 @@
     "date-fns": "2.16.1",
     "dotenv": "8.2.0",
     "dotenv-webpack": "4.0.0",
-    "faker": "5.1.0",
+    "faker": "5.2.0",
     "firebase": "7.24.0",
     "firebase-admin": "9.4.2",
     "formik": "2.2.6",
