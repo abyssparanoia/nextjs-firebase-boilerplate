@@ -21,7 +21,7 @@
   "dependencies": {
     "@abyssparanoia/interface": "0.0.1",
     "@nestjs/common": "7.6.11",
-    "@nestjs/config": "0.6.2",
+    "@nestjs/config": "0.6.3",
     "@nestjs/core": "7.6.11",
     "@nestjs/platform-express": "7.6.11",
     "class-transformer": "0.3.2",
