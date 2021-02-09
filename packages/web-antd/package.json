@@ -34,7 +34,7 @@
     "react-dom": "16.14.0",
     "react-google-button": "0.7.2",
     "styled-components": "5.2.1",
-    "swr": "0.4.1"
+    "swr": "0.4.2"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
