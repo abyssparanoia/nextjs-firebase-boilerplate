@@ -41,7 +41,7 @@
     "next-with-apollo": "5.1.1",
     "nookies": "2.5.2",
     "path": "0.12.7",
-    "query-string": "6.13.8",
+    "query-string": "6.14.0",
     "react": "16.14.0",
     "react-apollo": "3.1.5",
     "react-dom": "16.14.0",
