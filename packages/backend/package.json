@@ -27,7 +27,7 @@
     "class-transformer": "0.3.2",
     "class-validator": "0.13.1",
     "dotenv": "8.2.0",
-    "firebase-admin": "9.4.2",
+    "firebase-admin": "9.5.0",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
     "rxjs": "6.6.3"
