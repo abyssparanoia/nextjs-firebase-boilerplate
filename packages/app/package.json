@@ -12,7 +12,7 @@
   "dependencies": {
     "@abyssparanoia/interface": "0.0.1",
     "@capacitor/core": "2.4.6",
-    "@ionic/react": "5.5.4",
+    "@ionic/react": "5.5.5",
     "@ionic/react-router": "5.5.4",
     "axios": "0.21.1",
     "connected-react-router": "6.9.1",
