@@ -3963,12 +3963,13 @@
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
 
-"@ionic/core@5.5.5":
-  version "5.5.5"
-  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-5.5.5.tgz#f30b14f2a262ef2526a44d21b616be3881169ac5"
-  integrity sha512-i5KTiRuGa9PTUULy8rTQDDDw3FbxzYiOoSdKGNC0v7UOpMv9ReRixMWd5J0cfY17VRrua2aqNsqZXYwuInVnRQ==
+"@ionic/core@5.6.0":
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-5.6.0.tgz#e7dd9a31402223e95255d2193df201286391a71c"
+  integrity sha512-dRwNRjHBiE2nB0JKY7tNHbcYMGXmDp7QCCVmtQbU511rZkwDlPUtg5qMJFHuLQVVUE21bjmWIJliE0aB9kcwYQ==
   dependencies:
-    ionicons "^5.1.2"
+    "@stencil/core" "^2.4.0"
+    ionicons "^5.5.0"
     tslib "^1.10.0"
 
 "@ionic/react-router@5.6.0":
@@ -3978,12 +3979,12 @@
   dependencies:
     tslib "*"
 
-"@ionic/react@5.5.5":
-  version "5.5.5"
-  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-5.5.5.tgz#e7039519fbf222ba04f04a7f805766d1d045b2b6"
-  integrity sha512-UI2aJX+VxX3zyyeiNDSn+seffRxV1rXLoxaLwCxh3xe56TXl+3FWUVSbWS0vTCXJeDoL0PX8cxFemtMMifxyiQ==
+"@ionic/react@5.6.0":
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-5.6.0.tgz#aa0244af05cd20501fd6151db118da46a3c9fdf8"
+  integrity sha512-Qh4z3MBqMHKmmTtn3bsQAajEg/0JYUrC5x1vHymcj6XcJYEHomvYAFjMeMJCYUSAHqUrAKu8f2+LBXhTRKITHA==
   dependencies:
-    "@ionic/core" "5.5.5"
+    "@ionic/core" "5.6.0"
     ionicons "^5.1.2"
     tslib "*"
 
@@ -15436,7 +15437,7 @@ invert-kv@^2.0.0:
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-2.0.0.tgz#7393f5afa59ec9ff5f67a27620d11c226e3eec02"
   integrity sha512-wPVv/y/QQ/Uiirj/vh3oP+1Ww+AWehmi1g5fFWGPF6IpCBCDVrhgHRMvrLfdYcwDh3QJbGXDW4JAuzxElLSqKA==
 
-ionicons@5.5.0:
+ionicons@5.5.0, ionicons@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-5.5.0.tgz#74ab783be11bee60e4351153c80b6d0682e5125a"
   integrity sha512-0DUHTeoIrGSY+KNyNDaQW7v5+mDstjSkjx8dzT925kXKYBDrN3sGs8kUcSSQbTK132U4CbgDEZkn7FDUa9x8Qw==
