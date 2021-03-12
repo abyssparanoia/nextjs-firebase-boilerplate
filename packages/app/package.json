@@ -46,7 +46,7 @@
     "@types/styled-components": "5.1.7",
     "babel-loader": "8.1.0",
     "react-scripts": "3.4.1",
-    "redux-devtools-extension": "2.13.8",
+    "redux-devtools-extension": "2.13.9",
     "redux-logger": "3.0.6",
     "webpack": "4.42.0",
     "webpack-dev-server": "3.10.3"
