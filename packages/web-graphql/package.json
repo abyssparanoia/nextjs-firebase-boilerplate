@@ -30,7 +30,7 @@
     "core-js": "3.9.1",
     "date-fns": "2.19.0",
     "dotenv": "8.2.0",
-    "dotenv-webpack": "4.0.0",
+    "dotenv-webpack": "7.0.2",
     "faker": "5.4.0",
     "firebase": "7.24.0",
     "firebase-admin": "9.5.0",
