@@ -24,7 +24,7 @@
     "cors": "2.8.5",
     "date-fns": "2.19.0",
     "dotenv": "8.2.0",
-    "dotenv-webpack": "4.0.0",
+    "dotenv-webpack": "7.0.2",
     "express": "4.17.1",
     "faker": "5.4.0",
     "firebase": "7.24.0",
