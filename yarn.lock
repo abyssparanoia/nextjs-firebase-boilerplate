@@ -3887,10 +3887,10 @@
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
 
-"@ionic/core@5.6.0":
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-5.6.0.tgz#e7dd9a31402223e95255d2193df201286391a71c"
-  integrity sha512-dRwNRjHBiE2nB0JKY7tNHbcYMGXmDp7QCCVmtQbU511rZkwDlPUtg5qMJFHuLQVVUE21bjmWIJliE0aB9kcwYQ==
+"@ionic/core@5.6.1":
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-5.6.1.tgz#7bb111c16650f65734247429775394719786ac1c"
+  integrity sha512-3S1fqP4g0uArhKR0fhr+pyaHoISMIlAg+NvjIr8P+dB58yUTPfCcupDHeb5NMPOejDywB8vrz+BAH17DMN0kGQ==
   dependencies:
     "@stencil/core" "^2.4.0"
     ionicons "^5.5.0"
@@ -3903,12 +3903,12 @@
   dependencies:
     tslib "*"
 
-"@ionic/react@5.6.0":
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-5.6.0.tgz#aa0244af05cd20501fd6151db118da46a3c9fdf8"
-  integrity sha512-Qh4z3MBqMHKmmTtn3bsQAajEg/0JYUrC5x1vHymcj6XcJYEHomvYAFjMeMJCYUSAHqUrAKu8f2+LBXhTRKITHA==
+"@ionic/react@5.6.1":
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-5.6.1.tgz#b681548c7b854d10d06c69cb367bf33bcd30bfa9"
+  integrity sha512-TkEbE/yqaDDOFGLMiyP3M7gLwqVkEFXrpwuwOivsbSUnRy9Bwp6yhxRNteB+VmnJtIplFSDpfnmo5I9LIMPbJA==
   dependencies:
-    "@ionic/core" "5.6.0"
+    "@ionic/core" "5.6.1"
     ionicons "^5.1.2"
     tslib "*"
 
@@ -6426,10 +6426,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.6.tgz#7b73cce37352936e628c5ba40326193443cfba25"
   integrity sha512-sRVq8d+ApGslmkE9e3i+D3gFGk7aZHAT+G4cIpIEdLJYPsWiSPwcAnJEjddLQQDqV3Ra2jOclX/Sv6YrvGYiWA==
 
-"@types/node@13.13.46":
-  version "13.13.46"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.46.tgz#5471e176f3fa15e018dea7992072bf8ca208a3a6"
-  integrity sha512-dqpbzK/KDsOlEt+oyB3rv+u1IxlLFziZu/Z0adfRKoelkr+sTd6QcgiQC+HWq/vkYkHwG5ot2LxgV05aAjnhcg==
+"@types/node@13.13.47":
+  version "13.13.47"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.47.tgz#6eca42c3462821309b26edbc2eff0db1e37ab9bc"
+  integrity sha512-R6851wTjN1YJza8ZIeX6puNBSi/ZULHVh4WVleA7q256l+cP2EtXnKbO455fTs2ytQk3dL9qkU+Wh8l/uROdKg==
 
 "@types/node@^10.1.0":
   version "10.17.18"
@@ -6641,6 +6641,15 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
+
+"@types/styled-components@5.1.8":
+  version "5.1.8"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.8.tgz#41338fe060c543567ae94ab420036865a9b969d0"
+  integrity sha512-or4lQ12MhR4wTZ34rxRwI+Fw9vPqhd9WeEqFfF6yssDe1uS7L8p9YYMbmtDgHRbBKLR4aJIK8KHA0h9wSYifkg==
+  dependencies:
+    "@types/hoist-non-react-statics" "*"
+    "@types/react" "*"
+    csstype "^3.0.2"
 
 "@types/styled-components@5.1.9":
   version "5.1.9"
