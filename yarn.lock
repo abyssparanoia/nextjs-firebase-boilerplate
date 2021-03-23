@@ -3896,10 +3896,10 @@
     ionicons "^5.5.0"
     tslib "^1.10.0"
 
-"@ionic/react-router@5.6.0":
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-5.6.0.tgz#a7a9e2deee9615210a4f813422de361501244566"
-  integrity sha512-XrAk5y/Lstmsppc+UZH7tVjkq3TONnbcEJgN7OxtVO7Qc5Y4XjVtrLkJDN7ZpPtKXffHk/JpsVuLEchrWH+tuw==
+"@ionic/react-router@5.6.2":
+  version "5.6.2"
+  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-5.6.2.tgz#a7c0edf534c0679e773ae58203eb3c7d4dc97650"
+  integrity sha512-YYDU8k8Hz5xZc8ykTE1VxSQ3QiC05ybDaCPzfnSHBo01WHsyvKI6qyI+Eoo/Z5dPhLCjEefjxyhcsKGReAujxw==
   dependencies:
     tslib "*"
 
@@ -6631,15 +6631,6 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
-
-"@types/styled-components@5.1.8":
-  version "5.1.8"
-  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.8.tgz#41338fe060c543567ae94ab420036865a9b969d0"
-  integrity sha512-or4lQ12MhR4wTZ34rxRwI+Fw9vPqhd9WeEqFfF6yssDe1uS7L8p9YYMbmtDgHRbBKLR4aJIK8KHA0h9wSYifkg==
-  dependencies:
-    "@types/hoist-non-react-statics" "*"
-    "@types/react" "*"
-    csstype "^3.0.2"
 
 "@types/styled-components@5.1.9":
   version "5.1.9"
