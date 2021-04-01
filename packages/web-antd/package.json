@@ -33,7 +33,7 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-google-button": "0.7.2",
-    "styled-components": "5.2.1",
+    "styled-components": "5.2.3",
     "swr": "0.5.4"
   },
   "devDependencies": {
