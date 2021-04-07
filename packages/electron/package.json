@@ -74,7 +74,7 @@
     "css-loader": "^5.0.0",
     "formik": "^2.1.4",
     "history": "^5.0.0",
-    "query-string": "^6.11.1",
+    "query-string": "^7.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
