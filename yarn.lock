@@ -3120,10 +3120,10 @@
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
 
-"@ionic/core@5.6.4":
-  version "5.6.4"
-  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-5.6.4.tgz#49da080a4122241dd0e8ad5c08f9b8139e2a522b"
-  integrity sha512-fxCV/+0ibiaiBn1dsrrOmlLGJlTkqiG6IVXdLpPKimGdFLjy56olDvB5trlz9J5C/nHc7vR5MIiYC0qdTyX7og==
+"@ionic/core@5.6.5":
+  version "5.6.5"
+  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-5.6.5.tgz#ee3d9b08eb588649ee2c762742eeb7a5dc6297a4"
+  integrity sha512-oMRWvSMN+S6XmPO867FnUkyDg2JtMBd9DEBtdf5ge4ectFZP6ePTSOXRGSS6t+dXuMPqonFPnukiDIxO3XIwlA==
   dependencies:
     "@stencil/core" "^2.4.0"
     ionicons "^5.5.1"
@@ -3136,12 +3136,12 @@
   dependencies:
     tslib "*"
 
-"@ionic/react@5.6.4":
-  version "5.6.4"
-  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-5.6.4.tgz#3137cf3f11f79895b72cbfeede171b9a5f25b955"
-  integrity sha512-fZavd7gWALoJ0PgWmC4pgWeKZzDens5JxMf+m1rpfYWiDbQYRxckTAJPgWhLgFRano/EnQCoMzVY/vJYJ+6FKA==
+"@ionic/react@5.6.5":
+  version "5.6.5"
+  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-5.6.5.tgz#5223996334612a9756784f72e51ef710a93d7580"
+  integrity sha512-LxzVCefIA2iubJ6eukl0upzacZUjx3owDMhfjuJidON80XYJhrBjvSiZMgXceTRathzabDv+ZkgJXwFZk60mAQ==
   dependencies:
-    "@ionic/core" "5.6.4"
+    "@ionic/core" "5.6.5"
     ionicons "^5.1.2"
     tslib "*"
 
