@@ -3035,10 +3035,10 @@
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
 
-"@ionic/core@5.6.8":
-  version "5.6.8"
-  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-5.6.8.tgz#669c5dbda61a41f5421e4ed23fbfa84c81264092"
-  integrity sha512-JWrRGzw4SyyemjycPEh516fAkgFVtLp6RMPTH3uzK8L+DLfqJ/QU4Uccu89QqdcG/TBD75r3wkUtbKL2YlL8PQ==
+"@ionic/core@5.6.10":
+  version "5.6.10"
+  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-5.6.10.tgz#2bbfb2eaafe5e34a1d310550c0f76b15c6e6edaf"
+  integrity sha512-mjrfWa8ahCV8TYqJsWpop5kTyfr3NU1fYnoAhuqwZfuCLaMzYRYFPvSNoGynD4yfveZUyAfZM0NOuSquNZgfKQ==
   dependencies:
     "@stencil/core" "^2.4.0"
     ionicons "^5.5.1"
@@ -3051,12 +3051,12 @@
   dependencies:
     tslib "*"
 
-"@ionic/react@5.6.8":
-  version "5.6.8"
-  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-5.6.8.tgz#2e0cab3aecccac63675989e34e02b5c493cfe22d"
-  integrity sha512-TYi6wK8u9Ix7N0PEgA+fv1HlEDzkM6WxRdUK14yqlu2Q3TAfIvh/qU75IFriOJggKjBPhSrvX5cS3oCWi+2ltw==
+"@ionic/react@5.6.10":
+  version "5.6.10"
+  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-5.6.10.tgz#a988124be0cc5d73071aea6dd5451c22eed85ca8"
+  integrity sha512-vgI6aFEUSft08UVsS9mqQ5xCQrOKAAzuzq4qLC8kWUONfn8MFoQbjUE8Jvo9GIFXYzhVwBN/UPfi6mxk+6bqRg==
   dependencies:
-    "@ionic/core" "5.6.8"
+    "@ionic/core" "5.6.10"
     ionicons "^5.1.2"
     tslib "*"
 
@@ -20020,10 +20020,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.0.tgz#b6a5bf1284026ae640f17f7ff5658a7567fc0d18"
-  integrity sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==
+prettier@2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.1.tgz#76903c3f8c4449bc9ac597acefa24dc5ad4cbea6"
+  integrity sha512-p+vNbgpLjif/+D+DwAZAbndtRrR0md0MwfmOVN9N+2RgyACMT+7tfaRnT+WDPkqnuVwleyuBIG2XBxKDme3hPA==
 
 pretty-bytes@^5.1.0, pretty-bytes@^5.3.0:
   version "5.3.0"
