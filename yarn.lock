@@ -3044,10 +3044,10 @@
     ionicons "^5.5.1"
     tslib "^2.1.0"
 
-"@ionic/react-router@5.6.8":
-  version "5.6.8"
-  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-5.6.8.tgz#18c24e75a556db1f7bdd28042afbdd97e66fd6e9"
-  integrity sha512-rilx1IsgJqRcuM8nTsuVBcjDiA5OMRYmbWUSWKN2oXWXDX74k0+ccqsVT9ocEs+BtG+JlqNnunQJpSMlLiKRIQ==
+"@ionic/react-router@5.6.10":
+  version "5.6.10"
+  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-5.6.10.tgz#f38a9ff8fde19f32fab67af9fbada94139ec5ccc"
+  integrity sha512-M1sRERMBZlsg74eMTYjcm68xVnOSt7f8oE4x/virFX881XFzZAlrWKYipP+BQLDTMkDznd16Bu5kbSK9iMNhyQ==
   dependencies:
     tslib "*"
 
