@@ -37,7 +37,7 @@
     "@storybook/react": "5.3.21",
     "@testing-library/react": "11.2.7",
     "@types/electron-load-devtool": "^1.0.0",
-    "@types/history": "4.7.7",
+    "@types/history": "4.7.9",
     "@types/jest": "25.2.3",
     "@types/react": "17.0.13",
     "@types/react-dom": "17.0.8",
