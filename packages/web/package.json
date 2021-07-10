@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
-    "@types/body-parser": "1.19.0",
+    "@types/body-parser": "1.19.1",
     "@types/cors": "2.8.11",
     "@types/faker": "5.5.7",
     "@types/node": "13.13.51",
