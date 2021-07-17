@@ -23165,10 +23165,10 @@ signedsource@^1.0.0:
   resolved "https://registry.yarnpkg.com/signedsource/-/signedsource-1.0.0.tgz#1ddace4981798f93bd833973803d80d52e93ad6a"
   integrity sha1-HdrOSYF5j5O9gzlzgD2A1S6TrWo=
 
-simple-git@2.38.0:
-  version "2.38.0"
-  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-2.38.0.tgz#5bc66bec40bce4f8ef950f4966f427799b4dd758"
-  integrity sha512-CORjrfirWMEGbJAxaXDH/PjZVOeATeG2bkafM9DsLVcFkbF9sXQGIIpEI6FeyXpvUsFK69T/pa4+4FKY9TUJMQ==
+simple-git@2.41.1:
+  version "2.41.1"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-2.41.1.tgz#f7fe8a6183401a2cca36a2f6773db25bf78473ae"
+  integrity sha512-n1STz1tfnemvYndzWakgKa0JB4s/LrUG4btXMetWB9N9ZoIAJQd0ZtWj9sBwWxIZ/X/tYdA/tq+KHfFNAGzZhQ==
   dependencies:
     "@kwsites/file-exists" "^1.1.1"
     "@kwsites/promise-deferred" "^1.1.1"
