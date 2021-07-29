@@ -82,7 +82,7 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "style-loader": "^2.0.0",
+    "style-loader": "^3.0.0",
     "use-image": "^1.0.5"
   }
 }
