@@ -51,6 +51,6 @@
     ]
   },
   "dependencies": {
-    "simple-git": "2.41.1"
+    "simple-git": "2.41.2"
   }
 }
