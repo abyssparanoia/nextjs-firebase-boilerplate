@@ -17,7 +17,7 @@
     "core-js": "3.16.1",
     "date-fns": "2.23.0",
     "faker": "5.5.3",
-    "firebase": "7.24.0",
+    "firebase": "8.10.0",
     "firebase-admin": "9.11.0",
     "moment": "2.29.1",
     "next": "10.2.3",
