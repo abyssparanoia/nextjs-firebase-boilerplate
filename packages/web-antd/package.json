@@ -18,7 +18,7 @@
     "antd": "4.16.13",
     "axios": "0.21.1",
     "babel-plugin-import": "1.13.3",
-    "core-js": "3.16.1",
+    "core-js": "3.16.4",
     "date-fns": "2.23.0",
     "http2": "3.3.7",
     "less": "4.1.1",
