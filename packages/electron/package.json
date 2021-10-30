@@ -38,7 +38,7 @@
     "@testing-library/react": "12.1.2",
     "@types/electron-load-devtool": "^1.0.0",
     "@types/history": "4.7.9",
-    "@types/jest": "25.2.3",
+    "@types/jest": "27.0.2",
     "@types/react": "17.0.33",
     "@types/react-dom": "17.0.10",
     "@types/react-hot-loader": "4.1.1",
