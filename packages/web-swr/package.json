@@ -14,7 +14,7 @@
     "@abyssparanoia/fixtures": "0.0.1",
     "@quentin-sommer/react-useragent": "3.1.0",
     "axios": "0.24.0",
-    "core-js": "3.18.3",
+    "core-js": "3.19.0",
     "date-fns": "2.23.0",
     "faker": "5.5.3",
     "firebase": "7.24.0",
