@@ -48,7 +48,7 @@
     "react-scripts": "4.0.3",
     "redux-devtools-extension": "2.13.9",
     "redux-logger": "3.0.6",
-    "webpack": "4.42.0",
+    "webpack": "4.46.0",
     "webpack-dev-server": "3.10.3"
   },
   "browserslist": {
