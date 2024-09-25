@@ -14,7 +14,7 @@
     "@capacitor/core": "3.3.1",
     "@ionic/react": "5.8.5",
     "@ionic/react-router": "5.8.5",
-    "axios": "0.24.0",
+    "axios": "0.25.0",
     "connected-react-router": "6.9.1",
     "firebase": "7.24.0",
     "ionicons": "5.5.4",
