@@ -32,7 +32,7 @@
     "firebase-functions": "3.16.0",
     "formik": "2.2.9",
     "formik-material-ui": "3.0.1",
-    "moment": "2.29.2",
+    "moment": "2.29.4",
     "next": "10.2.3",
     "next-offline": "5.0.5",
     "next-redux-wrapper": "5.0.0",
